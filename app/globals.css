@@ -1,48 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Unbounded:wght@200..900&display=swap');
-
 @import "tailwindcss";
-
 @import "bootstrap-icons/font/bootstrap-icons.css";
-@import 'remixicon/fonts/remixicon.css';
+@import "remixicon/fonts/remixicon.css";
 
+/* Custom variables */
 :root {
   --prim-color: #b3111a;
-  --prim-light: #f7adad;
+  --prim-light: #f6afb0;
   --white-color: #feffff;
   --black-color: #000;
 
-  --Unbounded: "Unbounded", sans-serif;
+   --Unbounded: "Unbounded", sans-serif;
   --EB_Garamond: "EB Garamond", serif;
 
   --transition-regular: 0.3s;
   --transition-slow: 0.6s;
 }
 
+/* Base styles */
 html, body {
-  @apply bg-[var(--prim-color)] text-[var(--black-color)];
+  @apply bg-[var(--white-color)] text-[var(--black-color)];
   margin: 0;
   padding: 0;
 }
-
-.bg-\[var\(--prim-color\)\] {
-  background-color: var(--prim-color);
-}
-
-.bg-\[var\(--prim-light\)\] {
-  background-color: var(--prim-light);
-}
-
 
 * {
   scroll-behavior: smooth;
 }
 
+/* Font utilities (opsional, karena kamu sudah pakai next/font) */
 .Unbounded {
-  font-family: var(--Unbounded) !important;
+  font-family: "Unbounded", sans-serif !important;
 }
 
 .EB_Garamond {
-  font-family: var(--EB_Garamond) !important;
+  font-family: "EB Garamond", serif !important;
 }
 
+ 
 
+  
