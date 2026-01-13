@@ -24,6 +24,14 @@ html, body {
   padding: 0;
 }
 
+.bg-\[var\(--prim-color\)\] {
+  background-color: var(--prim-color);
+}
+
+.bg-\[var\(--prim-light\)\] {
+  background-color: var(--prim-light);
+}
+
 
 * {
   scroll-behavior: smooth;
