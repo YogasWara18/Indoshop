@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IndoShop",
+  title: "Indoshop",
   description: "Indonesia Online Store",
 };
 

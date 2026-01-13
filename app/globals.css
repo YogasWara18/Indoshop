@@ -7,7 +7,7 @@
 
 :root {
   --prim-color: #b3111a;
-  --prim-light: #f16c6e;
+  --prim-light: #f7adad;
   --white-color: #feffff;
   --black-color: #000;
 
@@ -19,7 +19,7 @@
 }
 
 html, body {
-  @apply bg-[var(--white-color)] text-[var(--black-color)];
+  @apply bg-[var(--prim-color)] text-[var(--black-color)];
   margin: 0;
   padding: 0;
 }

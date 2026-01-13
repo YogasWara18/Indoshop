@@ -10,6 +10,10 @@ export default function Topnav() {
                 <Link href="#" className="pr-3 border-r-2 border-gray-300 hover:underline">Free Delivery</Link>
                 <Link href="#" className="hover:underline">Return Policy</Link>
             </div>
+            <div className="flex space-x-4">
+                <Link href="#" className="pr-3 border-r-2 border-gray-300 hover:underline">Help Center</Link>
+                <Link href="#" className="hover:underline">My Account</Link>
+            </div>
         </div>
     </div>
   )
