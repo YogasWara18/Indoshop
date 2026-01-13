@@ -1,0 +1,998 @@
+// Commands Used
+
+npm install react-hot-toast
+npm install remixicon react-icons @fortawesome/react-fontawesome @fortawesome/free-brands-svg-icons
+npm install swiper
+npm install countup.js
+npm install bootstrap-icons
+npm install remixicon
+npm install @iconify/react
+
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import 'remixicon/fonts/remixicon.css';
+
+
+<option>New York</option>
+<option>Los Angeles</option>
+<option>Chicago</option>
+<option>Houston</option>
+<option>Phoenix</option>
+<option>Philadelphia</option>
+
+
+
+// Hero Header 
+
+
+Daily Grocery Order and Get Express Delivery
+
+Order your daily groceries online and enjoy express delivery 
+straight to your doorstep. Fresh produce, essentials, and more—fast, 
+convenient, and reliable service for your everyday needs.
+
+
+
+// Categorys
+
+{ image: Category1, title: "Vegetables", products: "125+ Products" },
+{ image: Category2, title: "Fish & Meats", products: "90+ Products" },
+{ image: Category3, title: "Desserts", products: "80+ Products" },
+{ image: Category4, title: "Drinks & Juice", products: "60+ Products" },
+{ image: Category5, title: "Animals Food", products: "100+ Products" },
+{ image: Category6, title: "Fresh Fruits", products: "70+ Products" },
+{ image: Category7, title: "Yummy Candy", products: "50+ Products" },
+{ image: Category8, title: "Dairy & Eggs", products: "45+ Products" },
+{ image: Category9, title: "Snacks", products: "110+ Products" },
+{ image: Category10, title: "Frozen Foods", products: "40+ Products" },
+
+
+// Banners
+
+const banners: BannerType[] = [
+  { image: promotionBanner1, heading: "Everyday\nFresh Meat" },
+  { image: promotionBanner2, heading: "Daily Fresh\nVegetables" },
+  { image: promotionBanner3, heading: "Everyday\nfresh Milk" },
+  { image: promotionBanner4, heading: "Everyday\nFresh Fruits" },
+];
+
+<button className="px-5 py-3 rounded-full text-white font-bold mt-5 bg-[var(--prim-color)] hover:bg-white hover:text-[var(--prim-color)] transition-all duration-300 cursor-pointer">
+  Shop Now <i className="bi bi-arrow-right ps-2"></i>
+</button>
+
+
+
+// Best Deals json
+
+[
+    {
+        "Id": "BestDeals1",
+        "image": "/BestDeals/product-img1.png",
+        "title": "Fresh Eggplant & Cucumber Mix",
+        "price": "$14.99",
+        "lessprice": "$28.99",
+        "review": "(17k)",
+        "sold": "18/35"
+    },
+    {
+        "Id": "BestDeals2",
+        "image": "/BestDeals/product-img2.png",
+        "title": "Organic Beets with Greens",
+        "price": "$12.99",
+        "lessprice": "$22.99",
+        "review": "(12k)",
+        "sold": "22/40"
+    },
+    {
+        "Id": "BestDeals3",
+        "image": "/BestDeals/product-img3.png",
+        "title": "Mixed Fresh Vegetables Pack",
+        "price": "$13.99",
+        "lessprice": "$25.99",
+        "review": "(8k)",
+        "sold": "15/25"
+    },
+    {
+        "Id": "BestDeals4",
+        "image": "/BestDeals/product-img5.png",
+        "title": "Sun-Maid Raisins",
+        "price": "$16.99",
+        "lessprice": "$32.99",
+        "review": "(5k)",
+        "sold": "8/15"
+    },
+    {
+        "Id": "BestDeals5",
+        "image": "/BestDeals/product-img6.png",
+        "title": "Doritos Spicy Sweet Chili ",
+        "price": "$28.99",
+        "lessprice": "$38.99",
+        "review": "(11k)",
+        "sold": "20/30"
+    }
+]
+
+
+
+// Deals Content
+
+{
+    image: Deal1,
+    title: "Fresh Vegetables",
+    description: "Shop fresh, healthy vegetables delivered daily. Taste the garden in every bite!",
+},
+{
+    image: Deal2,
+    title: "Daily Snacks",
+    description: "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
+    className: "deals-wrap2",
+},
+{
+    image: Deal1,
+    title: "Fresh Vegetables",
+    description: "Shop fresh, healthy vegetables delivered daily. Taste the garden in every bite!",
+},
+
+
+
+
+// Offers Banner
+
+{
+    image: Deal1,
+    title: "$5 off your first order",
+    description: "Delivery by 6:15am",
+},
+{
+    image: Deal2,
+    title: "$5 off your first order",
+    description: "Delivery by 6:15am",
+},
+
+
+// Recommend Json
+
+[
+    {
+        "Id": "Recommend1",
+        "image": "/Recommend/product-img1.png",
+        "title": "C-500 Antioxidant Protect Dietary Supplement",
+        "price": "$12.49",
+        "lessprice": "$24.99",
+        "review": "(17k)",
+        "sold": "18/35",
+        "sale": ""
+    },
+    {
+        "Id": "Recommend2",
+        "image": "/Recommend/product-img2.png",
+        "title": "Marcel’s Modern Pantry Almond Unsweetened",
+        "price": "$16.99",
+        "lessprice": "$33.99",
+        "review": "(17k)",
+        "sold": "22/40",
+        "sale": "50%"
+    },
+    {
+        "Id": "Recommend3",
+        "image": "/Recommend/product-img3.png",
+        "title": "O Organics Milk, Whole, Vitamin D",
+        "price": "$13.49",
+        "lessprice": "$26.99",
+        "review": "(17k)",
+        "sold": "20/32",
+        "sale": "New"
+    },
+    {
+        "Id": "Recommend4",
+        "image": "/Recommend/product-img4.png",
+        "title": "Whole Grains and Seeds Organic Bread",
+        "price": "$8.99",
+        "lessprice": "$17.99",
+        "review": "(17k)",
+        "sold": "15/25",
+        "sale": "35%"
+    },
+    {
+        "Id": "Recommend5",
+        "image": "/Recommend/product-img2.png",
+        "title": "Lucerne Yogurt, Lowfat, Strawberry",
+        "price": "$10.99",
+        "lessprice": "$21.99",
+        "review": "(17k)",
+        "sold": "18/35",
+        "sale": ""
+    },
+    {
+        "Id": "Recommend6",
+        "image": "/Recommend/product-img6.png",
+        "title": "Nature Valley Whole Grain Oats and Honey Protein",
+        "price": "$11.49",
+        "lessprice": "$22.99",
+        "review": "(17k)",
+        "sold": "25/40",
+        "sale": "50%"
+    },
+    {
+        "Id": "Recommend7",
+        "image": "/Recommend/product-img7.png",
+        "title": "Sun-Maid Raisins, Natural & Sweet",
+        "price": "$7.99",
+        "lessprice": "$15.99",
+        "review": "(17k)",
+        "sold": "30/50",
+        "sale": "New"
+    },
+    {
+        "Id": "Recommend8",
+        "image": "/Recommend/product-img8.png",
+        "title": "Fresh Watermelon Juice Bottle",
+        "price": "$5.49",
+        "lessprice": "$10.99",
+        "review": "(17k)",
+        "sold": "12/20",
+        "sale": "50%"
+    },
+    {
+        "Id": "Recommend9",
+        "image": "/Recommend/product-img9.png",
+        "title": "Tillamook Triple Cheddar Blend Cheese",
+        "price": "$14.99",
+        "lessprice": "$29.99",
+        "review": "(17k)",
+        "sold": "14/28",
+        "sale": "New"
+    },
+    {
+        "Id": "Recommend10",
+        "image": "/Recommend/product-img10.png",
+        "title": "Good & Gather Farmed Atlantic Salmon",
+        "price": "$18.99",
+        "lessprice": "$37.99",
+        "review": "(17k)",
+        "sold": "20/40",
+        "sale": "50%"
+    },
+    {
+        "Id": "Recommend11",
+        "image": "/Recommend/product-img2.png",
+        "title": "Market Pantry 41/50 Raw Tail-Off Large Raw Shrimp",
+        "price": "$21.49",
+        "lessprice": "$42.99",
+        "review": "(17k)",
+        "sold": "18/30",
+        "sale": "50%"
+    },
+    {
+        "Id": "Recommend12",
+        "image": "/Recommend/product-img12.png",
+        "title": "Tropicana 100% Juice, Orange, No Pulp",
+        "price": "$9.99",
+        "lessprice": "$19.99",
+        "review": "(17k)",
+        "sold": "25/35",
+        "sale": "New"
+    }
+]
+
+
+// Hot Deals Json
+
+[
+    {
+        "Id": "HotDeals1",
+        "image": "/HotDeals/product-img1.png",
+        "title": "Marcel’s Modern Pantry Almond Unsweetened",
+        "price": "$15.99",
+        "lessprice": "$28.99",
+        "review": "(17k)",
+        "sold": "18/35",
+        "sale":"35%"
+    },
+    {
+        "Id": "HotDeals2",
+        "image": "/HotDeals/product-img2.png",
+        "title": "O Organics Milk, Whole, Vitamin D",
+        "price": "$18.99",
+        "lessprice": "$20.99",
+        "review": "(17k)",
+        "sold": "22/40",
+        "sale":"30%"
+    },
+    {
+        "Id": "HotDeals3",
+        "image": "/HotDeals/product-img3.png",
+        "title": "Whole Grains and Seeds Organic Bread",
+        "price": "$18.99",
+        "lessprice": "$32.99",
+        "review": "(17k)",
+        "sold": "15/25",
+        "sale":"New"
+    },
+    {
+        "Id": "HotDeals4",
+        "image": "/HotDeals/product-img4.png",
+        "title": "Tropicana 100% Juice, Orange, No Pulp",
+        "price": "$20.99",
+        "lessprice": "$30.99",
+        "review": "(17k)",
+        "sold": "8/15",
+        "sale":"50%"
+    },
+    {
+        "Id": "HotDeals5",
+        "image": "/HotDeals/product-img2.png",
+        "title": "Tropicana 100% Juice, Orange, No Pulp",
+        "price": "$14.99",
+        "lessprice": "$28.99",
+        "review": "(17k)",
+        "sold": "20/30",
+        "sale":"New"
+    }
+]
+
+Get the freshest vegetables delivered to your doorstep. Healthy,
+organic, and full of flavor!
+
+
+
+
+// Vendors json
+
+[
+    {
+        "id":1,
+        "title": "Organic Market",
+        "time":"Delivery by 6:15am",
+        "off":"$5 off Snack & Candy",
+        "vendorMain":"/vendor-logo1.png",
+        "vendors":[
+            "/vendor-img3.png",
+            "/vendor-img4.png",
+            "/vendor-img5.png"
+        ]
+    },
+    {
+        "id":2,
+        "title": "Safeway",
+        "time":"Delivery by 6:15am",
+        "off":"$5 off Snack & Candy",
+        "vendorMain":"/vendor-logo2.png",
+        "vendors":[
+            "/vendor-img3.png",
+            "/vendor-img4.png",
+            "/vendor-img5.png"
+        ]
+    },
+    {
+        "id":3,
+        "title": "Food Max",
+        "time":"Delivery by 6:15am",
+        "off":"$5 off Snack & Candy",
+        "vendorMain":"/vendor-logo3.png",
+        "vendors":[
+            "/vendor-img3.png",
+            "/vendor-img4.png",
+            "/vendor-img5.png"
+        ]
+    },
+    {
+        "id":4,
+        "title": "HRmart",
+        "time":"Delivery by 6:15am",
+        "off":"$5 off Snack & Candy",
+        "vendorMain":"/vendor-logo4.png",
+        "vendors":[
+            "/vendor-img3.png",
+            "/vendor-img4.png",
+            "/vendor-img5.png"
+        ]
+    },
+    {
+        "id":5,
+        "title": "Lucky Supermarket",
+        "time":"Delivery by 6:15am",
+        "off":"$5 off Snack & Candy",
+        "vendorMain":"/vendor-logo5.png",
+        "vendors":[
+            "/vendor-img3.png",
+            "/vendor-img4.png",
+            "/vendor-img5.png"
+        ]
+    },
+    {
+        "id":6,
+        "title": "Arico Farmer",
+        "time":"Delivery by 6:15am",
+        "off":"$5 off Snack & Candy",
+        "vendorMain":"/vendor-logo6.png",
+        "vendors":[
+            "/vendor-img3.png",
+            "/vendor-img4.png",
+            "/vendor-img5.png"
+        ]
+    },
+    {
+        "id":7,
+        "title": "Farmer Market",
+        "time":"Delivery by 6:15am",
+        "off":"$5 off Snack & Candy",
+        "vendorMain":"/vendor-logo7.png",
+        "vendors":[
+            "/vendor-img3.png",
+            "/vendor-img4.png",
+            "/vendor-img5.png"
+        ]
+    },
+    {
+        "id":8,
+        "title": "Foodsco",
+        "time":"Delivery by 6:15am",
+        "off":"$5 off Snack & Candy",
+        "vendorMain":"/vendor-logo8.png",
+        "vendors":[
+            "/vendor-img3.png",
+            "/vendor-img4.png",
+            "/vendor-img5.png"
+        ]
+    }
+]
+
+// Vendors
+
+"#F8EAE4",
+"#DEE6F3",
+"#DAF2DB",
+"#EBF1DA",
+"#F4F6E6",
+"#E6F6F6",
+"#F6E6F6",
+"#F8EAE4",
+
+
+// Best Sales
+
+[
+    {
+        "Id": "BestSales1",
+        "image": "/BestSales/best-sell1.png",
+        "title": "Taylor Farms Broccoli Fruits",
+        "price": "$15.99",
+        "lessprice": "$28.99",
+        "review": "(17k)",
+        "sold": "18/35",
+        "sale":"35%"
+    },
+    {
+        "Id": "BestSales2",
+        "image": "/BestSales/best-sell2.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$18.99",
+        "lessprice": "$20.99",
+        "review": "(17k)",
+        "sold": "22/40",
+        "sale":"30%"
+    },
+    {
+        "Id": "BestSales3",
+        "image": "/BestSales/best-sell3.png",
+        "title": "Taylor Farms Broccoli Florets Vegetables",
+        "price": "$18.99",
+        "lessprice": "$32.99",
+        "review": "(17k)",
+        "sold": "15/25",
+        "sale":"New"
+    },
+    {
+        "Id": "BestSales4",
+        "image": "/BestSales/best-sell4.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$20.99",
+        "lessprice": "$30.99",
+        "review": "(17k)",
+        "sold": "8/15",
+        "sale":"30%"
+    }
+]
+
+// Banner
+
+We Delivery on Next Day from 10:00 <br /> AM to 08:00 PM
+
+
+// OrganicFood Json
+
+[
+    {
+        "Id": "Organic1",
+        "image": "/Organic-Food/product-img1.png",
+        "title": "Taylor Farms Broccoli fresh Fruits",
+        "price": "$15.99",
+        "lessprice": "$28.99",
+        "review": "(17k)",
+        "sold": "18/35",
+        "sale":"35%"
+    },
+    {
+        "Id": "Organic2",
+        "image": "/Organic-Food/product-img2.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$18.99",
+        "lessprice": "$20.99",
+        "review": "(17k)",
+        "sold": "22/40",
+        "sale":"30%"
+    },
+    {
+        "Id": "Organic3",
+        "image": "/Organic-Food/product-img3.png",
+        "title": "Taylor Farms Broccoli Florets Vegetables",
+        "price": "$18.99",
+        "lessprice": "$32.99",
+        "review": "(17k)",
+        "sold": "15/25",
+        "sale":"New"
+    },
+    {
+        "Id": "Organic4",
+        "image": "/Organic-Food/product-img4.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$20.99",
+        "lessprice": "$30.99",
+        "review": "(17k)",
+        "sold": "8/15",
+        "sale":"30%"
+    },
+    {
+        "Id": "Organic5",
+        "image": "/Organic-Food/product-img5.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$20.99",
+        "lessprice": "$30.99",
+        "review": "(17k)",
+        "sold": "8/15",
+        "sale":"30%"
+    },
+    {
+        "Id": "Organic6",
+        "image": "/Organic-Food/product-img6.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$20.99",
+        "lessprice": "$30.99",
+        "review": "(17k)",
+        "sold": "8/15",
+        "sale":"30%"
+    }
+]
+
+
+// Short Products
+
+"Featured": [
+    {
+        "Id": "Featured1",
+        "image": "/shortProduct/short-product-img1.png",
+        "title": "Taylor Farms Broccoli fresh Fruits",
+        "price": "$15.99",
+        "lessprice": "$28.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "Featured2",
+        "image": "/shortProduct/short-product-img2.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$18.99",
+        "lessprice": "$20.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "Featured3",
+        "image": "/shortProduct/short-product-img3.png",
+        "title": "Taylor Farms Broccoli Florets Vegetables",
+        "price": "$18.99",
+        "lessprice": "$32.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "Featured4",
+        "image": "/shortProduct/short-product-img4.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$20.99",
+        "lessprice": "$30.99",
+        "review": "(17k)"
+    }
+],
+"TopSelling": [
+    {
+        "Id": "TopSelling1",
+        "image": "/shortProduct/short-product-img5.png",
+        "title": "Taylor Farms Broccoli fresh Fruits",
+        "price": "$15.99",
+        "lessprice": "$28.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "TopSelling2",
+        "image": "/shortProduct/short-product-img6.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$18.99",
+        "lessprice": "$20.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "TopSelling3",
+        "image": "/shortProduct/short-product-img7.png",
+        "title": "Taylor Farms Broccoli Florets Vegetables",
+        "price": "$18.99",
+        "lessprice": "$32.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "TopSelling4",
+        "image": "/shortProduct/short-product-img8.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$20.99",
+        "lessprice": "$30.99",
+        "review": "(17k)"
+    }
+],
+"OnSale": [
+    {
+        "Id": "OnSale1",
+        "image": "/shortProduct/short-product-img9.png",
+        "title": "Taylor Farms Broccoli fresh Fruits",
+        "price": "$15.99",
+        "lessprice": "$28.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "OnSale2",
+        "image": "/shortProduct/short-product-img2.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$18.99",
+        "lessprice": "$20.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "OnSale3",
+        "image": "/shortProduct/short-product-img3.png",
+        "title": "Taylor Farms Broccoli Florets Vegetables",
+        "price": "$18.99",
+        "lessprice": "$32.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "OnSale4",
+        "image": "/shortProduct/short-product-img4.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$20.99",
+        "lessprice": "$30.99",
+        "review": "(17k)"
+    }
+],
+"TopRated": [
+    {
+        "Id": "TopRated1",
+        "image": "/shortProduct/short-product-img1.png",
+        "title": "Taylor Farms Broccoli fresh Fruits",
+        "price": "$15.99",
+        "lessprice": "$28.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "TopRated2",
+        "image": "/shortProduct/short-product-img3.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$18.99",
+        "lessprice": "$20.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "TopRated3",
+        "image": "/shortProduct/short-product-img2.png",
+        "title": "Taylor Farms Broccoli Florets Vegetables",
+        "price": "$18.99",
+        "lessprice": "$32.99",
+        "review": "(17k)"
+    },
+    {
+        "Id": "TopRated4",
+        "image": "/shortProduct/short-product-img7.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$20.99",
+        "lessprice": "$30.99",
+        "review": "(17k)"
+    }
+]
+
+
+// New Arrivals Json
+
+[
+    {
+        "Id": "Arrivals1",
+        "image": "/Arrivals/product-img1.png",
+        "title": "Taylor Farms Broccoli fresh Fruits",
+        "price": "$19.99",
+        "lessprice": "$30.99",
+        "review": "(17k)",
+        "sold": "18/35",
+        "sale":"35%"
+    },
+    {
+        "Id": "Arrivals2",
+        "image": "/Arrivals/product-img2.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$22.99",
+        "lessprice": "$29.99",
+        "review": "(17k)",
+        "sold": "22/40",
+        "sale":"30%"
+    },
+    {
+        "Id": "Arrivals3",
+        "image": "/Arrivals/product-img3.png",
+        "title": "Taylor Farms Broccoli Florets Vegetables",
+        "price": "$25.99",
+        "lessprice": "$32.99",
+        "review": "(17k)",
+        "sold": "15/25",
+        "sale":"New"
+    },
+    {
+        "Id": "Arrivals4",
+        "image": "/Arrivals/product-img4.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$22.99",
+        "lessprice": "$30.99",
+        "review": "(17k)",
+        "sold": "8/15",
+        "sale":"30%"
+    },
+    {
+        "Id": "Arrivals5",
+        "image": "/Arrivals/product-img5.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$24.99",
+        "lessprice": "$30.99",
+        "review": "(17k)",
+        "sold": "8/15",
+        "sale":"30%"
+    },
+    {
+        "Id": "Arrivals6",
+        "image": "/Arrivals/product-img6.png",
+        "title": "Taylor Farms Broccoli Florets Fruits",
+        "price": "$21.99",
+        "lessprice": "$30.99",
+        "review": "(17k)",
+        "sold": "8/15",
+        "sale":"30%"
+    }
+]
+
+
+// Benefits
+
+Free Shipping
+Free shipping all over the US
+
+
+100% Satisfaction
+
+Secure Payments
+
+24/7 
+
+
+// Newsletter 
+
+Don't Miss Out on Grocery Deals
+
+SING UP FOR THE UPDATE NEWSLETTER
+
+
+
+// Footer
+
+
+We're Grocery Shop, an innovative team of food supliers.
+
+789 Inner Lane, Biyes park, California
++00 123 456 789 or +00 987 654 012
+Example@site.com
+
+
+Information
+
+Become a Vendor
+Affiliate Program
+Privacy Policy
+Our Suppliers
+Extended Plan
+Community
+
+
+Support
+
+Help Center
+Contact Us
+Report Abuse
+Submit and Dispute
+Policies & Rules
+Online Shopping
+
+
+Account
+
+My Account
+Order History
+Shoping Cart
+Compare
+Help Ticket
+Wishlist
+
+
+Groceries
+
+Dairy & Eggs
+Meat & Seafood
+Breakfast Food
+Household Supplies
+Bread & Bakery
+Pantry Staples
+
+
+Shop on The Go
+
+SnackBasket App is available. Get it now
+
+
+©2025. All Rights Reserved By <a href="https://uicode.in/" className="font-semibold">Uicode</a>
+
+
+
+// Product Details
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus culpa, est illo id sapiente veniam autem distinctio sunt mollitia possimus!
+
+Special Offer: <strong> 5 Days </strong> Remains untill the end of the offer
+
+
+Fast Delivery
+Lightning-fast shipping, guaranteed.
+
+Free 30-day returns
+Shop risk-free with easy returns.
+
+
+Pickup available at Shop location
+Usually ready in 24 hours.
+
+Payment
+Payment upon receipt of goods, Payment by card in the department, Google Pay, Online card.
+
+Warranty
+The Consumer Protection Act does not provide for the return of this product of proper quality.
+
+Packaging
+Research & development value proposition graphical user interface investor.
+
+
+
+Description
+
+Product Description
+
+Wherever celebrations and good times happen, the LAY'S brand will be there just as it has been for more than 75 years. With flavors almost as rich as our history, we have a chip or crisp flavor guaranteed to bring a smile on your face.
+Morbi ut sapien vitae odio accumsan gravida. Morbi vitae erat auctor, eleifend nunc a, lobortis neque. viverra. Maecenas lacus odio, feugiat eu nunc sit amet, maximus sagittis dolor.
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius perferendis perspiciatis temporibus voluptate, nemo quod dignissimos nam molestias nulla a officia eos, voluptatem beatae provident, dolorum suscipit aspernatur doloribus. Ut.
+
+<span>•</span> 8.0 oz. bag of LAY'S Classic Potato Chips
+
+Tasty LAY's potato chips are a great snack
+Includes three ingredients: potatoes, oil, and salt
+Gluten free product
+
+
+Product Specifications
+
+Product Type: Chips & Dips
+Product Name: {product.title}
+Brand: Lay's
+FSA Eligible: No
+Size/Count: 8.0oz
+Item Code: 425652
+Ingredients: Potatoes, Vegetable Oil, and Salt.
+
+
+Nutrition Facts
+
+Total Fat 10g 13%
+Saturated Fat 1.5g 7%
+Cholesterol 0mg 0%
+Sodium 170mg 7%
+Potassium 350mg 6%
+
+More Details
+
+Lunarlon midsole delivers ultra-plush responsiveness
+Encapsulated Air-Sole heel unit for lightweight cushioning
+Colour Shown: Ale Brown/Black/Goldtone/Ale Brown
+Style: 805899-202
+
+
+
+
+// Blog json 
+
+[
+  {
+    "id": 1,
+    "image": "/Blogs/blog-img1.png",
+    "title": "Top grocery deals to save big this week",
+    "tag": "Offers & Discounts",
+    "pere": "Shopping smart means knowing where to find the best deals. Weekly grocery offers can help families save money while still enjoying fresh and quality products.",
+    "pere2": "Bulk-buying staples like rice, pulses, and cooking oil during discount sales can reduce monthly expenses significantly.",
+    "pere3": "Keep an eye on limited-time deals in fruits, vegetables, and packaged foods to maximize savings without compromising nutrition.",
+    "date": "July 15, 2025",
+    "comment": "10 Comments"
+  },
+  {
+    "id": 2,
+    "image": "/Blogs/blog-img2.png",
+    "title": "How online grocery apps are changing shopping",
+    "tag": "Digital Grocery",
+    "pere": "Online grocery shopping is more popular than ever, offering the convenience of browsing and purchasing essentials from home.",
+    "pere2": "Apps now provide features like order tracking, instant discounts, and personalized recommendations based on past purchases.",
+    "pere3": "With just a few taps, customers can restock their kitchen and save valuable time, making grocery shopping stress-free.",
+    "date": "July 16, 2025",
+    "comment": "7 Comments"
+  },
+  {
+    "id": 3,
+    "image": "/Blogs/blog-img3.jpg",
+    "title": "Smart ways to manage your monthly grocery budget",
+    "tag": "Budget Tips",
+    "pere": "Budgeting groceries can help prevent overspending and reduce waste. Planning meals ahead of time ensures you only buy what’s needed.",
+    "pere2": "Using shopping lists, comparing prices, and tracking expenses can make a huge difference in monthly savings.",
+    "pere3": "Digital wallets and cashback offers from grocery apps also help maximize your budget while ensuring quality purchases.",
+    "date": "July 17, 2025",
+    "comment": "12 Comments"
+  },
+  {
+    "id": 4,
+    "image": "/Blogs/blog-img4.jpg",
+    "title": "Essential packaged foods for every kitchen",
+    "tag": "Staples",
+    "pere": "Packaged foods like flour, rice, pulses, and oils are the backbone of every kitchen. Stocking them smartly ensures you’re never short of essentials.",
+    "pere2": "Choosing fortified and organic variants can improve health benefits while maintaining taste and quality.",
+    "pere3": "Always check expiry dates and storage conditions to keep packaged foods fresh and safe for long-term use.",
+    "date": "July 18, 2025",
+    "comment": "9 Comments"
+  },
+  {
+    "id": 5,
+    "image": "/Blogs/blog-img5.jpg",
+    "title": "Why fresh produce should be your first choice",
+    "tag": "Fruits & Vegetables",
+    "pere": "Fresh produce is packed with nutrients and flavors that packaged items can’t match. Seasonal fruits and vegetables are especially rich in vitamins.",
+    "pere2": "Buying local ensures freshness, supports farmers, and reduces carbon footprints caused by long transportation.",
+    "pere3": "Incorporating a colorful variety of produce in meals boosts immunity and makes food more enjoyable.",
+    "date": "July 19, 2025",
+    "comment": "6 Comments"
+  }
+]
+
+
+
+// Blog
+
+
+"Fruits & Vegetables",
+"Dairy & Bakery",
+"Snacks & Beverages",
+"Staples",
+"Frozen & Packaged Food",
+"Personal Care",
+"Household Essentials",
