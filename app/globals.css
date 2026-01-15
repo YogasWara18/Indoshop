@@ -62,7 +62,7 @@
 /* Hero */
 .Hero {
   position: relative;
-  background-color: #f6afb0;
+  background-color: #f1c6c6c5;
   background-image: 
     linear-gradient(rgba(246, 175, 176, 0.5), rgba(246, 175, 176, 0.5)), 
     url(../public/Hero-bg.png);
@@ -117,5 +117,36 @@
   100% {
     trnasform: scale(1);
     opacity: 1;
+  }
+}
+
+/* Responsive Hero */
+@media (max-width:991px) {
+  .Hero {
+    height: 100%;
+  }
+  .hero-image {
+    width: 80%;
+  }
+  .hero-wrap h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width:575px) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-costum {
+    display: none;
+  }
+  .Hero {
+    padding: 5%;
+  }
+  .hero-wrap h1 {
+    font-size: 2rem;
+  }
+  .hero-image {
+    width: 100%;
+  }
+  .hero-wrap p {
+    width: 100%;
   }
 }

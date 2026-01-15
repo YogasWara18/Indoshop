@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
 import Hero1 from "@/public/Hero-img1.png";
 import Hero2 from "@/public/Hero-img2.png";
 
@@ -9,11 +8,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function Hero() {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
+
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
 
   return (
     <div className="px-[8%] lg:px-[12%] py-5">
@@ -22,10 +31,7 @@ export default function Hero() {
           slidesPerView={1}
           loop={true}
           modules={[Navigation]}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
+          onSwiper={setSwiperInstance} // simpan instance Swiper
         >
           {/* Slide 1 */}
           <SwiperSlide>
@@ -44,7 +50,7 @@ export default function Hero() {
                   menghadirkan kekayaan budaya Indonesia ke ruang hidup Anda.
                 </p>
                 <button className="px-5 py-3 rounded-full text-white font-bold mt-5 bg-[var(--prim-color)] hover:bg-gray-300 hover:text-[var(--prim-color)] transition-all duration-300 cursor-pointer">
-                  Order Now <i className="bi bi-cart3 ps-3"></i>{" "}
+                  Order Now <i className="bi bi-cart3 ps-3"></i>
                 </button>
               </div>
               <div className="hero-image w-full lg:w-1/2">
@@ -56,12 +62,13 @@ export default function Hero() {
               </div>
             </div>
           </SwiperSlide>
+
           {/* Slide 2 */}
           <SwiperSlide>
             <div className="hero-wrap w-full flex flex-col lg:flex-row items-center justify-between">
               <div className="w-full lg:w-1/1">
                 <h1 className="EB_Garamond text-2xl lg:text-[2.6rem] font-bold">
-                  Seni Bambu & Rotan Nusantara
+                 Nusantara Seni Bambu & Rotan 
                 </h1>
                 <p className="w-[80%] my-3">
                   Koleksi kerajinan tangan yang memadukan keindahan anyaman
@@ -73,7 +80,7 @@ export default function Hero() {
                   representasi budaya dan keberlanjutan.
                 </p>
                 <button className="px-5 py-3 rounded-full text-white font-bold mt-5 bg-[var(--prim-color)] hover:bg-gray-300 hover:text-[var(--prim-color)] transition-all duration-300 cursor-pointer">
-                  Order Now <i className="bi bi-cart3 ps-3"></i>{" "}
+                  Order Now <i className="bi bi-cart3 ps-3"></i>
                 </button>
               </div>
               <div className="hero-image w-full lg:w-1/2">
@@ -90,13 +97,15 @@ export default function Hero() {
         {/* Custom Navigation Button */}
         <div
           ref={prevRef}
-          className="swiper-button-prev-custom absolute left-5 top-1/2 z-10 -translate-y-1/2 cursor-pointer rounded-full bg-white/80 px-3 py-2 shadow hover:bg-white">
-         <i className="ri-arrow-left-s-line text-2xl text-gray-800"></i>
+          className="swiper-button-prev-custom absolute left-5 top-1/2 z-10 -translate-y-1/2 cursor-pointer rounded-full bg-white/80 px-3 py-2 shadow hover:bg-white"
+        >
+          <i className="ri-arrow-left-s-line text-2xl text-gray-800"></i>
         </div>
-         <div
+        <div
           ref={nextRef}
-          className="swiper-button-next-custom absolute right-4 top-1/2 z-10 -translate-y-1/2 cursor-pointer rounded-full bg-white/80 px-3 py-2 shadow hover:bg-white">
-         <i className="ri-arrow-right-s-line text-2xl text-gray-800"></i>
+          className="swiper-button-next-custom absolute right-4 top-1/2 z-10 -translate-y-1/2 cursor-pointer rounded-full bg-white/80 px-3 py-2 shadow hover:bg-white"
+        >
+          <i className="ri-arrow-right-s-line text-2xl text-gray-800"></i>
         </div>
       </div>
     </div>
