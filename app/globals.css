@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Unbounded:wght@200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Unbounded:wght@200..900&display=swap");
 
 @import "tailwindcss";
 @import "bootstrap-icons/font/bootstrap-icons.css";
@@ -6,7 +6,6 @@
 
 /* Custom variables */
 :root {
-
   --prim-color: #b3111a;
   --prim-light: #f6afb0;
   --white-color: #feffff;
@@ -22,7 +21,6 @@
   scroll-behavior: smooth;
 }
 
-
 .Unbounded {
   font-family: "Unbounded", sans-serif !important;
 }
@@ -31,6 +29,32 @@
   font-family: "EB Garamond", serif !important;
 }
 
- 
+/* Navbar */
+.menu-link a {
+  font-weight: 600;
+  transition: var(--transition-regular);
+}
 
-  
+.menu-link a:hover {
+  color: var(--prim-color);
+}
+
+.fixed-nav {
+  animation: Anim-fixed var(--transition-slow) forwards linear;
+  box-shadow: 0 2px 10px rgba(131, 131, 131, 0.6);
+}
+
+.fixed-nav .nav-button {
+  padding: 25px 20px !important;
+}
+
+@keyframes Anim-fixed {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
