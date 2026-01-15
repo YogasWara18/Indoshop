@@ -26,8 +26,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Indoshop",
-  description: "Indonesia Online Store",
+  title: "Indonesia Art Market",
+  description: "Indonesia Art Market",
 };
 
 export default function RootLayout({

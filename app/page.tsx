@@ -1,9 +1,11 @@
+import PageIndex from "./UI-Components/Index/PageIndex";
+
 
 
 export default function Home() {
   return (
     <>
-    <h1>Page.tsx</h1>
+     <PageIndex/>
     </>
   );
 }
