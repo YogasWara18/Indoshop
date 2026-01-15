@@ -19,7 +19,7 @@ export default function MiddleNav() {
         </Link>
 
         {/* Search */}
-        <div className="flex flex-1 ms-6 lg:mx-0 max-w-xl relative">
+        <div className="flex flex-1 left-22 ms-6 lg:mx-0 max-w-xl relative">
           <input
             type="text"
             placeholder="Search for a Product or Brand"
