@@ -35,16 +35,35 @@ convenient, and reliable service for your everyday needs.
 
 // Categorys
 
-{ image: Category1, title: "Vegetables", products: "125+ Products" },
-{ image: Category2, title: "Fish & Meats", products: "90+ Products" },
-{ image: Category3, title: "Desserts", products: "80+ Products" },
-{ image: Category4, title: "Drinks & Juice", products: "60+ Products" },
-{ image: Category5, title: "Animals Food", products: "100+ Products" },
-{ image: Category6, title: "Fresh Fruits", products: "70+ Products" },
-{ image: Category7, title: "Yummy Candy", products: "50+ Products" },
-{ image: Category8, title: "Dairy & Eggs", products: "45+ Products" },
-{ image: Category9, title: "Snacks", products: "110+ Products" },
-{ image: Category10, title: "Frozen Foods", products: "40+ Products" },
+ Ragam Kerajinan Tradisional Indonesia
+- Batik (Jawa, berkembang di seluruh Indonesia)
+- Teknik: menggunakan canting dan malam untuk menciptakan motif.
+- Filosofi: setiap motif punya makna, misalnya Parang (kebijaksanaan), Kawung (kesucian), Mega Mendung (kesabaran).
+- Tenun (Sumatera, Nusa Tenggara, Sulawesi)
+- Songket (Sumatera): ditenun dengan benang emas/perak.
+- Ikat (Nusa Tenggara): teknik pewarnaan benang sebelum ditenun.
+- Anyaman (Kalimantan, Bali, Jawa, Sulawesi)
+- Bahan: bambu, rotan, pandan, atau daun lontar.
+- Produk: tikar, tas, keranjang, hingga dekorasi rumah.
+- Ukiran Kayu (Bali, Jepara – Jawa Tengah)
+- Motif: flora, fauna, dan mitologi.
+- Fungsi: hiasan rumah, patung, hingga perlengkapan upacara.
+- Keramik (Jawa Barat, Lombok, Bali)
+- Bahan: tanah liat dibentuk lalu dibakar.
+- Produk: guci, piring, vas, dan hiasan.
+- Perak & Emas (Yogyakarta, Bali, Sumatera Barat)
+- Teknik: filigree (benang perak tipis) dan ukiran logam.
+- Produk: perhiasan, hiasan rumah, dan perlengkapan adat.
+- Wayang Kulit (Jawa, Bali)
+- Bahan: kulit kerbau/sapi yang diukir halus.
+- Fungsi: media pertunjukan seni dan sarana pendidikan moral.
+- Topeng Tradisional (Cirebon, Bali, Lombok)
+- Digunakan dalam tari dan ritual.
+- Motif wajah melambangkan karakter tertentu (bijak, lucu, jahat).
+- Gerabah (Kasongan – Yogyakarta, Lombok)
+- Produk: kendi, pot bunga, dan alat dapur.
+- Ciri khas: warna alami tanah liat dengan sentuhan motif lokal.
+
 
 
 // Banners
