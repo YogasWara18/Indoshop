@@ -23,6 +23,19 @@ type CategoryType = {
   products: string;
 };
 
+const categories: CategoryType[] = [
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+  { image: Category1, title: "Patung Bali", products: "125+ Products" },
+];
+
 export default function Category() {
   return (
     <div>
