@@ -120,6 +120,55 @@
   }
 }
 
+/* Category */
+.category-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* gambar + teks rata tengah */
+  justify-content: flex-start;
+  text-align: center;
+  margin: 0 20px;        /* jarak antar item */
+  transition: transform 0.3s ease;
+}
+
+.category-wrap:hover {
+  transform: translateY(-6px); /* efek hover naik sedikit */
+}
+
+.category-image {
+  width: 120px;          /* ukuran konsisten */
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* gambar utuh, tidak terpotong */
+}
+
+.category-info {
+  margin-top: 10px;      /* jarak konsisten antara gambar dan teks */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* teks sejajar tengah */
+  justify-content: center;
+}
+
+.category-info h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;    /* jarak konsisten dengan products */
+  color: #333;
+}
+
+.category-info p {
+  font-size: 0.85rem;
+  color: #777;
+}
+
 /* Responsive Hero */
 @media (max-width:991px) {
   .Hero {
