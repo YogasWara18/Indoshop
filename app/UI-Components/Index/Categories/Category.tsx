@@ -17,6 +17,7 @@ import Category7 from "@/public/Category-7.png"
 import Category8 from "@/public/Category-8.png"
 import Category9 from "@/public/Category-9.png"
 import Category10 from "@/public/Category-10.png"
+import Category11 from "@/public/Category-11.png"
 
 type CategoryType = {
   image: StaticImageData;
@@ -26,15 +27,16 @@ type CategoryType = {
 
 const categories: CategoryType[] = [
   { image: Category1, title: "Patung", products: "225+ Products" },
-  { image: Category2, title: "Rotan", products: "425+ Products" },
+  { image: Category2, title: "Rotan", products: "25+ Products" },
   { image: Category3, title: "Batik", products: "125+ Products" },
   { image: Category4, title: "Tenun", products: "525+ Products" },
   { image: Category5, title: "Keramik", products: "625+ Products" },
   { image: Category6, title: "Ukiran", products: "725+ Products" },
-  { image: Category7, title: "Perak & emas", products: "825+ Products" },
-  { image: Category8, title: "Wayang", products: "925+ Products" },
-  { image: Category9, title: "Topeng", products: "1025+ Products" },
-  { image: Category10, title: "Gerabah", products: "1125+ Products" },
+  { image: Category7, title: "Perak", products: "525+ Products" },
+  { image: Category8, title: "Emas", products: "525+ Products" },
+  { image: Category9, title: "Wayang", products: "925+ Products" },
+  { image: Category10, title: "Topeng", products: "1025+ Products" },
+  { image: Category11, title: "Gerabah", products: "1125+ Products" },
 ];
 
 export default function Category() {
