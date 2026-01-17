@@ -79,7 +79,7 @@ export default function Hero() {
                   setiap produk bukan sekadar benda fungsional, melainkan
                   representasi budaya dan keberlanjutan.
                 </p>
-                <button className="px-5 py-3 rounded-full text-white font-bold mt-5 bg-[var(--prim-color)] hover:bg-gray-300 hover:text-[var(--prim-color)] transition-all duration-300 cursor-pointer">
+                <button className="px-5 py-3 rounded-full text-white font-bold mt-5 bg-[var(--prim-color)] hover:bg-white hover:text-[var(--prim-color)] transition-all duration-300 cursor-pointer">
                   Order Now <i className="bi bi-cart3 ps-3"></i>
                 </button>
               </div>

@@ -54,7 +54,7 @@ export default function Category() {
     991: { slidesPerView: 5 },
     767: { slidesPerView: 4 },
     575: { slidesPerView: 3 },
-    0: { slidesPerView: 2 }, // biar lebih lega di layar kecil
+    0: { slidesPerView: 2 }, 
   }}
 >
 
