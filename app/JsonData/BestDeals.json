@@ -1,0 +1,47 @@
+[
+    {
+        "Id": "BestDeals1",
+        "image": "/BestDeals/Product-1.png",
+        "title": "Keramik Bali",
+        "price": "Rp.200.000",
+        "lessprice": "Rp.499.000",
+        "review": "(17k)",
+        "sold": "18/35"
+    },
+    {
+        "Id": "BestDeals2",
+        "image": "/BestDeals/Product-1.png",
+        "title": "Keramik Bali",
+        "price": "Rp.200.000",
+        "lessprice": "Rp.499.000",
+        "review": "(17k)",
+        "sold": "18/35"
+    },
+    {
+        "Id": "BestDeals3",
+        "image": "/BestDeals/Product-1.png",
+        "title": "Keramik Bali",
+        "price": "Rp.200.000",
+        "lessprice": "Rp.499.000",
+        "review": "(17k)",
+        "sold": "18/35"
+    },
+    {
+        "Id": "BestDeals4",
+        "image": "/BestDeals/Product-1.png",
+        "title": "Keramik Bali",
+        "price": "Rp.200.000",
+        "lessprice": "Rp.499.000",
+        "review": "(17k)",
+        "sold": "18/35"
+    },
+    {
+        "Id": "BestDeals5",
+        "image": "/BestDeals/Product-1.png",
+        "title": "Keramik Bali",
+        "price": "Rp.200.000",
+        "lessprice": "Rp.499.000",
+        "review": "(17k)",
+        "sold": "18/35"
+    }
+]

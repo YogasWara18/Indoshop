@@ -176,6 +176,52 @@
   color: #777;
 }
 
+/* Deals Section */
+.deals-wrap {
+  background-image: url(../public/Deals-bg1.png);
+  background-position: top center;
+  background-size: cover;
+  height: 450px;
+}
+
+.deals-wrap2 {
+  background-image: url(../public/Deals-bg2.png);
+}
+
+.deals-wrap3 {
+  background-image: url(../public/Deals-bg3.png);
+}
+
+.deals-wrap4 {
+  background-image: url(../public/Deals-bg4.png);
+}
+
+.deals-wrap5 {
+  background-image: url(../public/Deals-bg5.png);
+}
+.deals-wrap6 {
+  background-image: url(../public/Deals-bg6.png);
+}
+.deals-wrap7 {
+  background-image: url(../public/Deals-bg7.png);
+}
+
+
+
+
+.deals-wrap {
+  position: relative;
+}
+
+.deals-wrap button {
+  position: absolute;
+  bottom: 1%;
+  right: 1px;
+  transform: translate(-50%, -50%);
+}
+
+
+
 /* Responsive Hero */
 @media (max-width:991px) {
   .Hero {
