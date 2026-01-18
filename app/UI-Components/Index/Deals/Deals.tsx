@@ -187,6 +187,7 @@ export default function Deals() {
                   <h6 className="text-lg text-gray-500 flex items-center gap-1">
                     <i className="bi bi-shop text-[var(--prim-color)]"></i> By indoshop
                   </h6>
+                  <h3 className="mt-2 Unbounded text-sm text-gray-500">Sold: {product.sold}</h3>
                 </div>
               </Link>
             </div>
