@@ -3,8 +3,8 @@
     "Id": "BestDeals1",
     "image": "/BestDeals/Product-1-v1.png",
     "title": "Keramik Bali",
-    "price": "Rp.200.000",
-    "lessprice": "Rp.499.000",
+    "price": "Rp 200.000",
+    "lessprice": "Rp 499.000",
     "review": "(1.2k)",
     "sold": "18/35"
   },
@@ -12,8 +12,8 @@
     "Id": "BestDeals2",
     "image": "/BestDeals/Product-2.png",
     "title": "Batik Jawa",
-    "price": "Rp.350.000",
-    "lessprice": "Rp.600.000",
+    "price": "Rp 350.000",
+    "lessprice": "Rp 600.000",
     "review": "(2.5k)",
     "sold": "25/50"
   },
@@ -21,8 +21,8 @@
     "Id": "BestDeals3",
     "image": "/BestDeals/Product-3.png",
     "title": "Ukiran Jepara",
-    "price": "Rp.1.200.000",
-    "lessprice": "Rp.2.000.000",
+    "price": "Rp 1.200.000",
+    "lessprice": "Rp 2.000.000",
     "review": "(980)",
     "sold": "12/20"
   },
@@ -30,8 +30,8 @@
     "Id": "BestDeals4",
     "image": "/BestDeals/Product-4-v2.png",
     "title": "Tenun Sumatra",
-    "price": "Rp.750.000",
-    "lessprice": "Rp.1.300.000",
+    "price": "Rp 750.000",
+    "lessprice": "Rp 1.300.000",
     "review": "(1.8k)",
     "sold": "30/60"
   },
@@ -39,8 +39,8 @@
     "Id": "BestDeals5",
     "image": "/BestDeals/Product-5-v1.png",
     "title": "Patung batu Bali",
-    "price": "Rp.5.000.000",
-    "lessprice": "Rp.9.500.000",
+    "price": "Rp 5.000.000",
+    "lessprice": "Rp 9.500.000",
     "review": "(2.1k)",
     "sold": "22/40"
   }

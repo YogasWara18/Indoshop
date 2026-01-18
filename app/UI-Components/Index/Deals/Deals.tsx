@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import Link from "next/link";
 
 import Deal1 from "@/public/Deals-bg1.png";
 import Deal2 from "@/public/Deals-bg2.png";
@@ -127,8 +128,7 @@ export default function Deals() {
             <div
               className={`deals-wrap px-5 py-6 rounded-2xl flex justify-center items-center ${deal.className || ""}`}
             >
-              <button
-                className="relative px-6 py-3 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
+              <button className="relative px-6 py-3 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
                 Shop Now <i className="bi bi-arrow-right ps-2"></i>
               </button>
             </div>
@@ -153,7 +153,42 @@ export default function Deals() {
                   height={180}
                   className="object-contain"
                 />
+                <div
+                  onClick={() => handleAddToCart(product)}
+                  className="absolute -top-3 -right-3 flex justify-between items-center"
+                >
+                  <button className="px-2 py-1 font-semibold text-[var(--prim-color)] bg-[var(--prim-light)] rounded-full text-md hover:bg-[var(--prim-color)] hover:text-white cursor-pointer transition">
+                    Add <i className="bi bi-cart"></i>
+                  </button>
+                </div>
               </div>
+              <Link
+                href={{
+                  pathname: "/UI-Components/Shop",
+                  query: { id: product.Id },
+                }}
+              >
+                <div className="space-y-1 mt-5 product-info">
+                  <div className="flex flex-col">
+                    {/* Harga utama */}
+                    <span className="text-sm font-semibold">
+                      {product.price}{" "}
+                      <span className="text-gray-500 text-sm">/Pcs</span>
+                    </span>
+                    {/* Harga coret */}
+                    <span className="text-gray-500 text-sm line-through">
+                      {product.lessprice}
+                    </span>
+                  </div>
+                  <span className="flex items-center text-yellow-500 text-md">
+                    <i className="bi bi-star-fill me-1"></i> {product.review}
+                  </span>
+                  <h2 className="text-md font-normal Unbounded my-2 hover:text-[var(--prim-color)] transition-all duration-300">{product.title}</h2>
+                  <h6 className="text-lg text-gray-500 flex items-center gap-1">
+                    <i className="bi bi-shop text-[var(--prim-color)]"></i> By indoshop
+                  </h6>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
