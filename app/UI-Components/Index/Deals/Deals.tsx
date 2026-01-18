@@ -128,17 +128,7 @@ export default function Deals() {
               className={`deals-wrap px-5 py-6 rounded-2xl flex justify-center items-center ${deal.className || ""}`}
             >
               <button
-                className="relative px-6 py-3 rounded-full font-bold 
-  text-[var(--white-color)] 
-  bg-[var(--prim-color)] 
-  shadow-[0_0_15px_var(--prim-light)] 
-  hover:bg-[var(--white-color)] 
-  hover:text-[var(--prim-color)] 
-  hover:shadow-[0_0_25px_var(--prim-light)] 
-  transition-all duration-[var(--transition-regular)] 
-  cursor-pointer 
-  backdrop-blur-md border border-[var(--prim-light)]/40"
-              >
+                className="relative px-6 py-3 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
                 Shop Now <i className="bi bi-arrow-right ps-2"></i>
               </button>
             </div>
