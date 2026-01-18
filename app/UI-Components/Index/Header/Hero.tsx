@@ -10,6 +10,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useRef, useEffect, useState } from "react";
 
+
+
 export default function Hero() {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
@@ -49,7 +51,7 @@ export default function Hero() {
                   Sumatra, hingga patung Bali semua dengan kualitas terbaik yang
                   menghadirkan kekayaan budaya Indonesia ke ruang hidup Anda.
                 </p>
-                <button className="px-5 py-3 rounded-full text-white font-bold mt-5 bg-[var(--prim-color)] hover:bg-gray-300 hover:text-[var(--prim-color)] transition-all duration-300 cursor-pointer">
+                <button className="relative px-6 py-3 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
                   Order Now <i className="bi bi-cart3 ps-3"></i>
                 </button>
               </div>
@@ -68,7 +70,7 @@ export default function Hero() {
             <div className="hero-wrap w-full flex flex-col lg:flex-row items-center justify-between">
               <div className="w-full lg:w-1/1">
                 <h1 className="EB_Garamond text-2xl lg:text-[2.6rem] font-bold">
-                 Nusantara Seni Bambu & Rotan 
+                  Nusantara Seni Bambu & Rotan
                 </h1>
                 <p className="w-[80%] my-3">
                   Koleksi kerajinan tangan yang memadukan keindahan anyaman
@@ -79,7 +81,7 @@ export default function Hero() {
                   setiap produk bukan sekadar benda fungsional, melainkan
                   representasi budaya dan keberlanjutan.
                 </p>
-                <button className="px-5 py-3 rounded-full text-white font-bold mt-5 bg-[var(--prim-color)] hover:bg-white hover:text-[var(--prim-color)] transition-all duration-300 cursor-pointer">
+                <button className="relative px-6 py-3 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
                   Order Now <i className="bi bi-cart3 ps-3"></i>
                 </button>
               </div>
