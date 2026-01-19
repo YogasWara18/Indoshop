@@ -43,7 +43,7 @@ const navLinks: NavLink[] = [
 export default function BottomNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState<Record<string, boolean>>(
-    {}
+    {},
   );
   const [isFixed, setIsFixed] = useState(false);
 
@@ -59,6 +59,26 @@ export default function BottomNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [cartCount, setCartCount] = useState(0);
+  const [wishlistCount, setWishlistCount] = useState(0);
+
+  useEffect(() => {
+    const loadCounts = () => {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+
+      const uniqueCart = new Set(cart.map((item: any) => item.Id));
+      const uniqueWishlist = new Set(wishlist.map((item: any) => item.Id));
+
+      setCartCount(uniqueCart.size);
+      setWishlistCount(uniqueWishlist.size);
+    };
+
+    loadCounts();
+    window.addEventListener("storageUpdate", loadCounts);
+    return () => window.removeEventListener("storageUpdate", loadCounts);
+  }, []);
+
   return (
     <div
       className={`w-full bg-white shadow-sm transition-all duration-500 ${
@@ -70,7 +90,7 @@ export default function BottomNav() {
         <Link
           href="/"
           className={`text-3xl font-bold EB_Garamond text-black hidden ${
-            isFixed ? "lg-flex" : "hidden"
+            isFixed ? "lg:flex" : "hidden"
           }`}
         >
           Indo<span className="text-[var(--prim-color)]">shop</span>
@@ -115,7 +135,7 @@ export default function BottomNav() {
                       >
                         {item.label}
                       </Link>
-                    )
+                    ),
                   )}
                 </div>
               </div>
@@ -123,7 +143,7 @@ export default function BottomNav() {
               <Link key={link.label} href={link.href}>
                 {link.label}
               </Link>
-            )
+            ),
           )}
         </nav>
 
@@ -143,19 +163,27 @@ export default function BottomNav() {
           </button>
           <div className="flex lg:hidden items-center space-x-6">
             {/* Wishlist */}
-            <Link href="#" className="relative">
-              <i className="bi bi-heart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
-              <span className="absolute -top-2 -right-2 bg-[var(--prim-color)] text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                1
-              </span>
-            </Link>
+            <button className="relative cursor-pointer">
+              <Link href="/UI-Components/Pages/wishlist">
+                <i className="bi bi-heart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-[var(--prim-color)] text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
+            </button>
             {/* Cart */}
-            <Link href="#" className="relative">
-              <i className="bi bi-cart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
-              <span className="absolute -top-2 -right-2 bg-[var(--prim-color)] text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                2
-              </span>
-            </Link>
+            <button className="relative cursor-pointer">
+              <Link href="/UI-Components/Pages/cart">
+                <i className="bi bi-cart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-[var(--prim-color)] text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
+            </button>
           </div>
           <button className="nav-button cursor-pointer font-bold bg-[var(--prim-color)] text-white p-3">
             <i className="bi bi-telephone pe-2 text-xl"></i> +628 1234 5678
@@ -164,60 +192,60 @@ export default function BottomNav() {
       </div>
 
       {/* Mobile Menu */}
-     {mobileMenuOpen && (
-  <div className="lg:hidden bg-white border-t border-gray-200 shadow-md overflow-hidden transition-all duration-500">
-    <nav className="flex flex-col px-[4%] py-4 space-y-1">
-      {navLinks.map((link) =>
-        link.dropdown ? (
-          <div key={link.label} className="flex flex-col">
-            <button
-              className="flex justify-between items-center w-full px-2 py-2 font-medium rounded-md hover:bg-gray-100"
-              onClick={() => toggleDropdown(link.label)}
-            >
-              {link.label}
-              <i
-                className={`ri-arrow-down-s-line transition-transform ${
-                  openDropdowns[link.label] ? "rotate-180" : ""
-                }`}
-              ></i>
-            </button>
-            <div
-              className={`overflow-hidden transition-all duration-500 ${
-                openDropdowns[link.label] ? "max-h-60 mt-1" : "max-h-0"
-              }`}
-            >
-              <div className="flex flex-col bg-[var(--prim-light)] p-2 space-y-1 rounded-md">
-                {link.dropdown.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={
-                      item.label === "Shop Details"
-                        ? "/UI-Components/Shop/details"
-                        : item.label === "Blog Details"
-                        ? "/UI-Components/Blogs/blog"
-                        : item.href
-                    }
-                    className="px-2 py-1 bg-white rounded-md hover:bg-gray-100"
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-md overflow-hidden transition-all duration-500">
+          <nav className="flex flex-col px-[4%] py-4 space-y-1">
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <div key={link.label} className="flex flex-col">
+                  <button
+                    className="flex justify-between items-center w-full px-2 py-2 font-medium rounded-md hover:bg-gray-100"
+                    onClick={() => toggleDropdown(link.label)}
                   >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        ) : (
-          <Link
-            key={link.label}
-            href={link.href}
-            className="block px-2 py-2 font-medium rounded-md hover:bg-gray-100"
-          >
-            {link.label}
-          </Link>
-        )
+                    {link.label}
+                    <i
+                      className={`ri-arrow-down-s-line transition-transform ${
+                        openDropdowns[link.label] ? "rotate-180" : ""
+                      }`}
+                    ></i>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ${
+                      openDropdowns[link.label] ? "max-h-60 mt-1" : "max-h-0"
+                    }`}
+                  >
+                    <div className="flex flex-col bg-[var(--prim-light)] p-2 space-y-1 rounded-md">
+                      {link.dropdown.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={
+                            item.label === "Shop Details"
+                              ? "/UI-Components/Shop/details"
+                              : item.label === "Blog Details"
+                                ? "/UI-Components/Blogs/blog"
+                                : item.href
+                          }
+                          className="px-2 py-1 bg-white rounded-md hover:bg-gray-100"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="block px-2 py-2 font-medium rounded-md hover:bg-gray-100"
+                >
+                  {link.label}
+                </Link>
+              ),
+            )}
+          </nav>
+        </div>
       )}
-    </nav>
-  </div>
-)}
     </div>
   );
 }

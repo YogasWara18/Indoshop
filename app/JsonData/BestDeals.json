@@ -43,5 +43,52 @@
     "lessprice": "Rp 9.500.000",
     "review": "(2.1k)",
     "sold": "22/40"
+  },
+  {
+    "Id": "BestDeals6",
+    "image": "/BestDeals/Product-6-v3.png",
+    "title": "Songket Palembang",
+    "price": "Rp 1.500.000",
+    "lessprice": "Rp 2.800.000",
+    "review": "(1.1k)",
+    "sold": "15/25"
+  },
+  {
+    "Id": "BestDeals7",
+    "image": "/BestDeals/Product-7.png",
+    "title": "Topeng Cirebon",
+    "price": "Rp 450.000",
+    "lessprice": "Rp 800.000",
+    "review": "(870)",
+    "sold": "20/40"
+  },
+  {
+    "Id": "BestDeals8",
+    "image": "/BestDeals/Product-8.png",
+    "title": "Anyaman Lombok",
+    "price": "Rp 300.000",
+    "lessprice": "Rp 550.000",
+    "review": "(1.5k)",
+    "sold": "28/50"
+  },
+  {
+    "Id": "BestDeals9",
+    "image": "/BestDeals/Product-9.png",
+    "title": "Perak Yogyakarta",
+    "price": "Rp 2.200.000",
+    "lessprice": "Rp 3.800.000",
+    "review": "(1.9k)",
+    "sold": "10/18"
+  },
+  {
+    "Id": "BestDeals10",
+    "image": "/BestDeals/Product-10.png",
+    "title": "Wayang Kulit",
+    "price": "Rp 950.000",
+    "lessprice": "Rp 1.700.000",
+    "review": "(2.3k)",
+    "sold": "35/70"
   }
+
+
 ]

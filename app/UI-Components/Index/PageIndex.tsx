@@ -1,6 +1,7 @@
 import Category from './Categories/Category'
 import Deals from './Deals/Deals'
 import Hero from './Header/Hero'
+import Offers from './Offers-Banner/Offers'
 import Banners from './Promotion-Banner/Banners'
 
 export default function PageIndex() {
@@ -10,6 +11,7 @@ export default function PageIndex() {
       <Category/>
       <Banners/>
       <Deals/>
+      <Offers/>
     </>
   )
 }

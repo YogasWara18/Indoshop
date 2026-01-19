@@ -168,7 +168,7 @@ export default function Deals() {
                   query: { id: product.Id },
                 }}
               >
-                <div className="space-y-1 mt-5 product-info">
+                <div className="space-y-1 mt-1 product-info">
                   <div className="flex flex-col">
                     {/* Harga utama */}
                     <span className="text-sm font-semibold">
