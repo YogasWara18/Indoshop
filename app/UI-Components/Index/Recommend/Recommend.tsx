@@ -1,82 +1,13 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
+import Image from "next/image";
 import Link from "next/link";
 
-import Deal1 from "@/public/Deals-bg1.png";
-import Deal2 from "@/public/Deals-bg2.png";
-import Deal3 from "@/public/Deals-bg3.png";
-import Deal4 from "@/public/Deals-bg4.png";
-import Deal5 from "@/public/Deals-bg5.png";
-import Deal6 from "@/public/Deals-bg6.png";
-import Deal7 from "@/public/Deals-bg7.png";
-
-type DealItem = {
-  image: StaticImageData;
-  title: string;
-  description: string;
-  className?: string;
-};
-
-const dealsData: DealItem[] = [
-  {
-    image: Deal1,
-    title: "Fresh Vegetables",
-    description:
-      "Shop fresh, healthy vegetables delivered daily. Taste the garden in every bite!",
-  },
-  {
-    image: Deal2,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap2",
-  },
-  {
-    image: Deal3,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap3",
-  },
-  {
-    image: Deal4,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap4",
-  },
-  {
-    image: Deal5,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap5",
-  },
-  {
-    image: Deal6,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap6",
-  },
-  {
-    image: Deal7,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap7",
-  },
-];
-
-import products from "@/app/JsonData/BestDeals.json";
+import products from "@/app/JsonData/Recommend.json";
 
 import toast from "react-hot-toast";
 
-export default function Deals() {
+export default function Recommend() {
   const handleAddToCart = (product: any) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
@@ -102,42 +33,40 @@ export default function Deals() {
     }
   };
 
+  const handleAddToWishlist = (product: any) => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+
+    const existingProduct = wishlist.find(
+      (item: any) => item.Id === product.Id,
+    );
+
+    if (existingProduct) {
+      toast(`${product.title} is already in the wishlist`, {
+        icon: "⚡",
+        style: {
+          border: "1px solid #facc15",
+          padding: "16px",
+          color: "#333",
+          background: "#fff9c4",
+        },
+      });
+    } else {
+      wishlist.push({ ...product, qty: 1 });
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+      window.dispatchEvent(new Event("storageUpdate"));
+
+      toast.success(`${product.title} added to wishlist!`);
+    }
+  };
+
   return (
     <div className="px-[8%] lg:px-[12%] py-10">
       <div className="title my-4 w-full flex flex-col lg:flex-row justify-between items-start gap-5">
-        <h1 className="text-5xl Unbounded">Today Featured Artwork</h1>
+        <h1 className="text-5xl Unbounded">Recommended for you</h1>
       </div>
 
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={10}
-        loop={true}
-        modules={[Autoplay]}
-        autoplay={{ delay: 1500 }}
-        speed={1500}
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          575: { slidesPerView: 1 },
-          767: { slidesPerView: 1 },
-          991: { slidesPerView: 1 },
-          1200: { slidesPerView: 1 },
-        }}
-      >
-        {dealsData.map((deal, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className={`deals-wrap px-5 py-6 rounded-2xl flex justify-center items-center ${deal.className || ""}`}
-            >
-              <button className="relative px-6 py-3 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
-                Shop Now <i className="bi bi-arrow-right ps-2"></i>
-              </button>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      {/* Best Deals Product */}
-
+      {/* Recommend product */}
       <div className="my-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (

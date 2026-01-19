@@ -261,9 +261,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  opacity: 0.15; /* sedikit lebih jelas */
+  opacity: 0.15; 
   z-index: -1;
-  filter: blur(2px); /* efek blur agar lebih soft */
+  filter: blur(2px);
 }
 
 /* Text styling inside offer */

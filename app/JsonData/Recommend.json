@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "Recommend1",
+    "image": "/Recommend/Recommend-product1.png",
+    "title": "Patung Kayu Antik Bali",
+    "price": "Rp1.850.000",
+    "lessprice": "Rp3.700.000",
+    "review": "(1.2k)",
+    "sold": "18/35",
+    "sale": ""
+  },
+  {
+    "Id": "Recommend2",
+    "image": "/Recommend/Recommend-product2.png",
+    "title": "Batik Tulis Modern Jawa",
+    "price": "Rp250.000",
+    "lessprice": "Rp500.000",
+    "review": "(2.1k)",
+    "sold": "22/40",
+    "sale": "50%"
+  },
+  {
+    "Id": "Recommend3",
+    "image": "/Recommend/Recommend-product3.png",
+    "title": "Tenun Songket Sumatra",
+    "price": "Rp1.320.000",
+    "lessprice": "Rp2.000.000",
+    "review": "(980)",
+    "sold": "20/32",
+    "sale": "New"
+  },
+  {
+    "Id": "Recommend4",
+    "image": "/Recommend/Recommend-product4.png",
+    "title": "Anyaman Rotan Handmade",
+    "price": "Rp150.000",
+    "lessprice": "Rp300.000",
+    "review": "(1.5k)",
+    "sold": "15/25",
+    "sale": "35%"
+  },
+  {
+    "Id": "Recommend5",
+    "image": "/Recommend/Recommend-product5.png",
+    "title": "Keramik Motif Nusantara",
+    "price": "Rp210.000",
+    "lessprice": "Rp420.000",
+    "review": "(1.1k)",
+    "sold": "18/35",
+    "sale": ""
+  },
+  {
+    "Id": "Recommend6",
+    "image": "/Recommend/Recommend-product6.png",
+    "title": "Ukiran Jepara Premium",
+    "price": "Rp275.000",
+    "lessprice": "Rp550.000",
+    "review": "(2.4k)",
+    "sold": "25/40",
+    "sale": "50%"
+  },
+  {
+    "Id": "Recommend7",
+    "image": "/Recommend/Recommend-product7.png",
+    "title": "Lukisan Tradisional Wayang",
+    "price": "Rp300.000",
+    "lessprice": "Rp600.000",
+    "review": "(1.8k)",
+    "sold": "30/50",
+    "sale": "New"
+  },
+  {
+    "Id": "Recommend8",
+    "image": "/Recommend/Recommend-product8.png",
+    "title": "Kalung Manik Papua",
+    "price": "Rp95.000",
+    "lessprice": "Rp190.000",
+    "review": "(870)",
+    "sold": "12/20",
+    "sale": "50%"
+  },
+  {
+    "Id": "Recommend9",
+    "image": "/Recommend/Recommend-product9.png",
+    "title": "Topeng Kayu Cirebon",
+    "price": "Rp220.000",
+    "lessprice": "Rp440.000",
+    "review": "(1.3k)",
+    "sold": "14/28",
+    "sale": "New"
+  },
+  {
+    "Id": "Recommend10",
+    "image": "/Recommend/Recommend-product10.png",
+    "title": "Perhiasan Perak Lombok",
+    "price": "Rp350.000",
+    "lessprice": "Rp700.000",
+    "review": "(2.0k)",
+    "sold": "20/40",
+    "sale": "50%"
+  },
+  {
+    "Id": "Recommend11",
+    "image": "/Recommend/Recommend-product11.png",
+    "title": "Wayang Kulit Handmade",
+    "price": "Rp1.400.000",
+    "lessprice": "Rp1.800.000",
+    "review": "(1.6k)",
+    "sold": "18/30",
+    "sale": "50%"
+  },
+  {
+    "Id": "Recommend12",
+    "image": "/Recommend/Recommend-product12.png",
+    "title": "Miniatur Rumah Adat Toraja",
+    "price": "Rp280.000",
+    "lessprice": "Rp560.000",
+    "review": "(1.9k)",
+    "sold": "25/35",
+    "sale": "New"
+  }
+]
