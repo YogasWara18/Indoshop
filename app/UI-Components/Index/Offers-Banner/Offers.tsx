@@ -15,31 +15,50 @@ type DealItem = {
 const dealData: DealItem[] = [
   {
     image: Deal1,
-    title: "Diskon Rp50.000 untuk pembelian pertama",
-    description: "Kerajinan tangan Bali, dikirim sebelum jam 10 pagi",
+    title: " Voucher Rp50K Off",
+    description: "Keramik Bali • Pagi tiba",
   },
   {
     image: Deal2,
-    title: "Gratis ongkir untuk order pertama",
-    description: "Batik Jawa eksklusif, pengiriman cepat hari ini",
+    title: "Gratis Ongkir",
+    description: "Batik Jawa • Hari ini",
   },
 ];
 
 export default function Offers() {
-  return <div className="px-[8%] lg:px-[12%] mb-10">
-    <div className="flex flex-col lg:flex-row gap-5">
+  return (
+    <div className="px-[8%] lg:px-[12%] mb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
         {dealData.map((deal, index) => (
-            <div key={index} className={`offer-wrap px-5 py-6 rounded-2xl flex flex-col md:flex-row justify-between items-center ${deal.className || ""}`}>
-                <div className="w-full lg:w-1/2 deal-image">
-                    <Image src={deal.image} alt={deal.title} className=""/>
-                </div>
-                <div className="w-full lg:w-1/2 deal-info">
-                    <h2 className="EB_Garamond font-bold text-white text-2xl leading-5 whitespace-pre-line">
-                        {deal.title}
-                    </h2>
-                </div>
+          <div
+            key={index}
+            className={`relative overflow-hidden rounded-2xl shadow-lg group ${deal.className || ""}`}
+          >
+            {/* Background Image */}
+            <Image
+              src={deal.image}
+              alt={deal.title}
+              className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105"
+            />
+
+            {/* Overlay tipis */}
+            <div className="absolute inset-0 bg-black/40"></div>
+
+            {/* Text Content di tengah */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 z-10">
+              <h2 className="EB_Garamond font-bold text-2xl lg:text-3xl mb-2">
+                {deal.title}
+              </h2>
+              <p className="text-sm lg:text-base opacity-90">
+                {deal.description}{" "}
+                <span className="text-yellow-400 font-semibold">
+                  expired Jan, 26
+                </span>
+              </p>
             </div>
+          </div>
         ))}
+      </div>
     </div>
-  </div>;
+  );
 }
