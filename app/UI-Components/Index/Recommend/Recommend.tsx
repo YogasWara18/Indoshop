@@ -84,9 +84,14 @@ export default function Recommend() {
                   className="object-contain max-h-full"
                 />
                 <div
-                  onClick={() => handleAddToCart(product)}
+                  onClick={() => handleAddToWishlist(product)}
                   className="absolute bottom-2 right-2"
-                ></div>
+                >
+                 <i className="bi bi-heart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
+                </div>
+                <span className={`absolute off-product top-0 right-0 px-4 py-2 EB_Garamond text-xs font-bold text-white rounded ${product.sale === "New" ? "bg-yellow-400" : product.sale.includes("%") ? "bg-red-500" : "opacity-0" }`}>
+                  {product.sale}
+                </span>
               </div>
 
               {/* Product Info */}

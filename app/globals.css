@@ -282,6 +282,12 @@
   opacity: 0.9;
 }
 
+/* Recommend Product */
+.off-product {
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 40px;
+}
+
 /* Responsive Hero */
 @media (max-width: 991px) {
   .Hero {
