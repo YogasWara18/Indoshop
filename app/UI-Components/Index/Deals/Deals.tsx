@@ -206,17 +206,7 @@ export default function Deals() {
               {/* Add to Cart Button - Full Width at Bottom */}
               <button
                 onClick={() => handleAddToCart(product)}
-                className="w-full py-3 mt-3 font-semibold text-white 
-             bg-[var(--prim-color)] 
-             hover:bg-[var(--prim-light)] 
-             hover:scale-[1.02] 
-             hover:shadow-md 
-             transition-all 
-             duration-300 
-             ease-in-out 
-             text-sm 
-             rounded-b-xl 
-             flex items-center justify-center gap-2"
+                className="w-full py-3 mt-3 font-semibold text-white text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 transition-all duration-300 ease-in-out text-sm rounded-b-xl flex items-center justify-center gap-2"
               >
                 Add to Cart <i className="bi bi-cart"></i>
               </button>
