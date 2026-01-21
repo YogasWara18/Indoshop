@@ -224,12 +224,20 @@ export default function Checkout() {
                     Rp{totalPrice.toLocaleString("id-ID")}
                   </span>
                 </div>
+
+                {/* Delivery Free */}
+                <div className="flex justify-between">
+                  <span>Delivery</span>
+                  <span className="font-medium text-green-600">Free</span>
+                </div>
+
                 <div className="flex justify-between">
                   <span>Estimated Tax (10%)</span>
                   <span className="font-medium">
                     Rp{estimatedTax.toLocaleString("id-ID")}
                   </span>
                 </div>
+
                 <div className="flex justify-between font-bold border-t pt-3 text-lg">
                   <span>Total</span>
                   <span className="text-[var(--prim-color)]">
@@ -237,9 +245,10 @@ export default function Checkout() {
                   </span>
                 </div>
               </div>
+
               <button
                 onClick={handlePlaceOrder}
-               className="w-full py-3 mt-3 font-semibold text-white text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 transition-all duration-300 ease-in-out text-sm rounded-b-xl flex items-center justify-center gap-2"
+                className="w-full py-3 mt-3 font-semibold text-white text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 transition-all duration-300 ease-in-out text-sm rounded-b-xl flex items-center justify-center gap-2"
               >
                 Place Order
               </button>
