@@ -87,8 +87,8 @@ export default function Cart() {
           <div className="flex flex-col lg:flex-row gap-10">
             <div className="flex-1 overflow-x-auto">
               <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-600 rounded hidden md:table">
-                  <thead className="bg-[var(--prim-light)]">
+                <table className="min-w-full bg-white border border-gray-600 rounded-xl shadow-lg hidden md:table overflow-hidden">
+                  <thead className="bg-[var(--prim-light)] text-gray-800">
                     <tr>
                       <th className="py-3 px-4 Unbounded font-normal text-left">
                         Product
@@ -110,13 +110,12 @@ export default function Cart() {
                   <tbody>
                     {cartItems.map((item: CartItem) => {
                       const quantity = item.qty ?? 1;
-                      const priceNum =
-                        parseFloat(item.price.replace(/[^0-9]/g, "")) || 0; // simpan ke variabel
+                      const priceNum = parseFloat(item.price.replace(/[^0-9]/g, "")) || 0; // simpan ke variabel
                       const itemSubtotal = priceNum * quantity;
 
                       return (
-                        <tr key={item.Id} className="border-b border-gray-600">
-                          <td className="py-3 px-4 flex items-center gap-3">
+                        <tr key={item.Id} className="border-b border-gray-600 hover:bg-gray-100 transition">
+                          <td className="py-4 px-6 flex items-center gap-4">
                             <img
                               src={item.image}
                               alt={item.title}
@@ -137,37 +136,48 @@ export default function Cart() {
                             </div>
                           </td>
                           <td className="py-3 px-4 Unbounded">
-                            Rp{Number(item.price.replace(/[^0-9]/g, "")).toLocaleString("id-ID")}
+                            Rp
+                            {Number(
+                              item.price.replace(/[^0-9]/g, ""),
+                            ).toLocaleString("id-ID")}
                           </td>
                           <td className="py-3 px-4">
                             <div className="flex items-center border w-24 rounded">
-                                <button
-                                    className="px-2 text-lg cursor-pointer"
-                                    onClick={() => 
-                                        handleQtyChange(item.Id, Math.max(1, quantity - 1))
-                                    }
-                                >
-                                    -
-                                </button>
+                              <button
+                                className="px-2 text-lg cursor-pointer"
+                                onClick={() =>
+                                  handleQtyChange(
+                                    item.Id,
+                                    Math.max(1, quantity - 1),
+                                  )
+                                }
+                              >
+                                -
+                              </button>
 
-                                <span className="px-4">{quantity}</span>
-                                <button
-                                    className="px-2 text-lg cursor-pointer"
-                                    onClick={() => 
-                                        handleQtyChange(item.Id, Math.max(1, quantity + 1))
-                                    }
-                                >
-                                    +
-                                </button>
+                              <span className="px-4">{quantity}</span>
+                              <button
+                                className="px-2 text-lg cursor-pointer"
+                                onClick={() =>
+                                  handleQtyChange(
+                                    item.Id,
+                                    Math.max(1, quantity + 1),
+                                  )
+                                }
+                              >
+                                +
+                              </button>
                             </div>
                           </td>
-                          <td className="py-3 px-4 Unbounded">Rp{itemSubtotal.toLocaleString("id-ID")}</td>
+                          <td className="py-3 px-4 Unbounded">
+                            Rp{itemSubtotal.toLocaleString("id-ID")}
+                          </td>
                           <td className="py-3 px-4 Unbounded">
                             <button
-                                className="text-red-500 hover:text-red-700 cursor-pointer"
-                                onClick={() => handleRemove(item.Id)}
+                              className="text-red-500 hover:text-red-700 cursor-pointer"
+                              onClick={() => handleRemove(item.Id)}
                             >
-                                ✕ Remove
+                              Delete
                             </button>
                           </td>
                         </tr>
@@ -175,6 +185,119 @@ export default function Cart() {
                     })}
                   </tbody>
                 </table>
+
+                {/* Mobile List */}
+                <div className="md:hidden space-y-4">
+                  {cartItems.map((item) => {
+                    const quantity = item.qty ?? 1;
+                    const priceNum =
+                      parseFloat(item.price.replace(/[^0-9]/g, "")) || 0;
+                    const itemSubtotal = priceNum * quantity;
+
+                    return (
+                      <div
+                        key={item.Id}
+                        className="border p-4 rounded flex gap-3 items-start bg-white shadow-sm"
+                      >
+                        {/* Gambar */}
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-20 h-20 object-cover rounded flex-shrink-0"
+                        />
+
+                        {/* Detail Produk */}
+                        <div className="flex-1 flex flex-col space-y-2">
+                          <p className="font-medium Unbounded text-lg break-words">
+                            {item.title}
+                          </p>
+                          <span className="text-gray-500 text-sm">
+                            Rp{priceNum.toLocaleString("id-ID")}
+                          </span>
+
+                          {/* Kontrol Quantity */}
+                          <div className="flex items-center gap-2">
+                            <button
+                              className="px-2 py-1 text-lg border rounded cursor-pointer"
+                              onClick={() =>
+                                handleQtyChange(
+                                  item.Id,
+                                  Math.max(1, quantity - 1),
+                                )
+                              }
+                            >
+                              -
+                            </button>
+                            <span className="px-3">{quantity}</span>
+                            <button
+                              className="px-2 py-1 text-lg border rounded cursor-pointer"
+                              onClick={() =>
+                                handleQtyChange(item.Id, quantity + 1)
+                              }
+                            >
+                              +
+                            </button>
+                          </div>
+
+                          {/* Subtotal */}
+                          <span className="text-sm font-semibold text-gray-700">
+                            Subtotal: Rp{itemSubtotal.toLocaleString("id-ID")}
+                          </span>
+
+                          {/* Delete */}
+                          <button
+                            className="mt-2 text-red-500 Unbounded hover:text-red-700 cursor-pointer text-sm self-start"
+                            onClick={() => handleRemove(item.Id)}
+                          >
+                            ✕ Delete
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            {/* Cart Total */}
+            <div className="w-full lg:w-1/4 lg:sticky top-24 self-start">
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                <h2 className="text-2xl font-bold mb-6 text-gray-800">
+                  Cart Total
+                </h2>
+
+                <div className="space-y-3 text-gray-700">
+                  <div className="flex justify-between">
+                    <span className="Unbounded">Subtotal:</span>
+                    <span className="Unbounded font-medium">
+                      Rp{subtotal.toLocaleString("id-ID")}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between">
+                    <span className="Unbounded">Estimated Delivery</span>
+                    <span className="Unbounded font-medium text-green-600">
+                      Free
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between">
+                    <span className="Unbounded">Estimated Taxes:</span>
+                    <span className="Unbounded font-medium">
+                      Rp{estimatedTaxes.toLocaleString("id-ID")}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between font-bold border-t border-gray-300 pt-4 text-lg">
+                    <span className="Unbounded">Total</span>
+                    <span className="Unbounded text-[var(--prim-color)]">
+                      Rp{(subtotal + estimatedTaxes).toLocaleString("id-ID")}
+                    </span>
+                  </div>
+                </div>
+
+                <button className="mt-6 w-full bg-[var(--prim-color)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--prim-light)] transition">
+                 <Link href="/UI-Components/Pages/checkout">Proceed to Checkout</Link> 
+                </button>
               </div>
             </div>
           </div>
