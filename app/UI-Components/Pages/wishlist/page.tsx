@@ -121,7 +121,7 @@ export default function Wishlist() {
                           className="w-20 h-20 object-cover rounded"
                         />
                         <div className="flex flex-col">
-                          <p className="font-medium Unbounded text-xl">
+                          <p className="font-medium Unbounded text-md">
                             {item.title}
                           </p>
                           <h6 className="text-sm text-gray-500 flex items-center gap-1 mt-1">
@@ -147,7 +147,7 @@ export default function Wishlist() {
                     <td className="px-1 border-r border-gray-600">
                       <button
                         onClick={() => handleAddToCart(item)}
-                        className="w-full cursor-pointer px-3 py-2 my-2 text-lg font-semibold text-[var(--prim-color)] bg-[var(--prim-light)] rounded-md hover:bg-[var(--prim-color)] hover:text-white transition"
+                        className="w-full cursor-pointer px-3 py-2 my-2 text-xs font-semibold text-[var(--prim-color)] bg-[var(--prim-light)] rounded-md hover:bg-[var(--prim-color)] hover:text-white transition"
                       >
                         Add To Cart <i className="bi bi-cart"></i>
                       </button>
@@ -223,7 +223,7 @@ export default function Wishlist() {
                       Add To Cart
                     </button>
                     <button
-                      className="mt-2 text-gray-500 hover:text-red-700 cursor-pointer text-sm"
+                      className="mt-2 text-red-500 hover:text-red-700 cursor-pointer text-sm"
                       onClick={() => handleRemove(item.Id)}
                     >
                       ✕ Remove
