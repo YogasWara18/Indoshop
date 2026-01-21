@@ -27,13 +27,12 @@ export default function MiddleNav() {
 
   const allProducts: ProductType[] = useMemo(() => [...BestDeals], []);
 
-   // Filter Product by search
+  // Filter Product by search
   useEffect(() => {
     if (!searchTerm.trim()) {
       setResults([]);
       return;
     }
-
 
     const filtered = allProducts.filter((p) =>
       (p.Name || p.title || "")
@@ -55,53 +54,57 @@ export default function MiddleNav() {
       setWishlistCount(uniqueWishlist.size);
     };
 
-   loadCounts();
+    loadCounts();
     // gunakan event bawaan browser
     window.addEventListener("storage", loadCounts);
     return () => window.removeEventListener("storage", loadCounts);
   }, []);
 
-
-
   return (
     <div className="w-full bg-[var(--prim-light)] border-b border-gray-300 relative">
       <div className="flex items-center justify-between py-5 px-[8%] lg:px-[12%]">
         {/* Logo */}
-       <Link href="/">
+        <Link href="/">
           <Image
             src="/Logo.png"
             alt="Indoshop Logo"
             width={250}
             height={80}
-            className="absolute -top-20 left-32 h-auto object-contain"
+            className="
+    h-auto object-contain
+    w-[150px] sm:w-[180px] md:w-[200px] lg:w-[250px]
+    relative sm:relative md:relative lg:absolute lg:-top-20 lg:left-32
+  "
           />
         </Link>
 
-
         {/* Search */}
-        <div className="flex flex-1 left-22 ms-6 lg:mx-0 max-w-xl relative">
+        <div
+          className="flex flex-1 relative max-w-full sm:max-w-sm md:max-w-md lg:max-w-xl mx-auto md:mx-auto lg:ml-auto lg:mr-30">
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search for a Product or Brand"
-            className="flex-1 border px-3 py-2 rounded-s-lg border-gray-400 outline-none"
-            value={searchTerm}
-            onChangeCapture={(e) => setSearchTerm(e. target.value)}
+            className="
+      flex-1 border px-2 py-2
+      text-sm md:text-base
+      rounded-s-lg border-gray-400 outline-none
+    "
           />
           <button className="bg-[var(--prim-color)] text-white px-3 rounded-r cursor-pointer">
             <i className="bi bi-search"></i>
           </button>
 
-           {/* Search Results Dropdown */}
+          {/* Search Results Dropdown */}
           {results.length > 0 && (
             <div className="search-result absolute top-full left-0 w-full bg-white border border-gray-300 rounded-md shadow-md mt-1 z-50">
-              {results.map((item, index ) => (
+              {results.map((item, index) => (
                 <Link
                   key={`${item.Id}-${index}`}
                   href={{
                     pathname: "/UI-Components/Shop",
-                    query: { id: item.Id }
+                    query: { id: item.Id },
                   }}
                   onClick={() => setSearchTerm("")}
                 >
@@ -112,15 +115,16 @@ export default function MiddleNav() {
                       className="w-20 object-cover rounded"
                     />
                     <h3 className="font-semibold text-sm text-center mt-2">
-                      { item.Name || item.title }
+                      {item.Name || item.title}
                     </h3>
-                    <p className="text-gray-500 text-xs mt-1">{item.Price || item.price}</p>
+                    <p className="text-gray-500 text-xs mt-1">
+                      {item.Price || item.price}
+                    </p>
                   </div>
                 </Link>
               ))}
             </div>
           )}
-
 
           {/* Location Dropdown */}
           <div className="hidden lg:flex text-sm ms-5 bg-white items-center ps-4 rounded-lg border border-gray-400">
@@ -152,7 +156,7 @@ export default function MiddleNav() {
             )}
           </Link>
           {/* Cart */}
-          <Link href="#" className="relative">
+          <Link href="/UI-Components/Pages/cart" className="relative">
             <i className="bi bi-cart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-[var(--prim-color)] text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
