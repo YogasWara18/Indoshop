@@ -278,6 +278,12 @@ export default function Checkout() {
               >
                 Place Order
               </button>
+              <Link
+                href="/UI-Components/Pages/cart"
+                className="w-full py-3 font-semibold text-[var(--prim-color)] bg-[var(--white-color)] border border-[var(--prim-light)]/40 hover:bg-[var(--prim-light)] hover:text-[var(--white-color)] hover:shadow-[0_0_20px_var(--prim-light)] transition-all duration-300 ease-in-out text-sm rounded-xl flex items-center justify-center gap-2"
+              >
+                ← Back to Cart
+              </Link>
             </div>
           </div>
         </div>
