@@ -1,0 +1,53 @@
+[
+  {
+    "Id": "HotDeals1",
+    "image": "/HotDeals/HotDeals-img1.png",
+    "title": "Patung Emas Bali",
+    "price": "Rp 3.000.000",
+    "lessprice": "Rp 5.000.000",
+    "review": "(18K)",
+    "sold": "18/35",
+    "sale": "80%"
+  },
+  {
+    "Id": "HotDeals2",
+    "image": "/HotDeals/HotDeals-img2.png",
+    "title": "Batik Tulis Emas Solo",
+    "price": "Rp1.800.000",
+    "lessprice": "Rp2.500.000",
+    "review": "(1.7k)",
+    "sold": "22/40",
+    "sale": "30%"
+  },
+  {
+    "Id": "HotDeals3",
+    "image": "/HotDeals/HotDeals-img3.png",
+    "title": "Mahkota Emas Nusantara",
+    "price": "Rp3.500.000",
+    "lessprice": "Rp5.500.000",
+    "review": "(1.7k)",
+    "sold": "15/25",
+    "sale": "New"
+  },
+  {
+    "Id": "HotDeals4",
+    "image": "/HotDeals/HotDeals-img4-v2.png",
+    "title": "Ukiran Jepara Motif Flora",
+    "price": "Rp4.200.000",
+    "lessprice": "Rp6.000.000",
+    "review": "(1.7k)",
+    "sold": "8/15",
+    "sale": "50%"
+  },
+  {
+    "Id": "HotDeals5",
+    "image": "/HotDeals/HotDeals-img5-v1.png",
+    "title": "Topeng Tari Barong Bali",
+    "price": "Rp1.500.000",
+    "lessprice": "Rp2.800.000",
+    "review": "(1.7k)",
+    "sold": "20/30",
+    "sale": "New"
+  }
+
+]
