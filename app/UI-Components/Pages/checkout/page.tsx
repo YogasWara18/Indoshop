@@ -217,6 +217,33 @@ export default function Checkout() {
           <div className="lg:col-span-5 lg:sticky top-24 self-start">
             <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
               <h3 className="text-xl font-bold mb-4">Order Summary</h3>
+
+              {/* Order Images */}
+              <div className="space-y-3 mb-4">
+                {cartItems.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 border-b pb-3"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-16 h-16 object-cover rounded-md border"
+                    />
+                    <div className="flex-1">
+                      <p className="font-medium text-gray-800">{item.name}</p>
+                      <p className="text-sm text-gray-500">
+                        Qty: {item.quantity}
+                      </p>
+                    </div>
+                    <span className="font-semibold text-gray-700">
+                      Rp{item.price.toLocaleString("id-ID")}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Price Summary */}
               <div className="space-y-3 text-gray-700">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
@@ -225,7 +252,6 @@ export default function Checkout() {
                   </span>
                 </div>
 
-                {/* Delivery Free */}
                 <div className="flex justify-between">
                   <span>Delivery</span>
                   <span className="font-medium text-green-600">Free</span>
@@ -240,7 +266,7 @@ export default function Checkout() {
 
                 <div className="flex justify-between font-bold border-t pt-3 text-lg">
                   <span>Total</span>
-                  <span className="text-[var(--prim-color)]">
+                  <span className="text-[var(--prim-color)] Unbounded">
                     Rp{(totalPrice + estimatedTax).toLocaleString("id-ID")}
                   </span>
                 </div>
