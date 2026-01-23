@@ -75,7 +75,7 @@ export default function HotDeals() {
         {/* Banner + Carousel */}
         <div className="flex flex-col lg:flex-row items-start gap-10">
           {/* Banner */}
-          <div className="hot-deal-banner relative w-full lg:w-1/3 min-h-[450px] rounded-3xl overflow-hidden shadow-lg hover:translate-y-1 hover:shadow-2xl transition-all duration-300">
+          <div className="hot-deal-banner relative w-full lg:w-1/3 min-h-[495px] rounded-3xl overflow-hidden shadow-lg hover:translate-y-1 hover:shadow-2xl transition-all duration-300">
             {/* Full cover image */}
             <Image
               src={hotDealBanner}
@@ -178,6 +178,12 @@ export default function HotDeals() {
                           </h3>
                         </div>
                       </Link>
+                      <button
+                        onClick={() => handleAddToCart(product)}
+                        className="w-full py-3 mt-3 font-semibold text-white text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 transition-all duration-300 ease-in-out text-sm rounded-b-xl flex items-center justify-center gap-2"
+                      >
+                        Add to Cart <i className="bi bi-cart"></i>
+                      </button>
                     </div>
                   </div>
                 </SwiperSlide>

@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Gerabah Solo",
+    "time": "Delivery 06:15 WIB",
+    "off": "Discount 20% ",
+    "vendorMain": "/Vendors-logo1.png",
+    "vendors": [
+      "/BestDeals/Product-1.png",
+      "/BestDeals/Product-12.png",
+      "/Recommend/Recommend-product5.png"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Emas Papua",
+    "time": "Delivery 06:00 WIT",
+    "off": "Discount 30%",
+    "vendorMain": "/Vendors-logo2-v1.png",
+    "vendors": [
+      "/BestDeals/Product-11.png"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Tenun Sumatera",
+    "time": "Delivery 06:15 WIB",
+    "off": "Discount 25%",
+    "vendorMain": "/Vendors-logo3.png",
+    "vendors": [
+      "/BestDeals/Product-6-v3.png",
+      "/Recommend/Recommend-product3.png"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Patung Bali",
+    "time": "Delivery 06:15 WITA",
+    "off": "Dicount 20%",
+    "vendorMain": "/Vendors-logo4.png",
+    "vendors": [
+      "/BestDeals/Product-5-v1.png",
+      "/HotDeals/HotDeals-img1.png"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Wayang Solo",
+    "time": "Delivery 06:15 WIB",
+    "off": "Discount 20%",
+    "vendorMain": "/Vendors-logo5.png",
+    "vendors": [
+      "/BestDeals/Product-10.png",
+      "/Recommend/Recommend-product11.png"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Topeng Betawi",
+    "time": "Delivery 06:15 WIB",
+    "off": "Discount 35%",
+    "vendorMain": "/Vendors-logo6.png",
+    "vendors": [
+      "/BestDeals/product-7.png",
+      "/Recommend/Recommend-product9.png"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Ukiran Jepara",
+    "time": "Delivery 06:15 WIB",
+    "off": "Discount 20%",
+    "vendorMain": "/Vendors-logo7.png",
+    "vendors": [
+      "/BestDeals/Product-3.png",
+      "/HotDeals/HotDeals-img4-v2.png",
+      "/Recommend/Recommend-product6.png"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Made In Indonesia",
+    "time": "Delivery 06:15 WIB",
+    "off": "Discount 30%",
+    "vendorMain": "/Vendors-logo8.png",
+    "vendors": [
+      "/vendor-img-kontemporer.png",
+      "/vendor-img-fotografi.png",
+      "/vendor-img-poster.png"
+    ]
+  }
+]
