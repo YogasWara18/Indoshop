@@ -95,48 +95,89 @@ export default function HotDeals() {
               modules={[Autoplay]}
               autoplay={{
                 delay: 2500,
-                disableOnInteraction: false, // agar tetap jalan meski user interaksi
+                disableOnInteraction: false,
               }}
-              loop={true} // aktifkan loop agar berulang terus
+              loop={true}
               spaceBetween={20}
-              slidesPerView={2}
+              slidesPerView={3}
               breakpoints={{
-                640: { slidesPerView: 1 },
-                1024: { slidesPerView: 2 },
+                1200: { slidesPerView: 3 },
+                991: { slidesPerView: 2.5 },
+                575: { slidesPerView: 1 },
+                0: { slidesPerView: 1 },
               }}
             >
-              {products.map((product: any) => (
-                <SwiperSlide key={product.Id} className="h-full">
-                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all duration-300 flex flex-col justify-between items-center h-full">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      width={200}
-                      height={200}
-                      className="rounded-xl mb-4 object-cover"
-                    />
-                    <h2 className="text-xl font-semibold text-white mb-2 text-center">
-                      {product.title}
-                    </h2>
-                    <p className="text-yellow-300 font-bold mb-4 text-center">
-                      {product.price}
-                      <span className="line-through text-gray-400 ml-2">
-                        {product.lessprice}
-                      </span>
-                    </p>
-                    <div className="flex gap-3 mt-auto">
-                      <button
-                        onClick={() => handleAddToCart(product)}
-                        className="px-4 py-2 rounded-lg bg-gradient-to-r from-green-400 to-teal-500 text-white font-semibold hover:scale-105 transition-transform"
-                      >
-                        Add to Cart
-                      </button>
-                      <button
+              {products.map((product) => (
+                <SwiperSlide key={product.Id}>
+                  <div
+                    key={product.Id}
+                    className="product-wrap border border-gray-600 rounded-lg p-4 bg-white shadow-sm hover:shadow-md transition-all hover:border-[var(--prim-color)] cursor-pointer duration-300"
+                  >
+                    <div className="relative flex justify-center items-center w-full h-50">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={200}
+                        height={200}
+                        className="object-contain max-h-full"
+                      />
+                      <div
                         onClick={() => handleAddToWishlist(product)}
-                        className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:scale-105 transition-transform"
+                        className="absolute bottom-2 right-2"
                       >
-                        Wishlist
-                      </button>
+                        <i className="bi bi-heart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
+                      </div>
+                      <span
+                        className={`absolute off-product top-0 right-0 px-4 py-2 EB_Garamond text-xs font-bold text-white rounded ${product.sale === "New" ? "bg-yellow-400" : product.sale.includes("%") ? "bg-red-500" : "opacity-0"}`}
+                      >
+                        {product.sale}
+                      </span>
+                    </div>
+                    <div className="space-y-1 mt-5 product-info">
+                      <Link
+                        href={{
+                          pathname: "/UI-Components/Shop",
+                          query: { id: product.Id },
+                        }}
+                      >
+                        <div className="space-y-2 mt-3 product-info">
+                          <div className="flex flex-col">
+                            {/* Harga utama */}
+                            <span className="text-base font-semibold text-[var(--prim-color)]">
+                              {product.price}{" "}
+                              <span className="text-gray-500 text-sm">
+                                /Pcs
+                              </span>
+                            </span>
+                            {/* Harga coret */}
+                            <span className="text-gray-400 text-sm line-through">
+                              {product.lessprice}
+                            </span>
+                          </div>
+
+                          {/* Review */}
+                          <span className="flex items-center text-yellow-500 text-sm">
+                            <i className="bi bi-star-fill me-1"></i>{" "}
+                            {product.review}
+                          </span>
+
+                          {/* Judul Produk */}
+                          <h2 className="text-md font-medium Unbounded my-2 hover:text-[var(--prim-color)] transition-colors truncate">
+                            {product.title}
+                          </h2>
+
+                          {/* Seller */}
+                          <h6 className="text-sm text-gray-600 flex items-center gap-1">
+                            <i className="bi bi-shop text-[var(--prim-color)]"></i>{" "}
+                            By indoshop
+                          </h6>
+
+                          {/* Sold */}
+                          <h3 className="text-sm text-gray-500">
+                            Sold: {product.sold}
+                          </h3>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 </SwiperSlide>
