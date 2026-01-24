@@ -3,14 +3,14 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="px-[8%] lg:px-[12%] py-3 bg-gray-100 text-gray-600 border-t border-gray-200">
-      <div className="flex flex-col items-center space-y-6">
+      <div className="flex flex-col items-center space-y-4">
         
         {/* Logo */}
-        <a href="/" className="mb-3 hover:scale-105 transition-transform duration-300">
+        <a href="/" className="-mb-10 hover:scale-105 transition-transform duration-300">
           <img
             src="/logo.png"
             alt="Indoshop Art Market"
-            width={180}
+            width={200}
             height={80}
             className="object-contain drop-shadow-md hover:drop-shadow-xl transition-all duration-300"
           />
