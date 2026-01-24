@@ -6,11 +6,11 @@ import vendorsData from "@/app/JsonData/Vendors.json";
 export default function Vendors() {
   return (
     <div className="px-[8%] lg:px-[12%] py-16 bg-gray-50">
-      <div className="title mb-12 flex flex-col lg:flex-row justify-between items-start gap-5">
-        <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
-          Top Sellers & Hot Deals
-        </h1>
-      </div>
+     <div className="title my-4 w-full flex flex-col lg:flex-row justify-between items-start gap-5">
+          <h1 className="text-5xl Unbounded font-bold tracking-tight">
+            Top Seller & Best Deals
+          </h1>
+        </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {vendorsData.map((vendor) => (

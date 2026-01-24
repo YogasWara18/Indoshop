@@ -59,8 +59,10 @@ export default function Deals() {
   return (
     <div className="px-[8%] lg:px-[12%] py-10">
       <div className="title my-4 w-full flex flex-col lg:flex-row justify-between items-start gap-5">
-        <h1 className="text-5xl Unbounded">Today Featured Artwork</h1>
-      </div>
+          <h1 className="text-5xl Unbounded font-bold tracking-tight">
+            Today Featured Artwork
+          </h1>
+        </div>
 
       <Swiper
         slidesPerView={1}

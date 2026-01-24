@@ -63,8 +63,10 @@ export default function Recommend() {
   return (
     <div className="px-[8%] lg:px-[12%] py-10">
       <div className="title my-4 w-full flex flex-col lg:flex-row justify-between items-start gap-5">
-        <h1 className="text-5xl Unbounded">Recommended for you</h1>
-      </div>
+          <h1 className="text-5xl Unbounded font-bold tracking-tight">
+            Recommend For You
+          </h1>
+        </div>
 
       {/* Recommend product */}
       <div className="my-10">

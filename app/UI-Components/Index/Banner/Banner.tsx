@@ -3,8 +3,8 @@ import deliveryMan from "@/public/Delivery.png";
 
 export default function Banner() {
   return (
-    <div className="px-[5%] md:px-[8%] lg:px-[12%] py-6 md:py-10">
-      <div className="relative bottom-20 w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
+    <div className="px-[5%] md:px-[8%] lg:px-[12%] py-6 md:py-2">
+      <div className="relative -my-20  w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
         <div className="relative w-full h-full group">
           <Image
             src={deliveryMan}

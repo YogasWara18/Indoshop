@@ -7,6 +7,7 @@ import HotDeals from './Hot-Deals/HotDeals'
 import Offers from './Offers-Banner/Offers'
 import Banners from './Promotion-Banner/Banners'
 import Recommend from './Recommend/Recommend'
+import TopProduct from './Top-Product/TopProduct'
 import Vendors from './Vendors/Vendors'
 
 export default function PageIndex() {
@@ -22,6 +23,7 @@ export default function PageIndex() {
       <Vendors/>
       <BestSales/>
       <Banner/>
+      <TopProduct/>
     </>
   )
 }

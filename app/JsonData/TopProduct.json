@@ -1,0 +1,112 @@
+[
+    {
+        "id": "TopProduct1",
+        "image": "/TopProduct/TopProduct1.png",
+        "title": "Kain Tenun Palembang",
+        "price": "Rp1.500.000",
+        "lessprice": "Rp2.000.000",
+        "review": "(16K)",
+        "sold": "19/30",
+        "sale": "25%"
+    },
+    {
+        "id": "TopProduct2",
+        "image": "/TopProduct/TopProduct2.png",
+        "title": "Topeng Barong Bali",
+        "price": "Rp850.000",
+        "lessprice": "Rp1.200.000",
+        "review": "(9K)",
+        "sold": "25/40",
+        "sale": "30%"
+    },
+    {
+        "id": "TopProduct3",
+        "image": "/TopProduct/TopProduct3.png",
+        "title": "Gong Ageng",
+        "price": "Rp2.200.000",
+        "lessprice": "Rp2.800.000",
+        "review": "(12K)",
+        "sold": "14/25",
+        "sale": "20%"
+    },
+    {
+        "id": "TopProduct4",
+        "image": "/TopProduct/TopProduct4.png",
+        "title": "Emas Manset Premium",
+        "price": "Rp3.500.000",
+        "lessprice": "Rp4.200.000",
+        "review": "(7K)",
+        "sold": "10/20",
+        "sale": "15%"
+    },
+    {
+        "id": "TopProduct5",
+        "image": "/TopProduct/TopProduct5.png",
+        "title": "Vas Kaca Solo",
+        "price": "Rp450.000",
+        "lessprice": "Rp600.000",
+        "review": "(5K)",
+        "sold": "30/50",
+        "sale": "25%"
+    },
+    {
+        "id": "TopProduct6",
+        "image": "/TopProduct/TopProduct6.png",
+        "title": "Lukisan Mitologis",
+        "price": "Rp2.700.000",
+        "lessprice": "Rp6.950.000",
+        "review": "(4K)",
+        "sold": "18/30",
+        "sale": "20%"
+    },
+    {
+        "id": "TopProduct7",
+        "image": "/TopProduct/TopProduct7.png",
+        "title": "Kain Song Besaung",
+        "price": "Rp1.800.000",
+        "lessprice": "Rp2.400.000",
+        "review": "(6K)",
+        "sold": "12/20",
+        "sale": "25%"
+    },
+    {
+        "id": "TopProduct8",
+        "image": "/TopProduct/TopProduct8.png",
+        "title": "Kalung Emas Papua",
+        "price": "Rp9.950.000",
+        "lessprice": "Rp15.300.000",
+        "review": "(3K)",
+        "sold": "15/25",
+        "sale": "27%"
+    },
+    {
+        "id": "TopProduct9",
+        "image": "/TopProduct/TopProduct9.png",
+        "title": "Vas Porselen Clasic",
+        "price": "Rp2.700.000",
+        "lessprice": "Rp3.500.000",
+        "review": "(8K)",
+        "sold": "20/30",
+        "sale": "23%"
+    },
+    {
+        "id": "TopProduct10",
+        "image": "/TopProduct/TopProduct10.png",
+        "title": "Miniatur Stupa",
+        "price": "Rp1.200.000",
+        "lessprice": "Rp1.600.000",
+        "review": "(10K)",
+        "sold": "22/35",
+        "sale": "25%"
+    },
+    {
+        "id": "TopProduct11",
+        "image": "/TopProduct/TopProduct11.png",
+        "title": "Barong Emas Bali",
+        "price": "Rp7.550.000",
+        "lessprice": "Rp9750.000",
+        "review": "(4K)",
+        "sold": "28/40",
+        "sale": "27%"
+    }
+]

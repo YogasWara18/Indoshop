@@ -1,18 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-import products from "@/app/JsonData/HotDeals.json";
+import Image from "next/image";
+
 import Link from "next/link";
+import products from "@/app/JsonData/TopProduct.json";
 
 import toast from "react-hot-toast";
 
-import hotDealBanner from "@/public/HotDeals-banner1.png";
-
-export default function HotDeals() {
+export default function TopProduct() {
   const handleAddToCart = (product: any) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
@@ -67,52 +66,34 @@ export default function HotDeals() {
 
   return (
     <>
-      <div className="px-[8%] lg:px-[12%] pb-10">
-        <div className="title my-4 w-full flex flex-col lg:flex-row justify-between items-start gap-5">
+      <div className="px-[8%] lg:px-[12%] py-1">
+        <div className="title my-3 w-full flex flex-col lg:flex-row justify-between items-start gap-5">
           <h1 className="text-5xl Unbounded font-bold tracking-tight">
-            Hot Deals Today
+            Top Product
           </h1>
         </div>
-
-        {/* Banner + Carousel */}
-        <div className="flex flex-col lg:flex-row items-start gap-10">
-          {/* Banner */}
-          <div className="hot-deal-banner relative w-full lg:w-1/3 min-h-[495px] rounded-3xl overflow-hidden shadow-lg hover:translate-y-1 hover:shadow-2xl transition-all duration-300">
-            {/* Full cover image */}
-            <Image
-              src={hotDealBanner}
-              alt="Indonesian Art Banner"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-
-            {/* Button di tengah bawah */}
-            <button className="EB_Garamond absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
-              Shop Now
-            </button>
-          </div>
-
-          {/* Product Carousel */}
-          <div className="w-full lg:w-2/3">
+        <div className="flex flex-col lg:flex-row items-start gap-5">
+          <div className="w-full">
             <Swiper
-              modules={[Autoplay]}
+              spaceBetween={20}
+              slidesPerView={4}
+              loop={true}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              loop={true}
-              spaceBetween={20}
-              slidesPerView={3}
+              modules={[ Autoplay ]}
               breakpoints={{
-                1200: { slidesPerView: 3 },
+                1200: { slidesPerView: 4 },
                 991: { slidesPerView: 2.5 },
                 575: { slidesPerView: 1 },
                 0: { slidesPerView: 1 },
               }}
             >
               {products.map((product) => (
-                <SwiperSlide key={product.Id}>
+                <SwiperSlide key={product.id}>
                   <div
-                    key={product.Id}
+                    key={product.id}
                     className="product-wrap border border-gray-600 rounded-lg p-4 bg-white shadow-sm hover:shadow-md transition-all hover:border-[var(--prim-color)] cursor-pointer duration-300"
                   >
                     <div className="relative flex justify-center items-center w-full h-50">
