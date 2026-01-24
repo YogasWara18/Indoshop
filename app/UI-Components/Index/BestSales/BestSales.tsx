@@ -70,7 +70,7 @@ export default function BestSales() {
         </div>
 
         {/* Product Grid - 2 Columns */}
-        <div className="grid grid-cols-5 md:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {products.map((product) => (
             <div
               key={product.Id}
