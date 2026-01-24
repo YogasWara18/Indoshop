@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
-import bestSalesBanner from "@/public/BestSales/BestSales-banner.png";
+
 
 import products from "@/app/JsonData/BestSales.json";
 
@@ -161,6 +161,7 @@ export default function BestSales() {
               </div>
             </div>
           ))}
+          
         </div>
       </div>
     </>
