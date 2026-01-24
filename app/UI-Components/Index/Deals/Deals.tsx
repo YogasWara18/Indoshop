@@ -17,73 +17,29 @@ import Deal7 from "@/public/Deals-bg7.png";
 type DealItem = {
   image: StaticImageData;
   title: string;
-  description: string;
   className?: string;
 };
 
 const dealsData: DealItem[] = [
-  {
-    image: Deal1,
-    title: "Fresh Vegetables",
-    description:
-      "Shop fresh, healthy vegetables delivered daily. Taste the garden in every bite!",
-  },
-  {
-    image: Deal2,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap2",
-  },
-  {
-    image: Deal3,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap3",
-  },
-  {
-    image: Deal4,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap4",
-  },
-  {
-    image: Deal5,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap5",
-  },
-  {
-    image: Deal6,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap6",
-  },
-  {
-    image: Deal7,
-    title: "Daily Snacks",
-    description:
-      "Tasty daily snacks for every craving — fresh, fun, and ready to munch!",
-    className: "deals-wrap7",
-  },
+  { image: Deal1, title: "Fresh Vegetables" },
+  { image: Deal2, title: "Daily Snacks", className: "deals-wrap2" },
+  { image: Deal3, title: "Daily Snacks", className: "deals-wrap3" },
+  { image: Deal4, title: "Daily Snacks", className: "deals-wrap4" },
+  { image: Deal5, title: "Daily Snacks", className: "deals-wrap5" },
+  { image: Deal6, title: "Daily Snacks", className: "deals-wrap6" },
+  { image: Deal7, title: "Daily Snacks", className: "deals-wrap7" },
 ];
 
 import products from "@/app/JsonData/BestDeals.json";
-
 import toast from "react-hot-toast";
 
 export default function Deals() {
   const handleAddToCart = (product: any) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-
     const existingProduct = cart.find((item: any) => item.Id === product.Id);
 
     if (existingProduct) {
-      toast(`${product.title} is already in the cart`, {
+      toast(`${product.title} Ditambahkan ke keranjang`, {
         icon: "⚡",
         style: {
           border: "1px solid #facc15",
@@ -95,9 +51,7 @@ export default function Deals() {
     } else {
       cart.push({ ...product, qty: 1 });
       localStorage.setItem("cart", JSON.stringify(cart));
-
       window.dispatchEvent(new Event("storageUpdate"));
-
       toast.success(`${product.title} added to cart`);
     }
   };
@@ -137,7 +91,6 @@ export default function Deals() {
       </Swiper>
 
       {/* Best Deals Product */}
-
       <div className="my-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
@@ -154,10 +107,6 @@ export default function Deals() {
                   height={200}
                   className="object-contain max-h-full"
                 />
-                <div
-                  onClick={() => handleAddToCart(product)}
-                  className="absolute bottom-2 right-2"
-                ></div>
               </div>
 
               {/* Product Info */}
@@ -169,44 +118,35 @@ export default function Deals() {
               >
                 <div className="space-y-2 mt-3 product-info">
                   <div className="flex flex-col">
-                    {/* Harga utama */}
                     <span className="text-base font-semibold text-[var(--prim-color)]">
                       {product.price}{" "}
                       <span className="text-gray-500 text-sm">/Pcs</span>
                     </span>
-                    {/* Harga coret */}
                     <span className="text-gray-400 text-sm line-through">
                       {product.lessprice}
                     </span>
                   </div>
 
-                  {/* Review */}
                   <span className="flex items-center text-yellow-500 text-sm">
                     <i className="bi bi-star-fill me-1"></i> {product.review}
                   </span>
 
-                  {/* Judul Produk */}
                   <h2 className="text-md font-medium Unbounded my-2 hover:text-[var(--prim-color)] transition-colors truncate">
                     {product.title}
                   </h2>
 
-                  {/* Seller */}
                   <h6 className="text-sm text-gray-600 flex items-center gap-1">
-                    <i className="bi bi-shop text-[var(--prim-color)]"></i> By
-                    indoshop
+                    <i className="bi bi-shop text-[var(--prim-color)]"></i> By indoshop
                   </h6>
 
-                  {/* Sold */}
-                  <h3 className="text-sm text-gray-500">
-                    Sold: {product.sold}
-                  </h3>
+                  <h3 className="text-sm text-gray-500">Sold: {product.sold}</h3>
                 </div>
               </Link>
 
-              {/* Add to Cart Button - Full Width at Bottom */}
+              {/* Add to Cart Button */}
               <button
                 onClick={() => handleAddToCart(product)}
-                className="w-full py-3 mt-3 font-semibold text-white text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 transition-all duration-300 ease-in-out text-sm rounded-b-xl flex items-center justify-center gap-2"
+                className="w-full py-3 mt-3 font-semibold text-white text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 text-sm rounded-b-xl flex items-center justify-center gap-2"
               >
                 Add to Cart <i className="bi bi-cart"></i>
               </button>

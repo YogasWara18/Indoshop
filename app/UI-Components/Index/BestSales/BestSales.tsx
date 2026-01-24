@@ -27,12 +27,36 @@ export default function BestSales() {
       cart.push({ ...product, qty: 1 });
       localStorage.setItem("cart", JSON.stringify(cart));
       window.dispatchEvent(new Event("storageUpdate"));
-      toast.success(`${product.title} ditambahkan ke keranjang`);
+      toast.success(`${product.title} Ditambahkan ke keranjang`);
     }
   };
 
-  const handleAddToWishlist = (product: any) => {
-    toast(`${product.title} ditambahkan ke wishlist ❤️`);
+
+   const handleAddToWishlist = (product: any) => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+
+    const existingProduct = wishlist.find(
+      (item: any) => item.Id === product.Id,
+    );
+
+    if (existingProduct) {
+      toast(`${product.title} Item seni ini telah masuk ke wishlist Anda`, {
+        icon: "⚡",
+        style: {
+          border: "1px solid #facc15",
+          padding: "16px",
+          color: "#333",
+          background: "#fff9c4",
+        },
+      });
+    } else {
+      wishlist.push({ ...product, qty: 1 });
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+      window.dispatchEvent(new Event("storageUpdate"));
+
+      toast.success(`${product.title} added to wishlist!`);
+    }
   };
 
   return (

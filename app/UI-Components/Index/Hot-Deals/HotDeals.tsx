@@ -19,7 +19,7 @@ export default function HotDeals() {
     const existingProduct = cart.find((item: any) => item.Id === product.Id);
 
     if (existingProduct) {
-      toast(`${product.title} is already in the cart`, {
+      toast(`${product.title} Ditambahkan ke keranjang`, {
         icon: "⚡",
         style: {
           border: "1px solid #facc15",
@@ -34,7 +34,7 @@ export default function HotDeals() {
 
       window.dispatchEvent(new Event("storageUpdate"));
 
-      toast.success(`${product.title} added to cart`);
+      toast.success(`${product.title} Ditambahkan ke keranjang`);
     }
   };
 
@@ -46,7 +46,7 @@ export default function HotDeals() {
     );
 
     if (existingProduct) {
-      toast(`${product.title} is already in the wishlist`, {
+      toast(`${product.title} Item seni ini telah masuk ke wishlist Anda`, {
         icon: "⚡",
         style: {
           border: "1px solid #facc15",
