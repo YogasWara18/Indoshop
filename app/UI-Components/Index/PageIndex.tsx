@@ -6,6 +6,7 @@ import Category from './Categories/Category'
 import Deals from './Deals/Deals'
 import Hero from './Header/Hero'
 import HotDeals from './Hot-Deals/HotDeals'
+import Newsletter from './Newsletter/Newsletter'
 import Offers from './Offers-Banner/Offers'
 import Banners from './Promotion-Banner/Banners'
 import Recommend from './Recommend/Recommend'
@@ -23,11 +24,13 @@ export default function PageIndex() {
       <Recommend/>
       <HotDeals/>
       <Vendors/>
+       <Benefits/>
       <BestSales/>
       <Banner/>
       <TopProduct/>
       <Brands/>
-      <Benefits/>
+     
+      <Newsletter/>
     </>
   )
 }
