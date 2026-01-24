@@ -7,8 +7,7 @@ export default function Newsletter() {
   return (
     <section className="px-[8%] lg:px-[12%] py-16">
       <div
-        className="newsletter-wrap bg-gradient-to-r from-red-600 to-white text-white rounded-2xl flex flex-col lg:flex-row items-center gap-10 p-10 shadow-lg 
-                   transition-transform duration-500 hover:scale-[1.02] hover:shadow-2xl"
+        className="newsletter-wrap bg-gradient-to-r from-red-600 to-white text-white rounded-2xl flex flex-col lg:flex-row items-center gap-10 p-10 shadow-lg transition-transform duration-500 hover:scale-[1.02] hover:shadow-2xl"
       >
         {/* Left Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
@@ -26,10 +25,7 @@ export default function Newsletter() {
               className="w-full h-12 px-4 text-black outline-none rounded-l-xl"
               placeholder="Masukkan alamat email kamu..."
             />
-            <button
-              className="px-6 py-3 text-lg font-semibold text-white bg-red-500 rounded-xl 
-                         hover:bg-red-600 hover:scale-105 hover:shadow-lg transition-all duration-300"
-            >
+            <button className="px-6 py-3 text-lg font-semibold text-white bg-red-500 rounded-xl  hover:bg-red-600 hover:scale-105 hover:shadow-lg transition-all duration-300">
               Subscribe
             </button>
           </div>
@@ -40,8 +36,7 @@ export default function Newsletter() {
           <Image
             src={newsletter}
             alt="Newsletter Banner"
-            className="rounded-xl object-cover w-full h-auto shadow-md 
-                       transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
+            className="rounded-xl object-cover w-full h-auto shadow-md transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
             priority
           />
         </div>

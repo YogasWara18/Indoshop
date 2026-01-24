@@ -6,6 +6,10 @@ import { useEffect, useMemo, useState } from "react";
 
 // All Json Data
 import BestDeals from "@/app/JsonData/BestDeals.json";
+import BestSales from "@/app/JsonData/BestSales.json";
+import HotDeals from "@/app/JsonData/HotDeals.json";
+import TopProduct from "@/app/JsonData/TopProduct.json";
+import Recommend from "@/app/JsonData/Recommend.json";
 
 interface ProductType {
   Id: string;
@@ -25,7 +29,16 @@ export default function MiddleNav() {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<ProductType[]>([]);
 
-  const allProducts: ProductType[] = useMemo(() => [...BestDeals], []);
+  const allProducts: ProductType[] = useMemo(
+    () => [
+      ...BestDeals,
+      ...BestSales,
+      ...HotDeals,
+      ...TopProduct,
+      ...Recommend,
+    ],
+    [],
+  );
 
   // Filter Product by search
   useEffect(() => {
@@ -70,27 +83,18 @@ export default function MiddleNav() {
             alt="Indoshop Logo"
             width={250}
             height={80}
-            className="
-    h-auto object-contain
-    w-[150px] sm:w-[180px] md:w-[200px] lg:w-[250px]
-    relative sm:relative md:relative lg:absolute lg:-top-20 lg:left-32
-  "
+            className="h-auto object-contain w-[150px] sm:w-[180px] md:w-[200px] lg:w-[250px] relative sm:relative md:relative lg:absolute lg:-top-20 lg:left-32"
           />
         </Link>
 
         {/* Search */}
-        <div
-          className="flex flex-1 relative max-w-full sm:max-w-sm md:max-w-md lg:max-w-xl mx-auto md:mx-auto lg:ml-auto lg:mr-30">
+        <div className="flex flex-1 relative max-w-full sm:max-w-sm md:max-w-md lg:max-w-xl mx-auto md:mx-auto lg:ml-auto lg:mr-30">
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search for a Product or Brand"
-            className="
-      flex-1 border px-2 py-2
-      text-sm md:text-base
-      rounded-s-lg border-gray-400 outline-none
-    "
+            className="flex-1 border px-2 py-2 text-sm md:text-base rounded-s-lg border-gray-400 outline-none"
           />
           <button className="bg-[var(--prim-color)] text-white px-3 rounded-r cursor-pointer">
             <i className="bi bi-search"></i>
@@ -98,7 +102,7 @@ export default function MiddleNav() {
 
           {/* Search Results Dropdown */}
           {results.length > 0 && (
-            <div className="search-result absolute top-full left-0 w-full bg-white border border-gray-300 rounded-md shadow-md mt-1 z-50">
+            <div className="search-result absolute top-full left-0 w-full bg-white border border-gray-200 rounded-lg shadow-lg mt-2 z-50">
               {results.map((item, index) => (
                 <Link
                   key={`${item.Id}-${index}`}
@@ -108,18 +112,23 @@ export default function MiddleNav() {
                   }}
                   onClick={() => setSearchTerm("")}
                 >
-                  <div className="flex flex-col items-center p-2 border border-gray-300 rounded hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-4 p-3 border-b border-gray-100 hover:bg-gray-50 hover:shadow-md transition-all duration-300">
+                    {/* Product Image */}
                     <img
                       src={item.ProductImage || item.image}
                       alt={item.Name || item.title}
-                      className="w-20 object-cover rounded"
+                      className="w-16 h-16 object-cover rounded-md shadow-sm"
                     />
-                    <h3 className="font-semibold text-sm text-center mt-2">
-                      {item.Name || item.title}
-                    </h3>
-                    <p className="text-gray-500 text-xs mt-1">
-                      {item.Price || item.price}
-                    </p>
+
+                    {/* Product Info */}
+                    <div className="flex flex-col flex-1">
+                      <h3 className="font-semibold text-sm lg:text-base text-gray-800 truncate">
+                        {item.Name || item.title}
+                      </h3>
+                      <p className="text-gray-500 text-xs lg:text-sm mt-1">
+                        {item.Price || item.price}
+                      </p>
+                    </div>
                   </div>
                 </Link>
               ))}
