@@ -1,5 +1,7 @@
 import Banner from './Banner/Banner'
+import Benefits from './Benefits/Benefits'
 import BestSales from './BestSales/BestSales'
+import Brands from './Brands/Brands'
 import Category from './Categories/Category'
 import Deals from './Deals/Deals'
 import Hero from './Header/Hero'
@@ -24,6 +26,8 @@ export default function PageIndex() {
       <BestSales/>
       <Banner/>
       <TopProduct/>
+      <Brands/>
+      <Benefits/>
     </>
   )
 }
