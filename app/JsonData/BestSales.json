@@ -1,10 +1,10 @@
 [
   {
     "Id": "BestSales1",
-    "image": "/BestSales/batik-sell1.png",
-    "title": "Kain Batik Pekalongan Premium",
-    "price": "Rp250.000",
-    "lessprice": "Rp400.000",
+    "image": "/BestSales/BestSales-img1.png",
+    "title": "Kapal Pinisi ",
+    "price": "Rp450.000",
+    "lessprice": "Rp500.000",
     "review": "(2.1k)",
     "sold": "18/35",
     "sale": "35%"
