@@ -147,7 +147,7 @@ export default function Wishlist() {
                     <td className="px-1 border-r border-gray-600">
                       <button
                         onClick={() => handleAddToCart(item)}
-                        className="w-full cursor-pointer px-3 py-2 my-2 text-xs font-semibold text-[var(--prim-color)] bg-[var(--prim-light)] rounded-md hover:bg-[var(--prim-color)] hover:text-white transition"
+                        className="EB_Garamond w-full cursor-pointer px-3 py-2 my-2 text-xs font-semibold text-[var(--prim-color)] bg-[var(--prim-light)] rounded-md hover:bg-[var(--prim-color)] hover:text-white transition"
                       >
                         Add To Cart <i className="bi bi-cart"></i>
                       </button>

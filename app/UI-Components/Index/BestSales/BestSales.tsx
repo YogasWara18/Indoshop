@@ -154,7 +154,7 @@ export default function BestSales() {
                 {/* Add to Cart Button */}
                 <button
                   onClick={() => handleAddToCart(product)}
-                  className="mt-4 w-full lg:w-auto px-6 py-2 rounded-lg bg-[var(--prim-color)] text-white font-semibold hover:bg-white hover:text-[var(--prim-color)] border border-[var(--prim-color)] transition-all duration-300 flex items-center justify-center gap-2"
+                  className=" EB_Garamond mt-4 w-full lg:w-auto px-6 py-2 rounded-lg bg-[var(--prim-color)] text-white font-semibold hover:bg-white hover:text-[var(--prim-color)] border border-[var(--prim-color)] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <i className="bi bi-cart"></i> Add to Cart
                 </button>

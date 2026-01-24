@@ -47,7 +47,7 @@ export default function Banners() {
 
         {/* Button di tengah bawah */}
         <button
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40"
+          className="EB_Garamond absolute bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40"
         >
           Shop Now 
         

@@ -15,7 +15,7 @@ export default function Banner() {
 
           <div className="absolute inset-0 flex items-center justify-center">
             <button
-              className="opacity-0 group-hover:opacity-100
+              className=" EB_Garamond opacity-0 group-hover:opacity-100
              px-6 md:px-8 lg:px-10 
              py-3 md:py-4 lg:py-2 
              rounded-xl md:rounded-2xl lg:rounded-full font-semibold 

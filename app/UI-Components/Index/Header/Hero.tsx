@@ -51,7 +51,7 @@ export default function Hero() {
                   Sumatra, hingga patung Bali semua dengan kualitas terbaik yang
                   menghadirkan kekayaan budaya Indonesia ke ruang hidup Anda.
                 </p>
-                <button className="relative px-3 py-1 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
+                <button className=" EB_Garamond relative px-3 py-1 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
                   Order Now <i className="bi bi-cart3 ps-3"></i>
                 </button>
               </div>
@@ -81,7 +81,7 @@ export default function Hero() {
                   setiap produk bukan sekadar benda fungsional, melainkan
                   representasi budaya dan keberlanjutan.
                 </p>
-                <button className="relative px-3 py-1 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
+                <button className="EB_Garamond relative px-3 py-1 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
                   Order Now <i className="bi bi-cart3 ps-3"></i>
                 </button>
               </div>
