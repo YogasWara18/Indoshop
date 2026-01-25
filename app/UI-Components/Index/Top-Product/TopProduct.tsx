@@ -5,7 +5,6 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 import Image from "next/image";
-
 import Link from "next/link";
 import products from "@/app/JsonData/TopProduct.json";
 
@@ -15,7 +14,7 @@ export default function TopProduct() {
   const handleAddToCart = (product: any) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-    const existingProduct = cart.find((item: any) => item.Id === product.Id);
+    const existingProduct = cart.find((item: any) => item.id === product.id); // ✅ pakai id kecil
 
     if (existingProduct) {
       toast(`${product.title} Ditambahkan ke keranjang`, {
@@ -41,7 +40,7 @@ export default function TopProduct() {
     const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
 
     const existingProduct = wishlist.find(
-      (item: any) => item.Id === product.Id,
+      (item: any) => item.id === product.id, // ✅ pakai id kecil
     );
 
     if (existingProduct) {
@@ -82,7 +81,7 @@ export default function TopProduct() {
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              modules={[ Autoplay ]}
+              modules={[Autoplay]}
               breakpoints={{
                 1200: { slidesPerView: 4 },
                 991: { slidesPerView: 2.5 },
@@ -111,7 +110,13 @@ export default function TopProduct() {
                         <i className="bi bi-heart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
                       </div>
                       <span
-                        className={`absolute off-product top-0 right-0 px-4 py-2 EB_Garamond text-xs font-bold text-white rounded ${product.sale === "New" ? "bg-yellow-400" : product.sale.includes("%") ? "bg-red-500" : "opacity-0"}`}
+                        className={`absolute off-product top-0 right-0 px-4 py-2 EB_Garamond text-xs font-bold text-white rounded ${
+                          product.sale === "New"
+                            ? "bg-yellow-400"
+                            : product.sale.includes("%")
+                            ? "bg-red-500"
+                            : "opacity-0"
+                        }`}
                       >
                         {product.sale}
                       </span>
@@ -120,7 +125,7 @@ export default function TopProduct() {
                       <Link
                         href={{
                           pathname: "/UI-Components/Shop",
-                          query: { id: product.Id },
+                          query: { id: product.id }, // ✅ pakai id kecil
                         }}
                       >
                         <div className="space-y-2 mt-3 product-info">
