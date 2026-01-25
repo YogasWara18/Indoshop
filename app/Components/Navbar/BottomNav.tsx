@@ -16,7 +16,7 @@ const navLinks: NavLink[] = [
     href: "/UI-Components/Shop",
     dropdown: [
       { label: "Shop", href: "/UI-Components/Shop" },
-      { label: "Shop Details", href: "" },
+      { label: "Shop Details", href: "/UI-Components/Shop?id=Recommend1" },
     ],
   },
   {
@@ -34,7 +34,7 @@ const navLinks: NavLink[] = [
     href: "#",
     dropdown: [
       { label: "Blog", href: "/UI-Components/Blogs" },
-      { label: "Blog Details", href: "" },
+      { label: "Blog Details", href: "/UI-Components/Blogs/blogDetails?id=1" },
     ],
   },
   { label: "Contact Us", href: "/UI-Components/Pages/contact" },
@@ -104,39 +104,15 @@ export default function BottomNav() {
                   {link.label} <i className="ri-arrow-down-s-line"></i>
                 </Link>
                 <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl p-2 border border-gray-100 rounded-lg min-w-[150px]">
-                  {link.dropdown.map((item) =>
-                    item.label === "Shop Details" ? (
-                      <Link
-                        key={item.label}
-                        href={{
-                          pathname: "/UI-Components/Shop",
-                          query: {},
-                        }}
-                        className="block px-4 py-2 rounded-md hover:bg-[var(--prim-light)] transition-all "
-                      >
-                        {item.label}
-                      </Link>
-                    ) : item.label === "Blog Details" ? (
-                      <Link
-                        key={item.label}
-                        href={{
-                          pathname: "/UI-Components/Shop",
-                          query: {},
-                        }}
-                        className="block px-4 py-2 rounded-md hover:bg-[var(--prim-light)] transition-all "
-                      >
-                        {item.label}
-                      </Link>
-                    ) : (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="block px-4 py-2 rounded-md hover:bg-[var(--prim-light)] transition"
-                      >
-                        {item.label}
-                      </Link>
-                    ),
-                  )}
+                  {link.dropdown.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="block px-4 py-2 rounded-md hover:bg-[var(--prim-light)] transition-all"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
             ) : (
@@ -218,13 +194,7 @@ export default function BottomNav() {
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.label}
-                          href={
-                            item.label === "Shop Details"
-                              ? "/UI-Components/Shop/details"
-                              : item.label === "Blog Details"
-                                ? "/UI-Components/Blogs/blog"
-                                : item.href
-                          }
+                          href={item.href}
                           className="px-2 py-1 bg-white rounded-md hover:bg-gray-100"
                         >
                           {item.label}
