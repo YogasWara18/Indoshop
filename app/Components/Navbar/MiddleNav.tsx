@@ -12,7 +12,8 @@ import TopProduct from "@/app/JsonData/TopProduct.json";
 import Recommend from "@/app/JsonData/Recommend.json";
 
 interface ProductType {
-  Id: string;
+  Id?: string;
+  id?: string;
   title?: string;
   Name?: string;
   ProductImage?: string;
