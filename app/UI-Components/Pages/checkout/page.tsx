@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 
 type CartItem = {
   Id: string;
+  name: string;
   title: string;
   price: string;
   review: string;
