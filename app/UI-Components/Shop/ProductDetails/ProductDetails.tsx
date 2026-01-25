@@ -4,6 +4,8 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 import { useState } from "react";
 
+import satisfactionIcon from "@/public/ShopDetails.png";
+
 interface ProductType {
   Id: string;
   image: string;
@@ -153,13 +155,10 @@ export default function ProductDetails({ id, products }: Props) {
             </span>
 
             <p className="my-3 text-sm sm:text-base leading-relaxed">
-              Setiap karya seni Indonesia adalah cerminan kekayaan budaya dan
-              warisan leluhur yang tak ternilai. Dari ukiran kayu yang penuh
-              detail, batik dengan motif filosofis, hingga kerajinan tangan yang
-              sarat makna, setiap produk menghadirkan harmoni antara tradisi dan
-              keindahan. Dibuat dengan tangan terampil para pengrajin, karya ini
-              bukan sekadar benda dekoratif, melainkan simbol spiritualitas,
-              keanggunan, dan identitas bangsa.
+              Produk kerajinan Indonesia menghadirkan keindahan tradisi dan
+              kualitas premium. Dari batik, ukiran kayu, tenun, hingga keramik,
+              setiap karya dibuat dengan tangan terampil pengrajin lokal,
+              menjadi simbol budaya, elegansi, dan identitas bangsa.
             </p>
 
             <div className="flex items-center gap-2 border-b border-gray-300 pb-3">
@@ -312,6 +311,80 @@ export default function ProductDetails({ id, products }: Props) {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="border border-[var(--prim-light)]/40 mt-10 rounded-lg shadow-[0_0_15px_var(--prim-light)] backdrop-blur-md">
+          <div className="flex justify-between items-center border-b p-3 pb-5 border-[var(--prim-light)]/30 gap-2">
+            {/* Description Badge */}
+            <span className="EB_Garamond flex items-center justify-center bg-[var(--prim-color)] text-white font-semibold text-lg sm:text-xl px-5 py-2 rounded-full shadow-[0_0_15px_var(--prim-light)]">
+              Description
+            </span>
+
+            {/* Indonesia Art Market Badge */}
+            <span className="EB_Garamond flex items-center gap-3 bg-[var(--white-color)] text-[var(--prim-color)] font-semibold text-lg sm:text-xl px-5 py-2 rounded-full border border-[var(--prim-light)]/40 shadow hover:bg-[var(--prim-color)] hover:text-white transition transform hover:scale-105">
+              <Image
+                src={satisfactionIcon}
+                alt="satisfactionIcon"
+                className="w-6 h-6"
+              />
+              Indonesia Art Market
+            </span>
+          </div>
+          <div className="p-5 mt-5 bg-[#fdf6f0] rounded-xl  border border-[var(--prim-light)]/30 backdrop-blur-md">
+            <h2 className="Unbounded text-2xl mb-3 text-[var(--prim-color)] font-bold tracking-wide">
+              Product Description
+            </h2>
+            <p className="text-gray-700 mb-3 leading-relaxed">
+              Di setiap momen istimewa dan kebahagiaan, karya seni Indonesia
+              selalu hadir, sebagaimana telah diwariskan turun-temurun. Dengan
+              ragam kerajinan yang kaya akan sejarah dan filosofi, setiap produk
+              menghadirkan kehangatan, keindahan, dan senyum penuh makna bagi
+              siapa pun yang memilikinya.
+            </p>
+            <p className="text-gray-700 mb-5 leading-relaxed">
+              Menyatukan tradisi dan modernitas, kerajinan Nusantara menjadi
+              simbol elegansi, identitas, serta kebanggaan budaya.
+            </p>
+
+            {/* Bullet List */}
+            <div className="space-y-3">
+              <p className="flex items-start gap-2 text-gray-700">
+                <span className="text-[var(--prim-color)] font-bold">•</span>
+                <span>
+                  <strong>Keindahan Tradisi</strong> – Batik, ukiran kayu,
+                  tenun, dan keramik mencerminkan filosofi serta nilai budaya
+                  Nusantara.
+                </span>
+              </p>
+              <p className="flex items-start gap-2 text-gray-700">
+                <span className="text-[var(--prim-color)] font-bold">•</span>
+                <span>
+                  <strong>Kualitas Premium</strong> – Dibuat dari bahan pilihan
+                  dengan keterampilan tangan pengrajin lokal yang teruji.
+                </span>
+              </p>
+              <p className="flex items-start gap-2 text-gray-700">
+                <span className="text-[var(--prim-color)] font-bold">•</span>
+                <span>
+                  <strong>Simbol Identitas</strong> – Setiap karya menghadirkan
+                  spiritualitas, elegansi, dan kebanggaan bangsa.
+                </span>
+              </p>
+              <p className="flex items-start gap-2 text-gray-700">
+                <span className="text-[var(--prim-color)] font-bold">•</span>
+                <span>
+                  <strong>Harmoni Modernitas</strong> – Menghubungkan warisan
+                  leluhur dengan gaya hidup masa kini yang artistik dan elegan.
+                </span>
+              </p>
+              <p className="flex items-start gap-2 text-gray-700">
+                <span className="text-[var(--prim-color)] font-bold">•</span>
+                <span>
+                  <strong>Warisan Budaya</strong> – Setiap karya mencerminkan
+                  filosofi dan tradisi leluhur Nusantara.
+                </span>
+              </p>
             </div>
           </div>
         </div>
