@@ -8,9 +8,10 @@ type CartItem = {
   Id: string;
   name: string;
   title: string;
-  price: string;
+  price: number;
   review: string;
   qty?: number;
+  quantity?: number;
   image: string;
 };
 
