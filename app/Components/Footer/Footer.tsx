@@ -105,45 +105,6 @@ export default function Footer() {
               alt="Payment Methods"
               className="w-40 h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
             />
-
-            {/* Social Media Icons */}
-            <div className="flex flex-col mt-6">
-             <h2 className="Unbounded text-xl mb-3 font-semibold">Media</h2>
-              <div className="flex space-x-5">
-                <a
-                  href="https://www.youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-gradient-to-tr from-red-600 to-red-400 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
-                >
-                  <FaYoutube className="text-white w-6 h-6" />
-                </a>
-                <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-gradient-to-tr from-pink-500 to-purple-500 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
-                >
-                  <FaInstagram className="text-white w-6 h-6" />
-                </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-gradient-to-tr from-sky-500 to-blue-400 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
-                >
-                  <FaTwitter className="text-white w-6 h-6" />
-                </a>
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-gradient-to-tr from-blue-700 to-indigo-500 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
-                >
-                  <FaFacebook className="text-white w-6 h-6" />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>

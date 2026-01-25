@@ -106,26 +106,26 @@ export default function Products() {
   };
 
  return (
-  <div className="px-[8%] lg:px-[12%] py-10">
+  <div className="px-[5%] sm:px-[8%] lg:px-[12%] py-10">
     <div className="my-10">
-      <div className="flex flex-col md:flex-row justify-between gap-5">
+      <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-5">
         {/* Sidebar */}
-        <div className="w-full md:w-1/2 lg:w-1/3 relative lg:sticky top-22 left-0 h-full">
+        <div className="w-full md:w-1/2 lg:w-1/3 relative lg:sticky top-22 left-0 h-fit">
           <div className="border border-gray-300 shadow rounded p-3">
             <div className="border-b w-full border-gray-300 pb-3 flex items-center justify-between">
-              <h2 className="text-xl Unbounded">Product Category</h2>
+              <h2 className="text-xl sm:text-xl Unbounded">Product Category</h2>
               <button
                 onClick={() => setFilterProducts(products)}
-                className="border border-gray-300 px-2 py-1 rounded cursor-pointer hover:border-gray-500 transition-all duration-300"
+                className="border border-gray-300 px-2 py-1 rounded cursor-pointer hover:border-gray-500 transition-all duration-300 text-sm sm:text-base"
               >
                 Reset
               </button>
             </div>
             {/* Price Range */}
             <div className="mt-4">
-              <h3 className="text-lg font-medium mb-2">Price Range</h3>
+              <h3 className="text-lg sm:text-lg font-medium mb-2">Price Range</h3>
               <div className="flex items-center space-x-4">
-                <span className="text-gray-700 text-sm font-medium">Rp0</span>
+                <span className="text-gray-700 text-xs sm:text-sm font-medium">Rp0</span>
                 <input
                   type="range"
                   min={0}
@@ -134,14 +134,14 @@ export default function Products() {
                   onChange={(e) => setPrice(Number(e.target.value))}
                   className="w-full accent-[var(--prim-color)]"
                 />
-                <span className="text-gray-700 text-sm font-medium">
+                <span className="text-gray-700 text-xs sm:text-sm font-medium">
                   Rp{price}
                 </span>
               </div>
             </div>
             {/* Discount */}
             <div className="mt-6">
-              <h3 className="text-lg font-medium mb-2">Discount</h3>
+              <h3 className="text-base sm:text-lg font-medium mb-2">Discount</h3>
               <form className="space-y-2">
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input
@@ -150,7 +150,7 @@ export default function Products() {
                     onChange={(e) => setDiscount50(e.target.checked)}
                     className="form-checkbox accent-[var(--prim-color)]"
                   />
-                  <span>50% off</span>
+                  <span className="text-sm sm:text-base">50% off</span>
                 </label>
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input
@@ -159,13 +159,13 @@ export default function Products() {
                     onChange={(e) => setDiscount30(e.target.checked)}
                     className="form-checkbox accent-[var(--prim-color)]"
                   />
-                  <span>30% off</span>
+                  <span className="text-sm sm:text-base">30% off</span>
                 </label>
               </form>
             </div>
             {/* Other */}
             <div className="mt-6">
-              <h3 className="text-lg font-medium mb-2">Other</h3>
+              <h3 className="text-base sm:text-lg font-medium mb-2">Other</h3>
               <form className="space-y-2">
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input
@@ -174,19 +174,19 @@ export default function Products() {
                     onChange={(e) => setIsNew(e.target.checked)}
                     className="form-checkbox accent-[var(--prim-color)]"
                   />
-                  <span>New Products</span>
+                  <span className="text-sm sm:text-base">New Products</span>
                 </label>
               </form>
             </div>
           </div>
 
           {/* Random Product */}
-          <div className="mt-3">
+          <div className="mt-4">
             <div
               key={randomProduct.Id}
-              className="product-wrap border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow-lg transition-transform hover:scale-[1.02] cursor-pointer duration-300 overflow-hidden"
+              className="product-wrap border border-gray-200 rounded-xl p-3 sm:p-4 bg-white shadow-sm hover:shadow-lg transition-transform hover:scale-[1.02] cursor-pointer duration-300 overflow-hidden"
             >
-              <div className="relative flex justify-center items-center w-full h-56 bg-gray-50 rounded-lg">
+              <div className="relative flex justify-center items-center w-full h-40 sm:h-48 md:h-56 bg-gray-50 rounded-lg">
                 <Image
                   src={randomProduct.image}
                   alt={randomProduct.title}
@@ -198,7 +198,7 @@ export default function Products() {
                   onClick={() => handleAddToWishlist(randomProduct)}
                   className="absolute bottom-2 right-2"
                 >
-                  <i className="bi bi-heart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
+                  <i className="bi bi-heart text-gray-600 text-lg sm:text-xl hover:text-[var(--prim-color)] transition-all"></i>
                 </div>
                 <span
                   className={`absolute off-product top-0 right-0 px-4 py-2 EB_Garamond text-xs font-bold text-white rounded ${
@@ -222,22 +222,22 @@ export default function Products() {
               >
                 <div className="space-y-2 mt-3 product-info">
                   <div className="flex flex-col">
-                    <span className="text-base font-semibold text-[var(--prim-color)]">
+                    <span className="text-sm sm:text-base font-semibold text-[var(--prim-color)]">
                       {randomProduct.price}{" "}
-                      <span className="text-gray-500 text-sm">/Pcs</span>
+                      <span className="text-gray-500 text-xs sm:text-sm">/Pcs</span>
                     </span>
-                    <span className="text-gray-400 text-sm line-through">
+                    <span className="text-gray-400 text-xs sm:text-sm line-through">
                       {randomProduct.lessprice}
                     </span>
                   </div>
-                  <span className="flex items-center text-yellow-500 text-sm">
+                  <span className="flex items-center text-yellow-500 text-xs sm:text-sm">
                     <i className="bi bi-star-fill me-1"></i>{" "}
                     {randomProduct.review}
                   </span>
-                  <h2 className="text-md font-medium Unbounded my-2 hover:text-[var(--prim-color)] transition-colors truncate">
+                  <h2 className="text-sm sm:text-md font-medium Unbounded my-2 hover:text-[var(--prim-color)] transition-colors truncate">
                     {randomProduct.title}
                   </h2>
-                  <h6 className="text-sm text-gray-600 flex items-center gap-1">
+                  <h6 className="text-xs sm:text-sm text-gray-600 flex items-center gap-1">
                     <i className="bi bi-shop text-[var(--prim-color)]"></i> By indoshop
                   </h6>
                   <h3 className="text-sm text-gray-500">
@@ -250,11 +250,11 @@ export default function Products() {
         </div>
 
         {/* Product Grid */}
-        <div className="w-full md:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {filterProducts.map((product) => (
             <div
               key={product.Id}
-              className="border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow-lg transition-transform hover:scale-[1.02] cursor-pointer duration-300 overflow-hidden"
+              className="border border-gray-200 rounded-xl p-3 sm:p-4 bg-white shadow-sm hover:shadow-lg transition-transform hover:scale-[1.02] cursor-pointer duration-300 overflow-hidden"
             >
               <div className="relative flex justify-center items-center w-full h-56 bg-gray-50 rounded-lg">
                 <Image
