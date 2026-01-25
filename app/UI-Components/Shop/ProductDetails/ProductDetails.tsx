@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 
 import satisfactionIcon from "@/public/ShopDetails.png";
+import Deals from "../../Index/Deals/Deals";
 
 interface ProductType {
   Id: string;
@@ -385,10 +386,59 @@ export default function ProductDetails({ id, products }: Props) {
                   filosofi dan tradisi leluhur Nusantara.
                 </span>
               </p>
+              <p className="flex items-start gap-2 text-gray-700">
+                <span className="text-[var(--prim-color)] font-bold">•</span>
+                <span>
+                  <strong>Daerah Asal</strong> – Berasal dari sentra kerajinan
+                  tradisional di berbagai daerah Indonesia, seperti Yogyakarta,
+                  Bali, dan Sumatra.
+                </span>
+              </p>
+              <p className="flex items-start gap-2 text-gray-700">
+                <span className="text-[var(--prim-color)] font-bold">•</span>
+                <span>
+                  <strong>Pengrajin</strong> – Dibuat dengan penuh dedikasi oleh
+                  tangan terampil pengrajin lokal yang menjaga warisan budaya.
+                </span>
+              </p>
+
+              <h2 className="Unbounded text-2xl mt-8 mb-3 text-[var(--prim-color)] font-bold tracking-wide">
+                Nilai & Filosofi
+              </h2>
+              <div className="space-y-2 text-gray-700 leading-relaxed">
+                <p className="flex items-start gap-2">
+                  <span className="text-[var(--prim-color)] font-bold">•</span>
+                  <span>
+                    <strong>Keindahan</strong> – Detail artistik mencerminkan
+                    filosofi budaya Nusantara
+                  </span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-[var(--prim-color)] font-bold">•</span>
+                  <span>
+                    <strong>Spiritualitas</strong> – Simbol identitas, elegansi,
+                    dan kebanggaan bangsa
+                  </span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-[var(--prim-color)] font-bold">•</span>
+                  <span>
+                    <strong>Keberlanjutan</strong> – Ramah lingkungan, mendukung
+                    pengrajin lokal
+                  </span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-[var(--prim-color)] font-bold">•</span>
+                  <span>
+                    <strong>Harmoni</strong> – Tradisi berpadu dengan modernitas
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <Deals/>
     </>
   );
 }

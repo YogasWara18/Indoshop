@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "image": "/Blogs/Blog1.png",
+    "title": "Promo kerajinan Nusantara terbaik minggu ini",
+    "tag": "Penawaran & Diskon",
+    "pere": "Belanja bijak berarti tahu di mana menemukan karya seni dengan harga terbaik. Promo mingguan membantu pecinta seni mendapatkan produk berkualitas dengan hemat.",
+    "pere2": "Membeli batik, ukiran kayu, atau tenun dalam paket promo dapat mengurangi biaya sekaligus mendukung pengrajin lokal.",
+    "pere3": "Perhatikan penawaran terbatas pada keramik, anyaman, dan lukisan tradisional untuk koleksi eksklusif tanpa mengorbankan nilai budaya.",
+    "date": "15 Juli 2025",
+    "comment": "10 Komentar"
+  },
+  {
+    "id": 2,
+    "image": "/Blogs/Blog2.png",
+    "title": "Bagaimana aplikasi seni online mengubah belanja",
+    "tag": "Digital Art Market",
+    "pere": "Belanja kerajinan secara online semakin populer, memberi kemudahan menjelajahi dan membeli karya seni dari rumah.",
+    "pere2": "Aplikasi kini menawarkan fitur seperti pelacakan pesanan, diskon instan, dan rekomendasi personal berdasarkan koleksi sebelumnya.",
+    "pere3": "Dengan beberapa sentuhan, pecinta seni dapat menambah koleksi dan menghemat waktu, membuat belanja seni lebih menyenangkan.",
+    "date": "16 Juli 2025",
+    "comment": "7 Komentar"
+  },
+  {
+    "id": 3,
+    "image": "/Blogs/Blog3.png",
+    "title": "Cara cerdas mengatur anggaran belanja seni bulanan",
+    "tag": "Tips Anggaran",
+    "pere": "Mengatur anggaran seni membantu mencegah pengeluaran berlebih dan menjaga koleksi tetap terkurasi. Merencanakan pembelian memastikan hanya karya yang benar-benar dibutuhkan.",
+    "pere2": "Menggunakan daftar belanja, membandingkan harga, dan mencatat pengeluaran dapat memberi perbedaan besar dalam penghematan.",
+    "pere3": "Dompet digital dan penawaran cashback dari aplikasi seni juga membantu memaksimalkan anggaran sambil tetap mendukung kualitas karya.",
+    "date": "17 Juli 2025",
+    "comment": "12 Komentar"
+  },
+  {
+    "id": 4,
+    "image": "/Blogs/Blog4.png",
+    "title": "Kerajinan penting untuk setiap rumah",
+    "tag": "Kerajinan Pokok",
+    "pere": "Kerajinan seperti batik, ukiran kayu, tenun, dan keramik adalah fondasi dekorasi rumah. Menyimpannya dengan bijak memastikan rumah selalu bernuansa budaya.",
+    "pere2": "Memilih varian autentik dan ramah lingkungan meningkatkan nilai estetika sekaligus menjaga kualitas.",
+    "pere3": "Selalu perhatikan cara perawatan dan penyimpanan agar kerajinan tetap awet dan indah untuk jangka panjang.",
+    "date": "18 Juli 2025",
+    "comment": "9 Komentar"
+  },
+  {
+    "id": 5,
+    "image": "/Blogs/Blog5.png",
+    "title": "Mengapa karya seni lokal harus jadi pilihan utama",
+    "tag": "Seni Tradisional",
+    "pere": "Karya seni lokal sarat makna dan keindahan yang tak tergantikan. Batik, ukiran, dan tenun tradisional kaya akan filosofi budaya.",
+    "pere2": "Membeli dari pengrajin lokal memastikan keaslian, mendukung komunitas, dan menjaga kelestarian tradisi.",
+    "pere3": "Menghadirkan ragam karya seni dalam rumah menambah harmoni, memperkuat identitas, dan memberi kebanggaan budaya.",
+    "date": "19 Juli 2025",
+    "comment": "6 Komentar"
+  }
+]
