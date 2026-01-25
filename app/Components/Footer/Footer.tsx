@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaYoutube, FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
 
 import StoreImg1 from "@/public/store-img1.png";
 import StoreImg2 from "@/public/store-img2.png";
@@ -10,7 +10,6 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100 text-gray-700 px-[8%] lg:px-[12%] py-10 mt-10 border-t border-gray-200">
       <div className="flex flex-col lg:flex-row justify-between gap-10">
-        
         {/* Logo & About */}
         <div className="flex flex-col max-w-md">
           <Link
@@ -20,8 +19,8 @@ export default function Footer() {
             Indo<span className="text-[var(--prim-color)]">shop</span>
           </Link>
           <p className="text-sm leading-relaxed mt-3">
-            Kami <strong>Indoshop Art Market</strong>, tim kreatif yang menghadirkan karya seni
-            dan kriya Indonesia dengan sentuhan modern.
+            Kami <strong>Indoshop Art Market</strong>, tim kreatif yang
+            menghadirkan karya seni dan kriya Indonesia dengan sentuhan modern.
           </p>
           <div className="flex flex-col gap-y-4 mt-5 text-sm">
             <p className="flex items-center hover:scale-105 transition-transform duration-300">
@@ -44,7 +43,14 @@ export default function Footer() {
           {/* Informasi */}
           <div className="flex flex-col">
             <h2 className="Unbounded text-xl mb-3 font-semibold">Informasi</h2>
-            {["Penjual","Karya Seni","Galeri","Berjualan","Produk","Pasar"].map((item, i) => (
+            {[
+              "Penjual",
+              "Karya Seni",
+              "Galeri",
+              "Berjualan",
+              "Produk",
+              "Pasar",
+            ].map((item, i) => (
               <Link
                 key={i}
                 href="#"
@@ -58,7 +64,14 @@ export default function Footer() {
           {/* Support */}
           <div className="flex flex-col">
             <h2 className="Unbounded text-xl mb-3 font-semibold">Dukungan</h2>
-            {["Mitra Seniman","Pamerkan Karya","Galeri Kriya","Berjualan","Produk Kreatif","Kerajinan"].map((item, i) => (
+            {[
+              "Mitra Seniman",
+              "Pamerkan Karya",
+              "Galeri Kriya",
+              "Berjualan",
+              "Produk Kreatif",
+              "Kerajinan",
+            ].map((item, i) => (
               <Link
                 key={i}
                 href="#"
@@ -92,6 +105,45 @@ export default function Footer() {
               alt="Payment Methods"
               className="w-40 h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
             />
+
+            {/* Social Media Icons */}
+            <div className="flex flex-col mt-6">
+             <h2 className="Unbounded text-xl mb-3 font-semibold">Media</h2>
+              <div className="flex space-x-5">
+                <a
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-gradient-to-tr from-red-600 to-red-400 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
+                >
+                  <FaYoutube className="text-white w-6 h-6" />
+                </a>
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-gradient-to-tr from-pink-500 to-purple-500 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
+                >
+                  <FaInstagram className="text-white w-6 h-6" />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-gradient-to-tr from-sky-500 to-blue-400 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
+                >
+                  <FaTwitter className="text-white w-6 h-6" />
+                </a>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-gradient-to-tr from-blue-700 to-indigo-500 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
+                >
+                  <FaFacebook className="text-white w-6 h-6" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

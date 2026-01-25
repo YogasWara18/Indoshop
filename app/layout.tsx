@@ -3,9 +3,11 @@ import { EB_Garamond, Geist, Geist_Mono, Unbounded } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
-import Footermain from "./Components/Footer/Footermain";
+import Copyright from "./Components/Footer/Copyright";
+
 
 import { Toaster } from "react-hot-toast";
+
 
 
 
@@ -49,7 +51,7 @@ export default function RootLayout({
         <Navbar/>
         {children}
         <Footer/>
-        <Footermain/>
+        <Copyright/>
 
         <Toaster position="top-right" reverseOrder={false}/>
       </body>
