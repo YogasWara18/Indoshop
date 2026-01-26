@@ -1,6 +1,6 @@
 [
   {
-    "Id": "Recommend1",
+    "id": "Recommend1",
     "image": "/Recommend/Recommend-product1.png",
     "title": "Patung Kayu Antik Bali",
     "price": "Rp 1.850.000",
@@ -10,7 +10,7 @@
     "sale": ""
   },
   {
-    "Id": "Recommend2",
+    "id": "Recommend2",
     "image": "/Recommend/Recommend-product2.png",
     "title": "Batik Tulis Modern Jawa",
     "price": "Rp 250.000",
@@ -20,7 +20,7 @@
     "sale": "50%"
   },
   {
-    "Id": "Recommend3",
+    "id": "Recommend3",
     "image": "/Recommend/Recommend-product3.png",
     "title": "Tenun Songket Sumatra",
     "price": "Rp 1.320.000",
@@ -30,7 +30,7 @@
     "sale": "New"
   },
   {
-    "Id": "Recommend4",
+    "id": "Recommend4",
     "image": "/Recommend/Recommend-product4.png",
     "title": "Anyaman Rotan Handmade",
     "price": "Rp 150.000",
@@ -40,7 +40,7 @@
     "sale": "35%"
   },
   {
-    "Id": "Recommend5",
+    "id": "Recommend5",
     "image": "/Recommend/Recommend-product5.png",
     "title": "Keramik Motif Nusantara",
     "price": "Rp 210.000",
@@ -50,7 +50,7 @@
     "sale": ""
   },
   {
-    "Id": "Recommend6",
+    "id": "Recommend6",
     "image": "/Recommend/Recommend-product6.png",
     "title": "Ukiran Jepara Premium",
     "price": "Rp 275.000",
@@ -60,7 +60,7 @@
     "sale": "50%"
   },
   {
-    "Id": "Recommend7",
+    "id": "Recommend7",
     "image": "/Recommend/Recommend-product7.png",
     "title": "Lukisan Tradisional Wayang",
     "price": "Rp 300.000",
@@ -70,7 +70,7 @@
     "sale": "New"
   },
   {
-    "Id": "Recommend8",
+    "id": "Recommend8",
     "image": "/Recommend/Recommend-product8.png",
     "title": "Kalung Manik Papua",
     "price": "Rp 95.000",
@@ -80,7 +80,7 @@
     "sale": "50%"
   },
   {
-    "Id": "Recommend9",
+    "id": "Recommend9",
     "image": "/Recommend/Recommend-product9.png",
     "title": "Topeng Kayu Cirebon",
     "price": "Rp 220.000",
@@ -90,7 +90,7 @@
     "sale": "New"
   },
   {
-    "Id": "Recommend10",
+    "id": "Recommend10",
     "image": "/Recommend/Recommend-product10.png",
     "title": "Perhiasan Perak Lombok",
     "price": "Rp 350.000",
@@ -100,7 +100,7 @@
     "sale": "50%"
   },
   {
-    "Id": "Recommend11",
+    "id": "Recommend11",
     "image": "/Recommend/Recommend-product11.png",
     "title": "Wayang Kulit Handmade",
     "price": "Rp 1.400.000",
@@ -110,7 +110,7 @@
     "sale": "50%"
   },
   {
-    "Id": "Recommend12",
+    "id": "Recommend12",
     "image": "/Recommend/Recommend-product12.png",
     "title": "Miniatur Rumah Adat Toraja",
     "price": "Rp 280.000",

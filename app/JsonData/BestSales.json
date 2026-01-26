@@ -1,6 +1,6 @@
 [
   {
-    "Id": "BestSales1",
+    "id": "BestSales1",
     "image": "/BestSales/BestSales-img1.png",
     "title": "Wooden Sailing Ship Replica",
     "price": "Rp2.500.000",
@@ -10,7 +10,7 @@
     "sale": "35%"
   },
   {
-    "Id": "BestSales2",
+    "id": "BestSales2",
     "image": "/BestSales/BestSales-img2-v2.png",
     "title": "Pusaka Pura Jepara Tradisional",
     "price": "Rp8.000.000",
@@ -20,7 +20,7 @@
     "sale": "30%"
   },
   {
-    "Id": "BestSales3",
+    "id": "BestSales3",
     "image": "/BestSales/BestSales-img3.png",
     "title": "Cahaya Agung Bali Tradisional",
     "price": "Rp3.500.000",
@@ -30,7 +30,7 @@
     "sale": "New"
   },
   {
-    "Id": "BestSales4",
+    "id": "BestSales4",
     "image": "/BestSales/BestSales-img4.png",
     "title": "Anggun Perak Yogyakarta",
     "price": "Rp1.800.000",

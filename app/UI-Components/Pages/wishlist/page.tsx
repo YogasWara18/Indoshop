@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 type wishlistItem = {
-  Id: string;
+  id: string;
   title: string;
   price: string;
   review: string;
@@ -35,34 +35,36 @@ export default function Wishlist() {
 
   // Remove Product from Wishlist
   const handleRemove = (productId: string) => {
-    const updateWishlist = wishlistItems.filter((item) => item.Id !== productId);
+    const updateWishlist = wishlistItems.filter((item) => item.id !== productId);
     localStorage.setItem("wishlist", JSON.stringify(updateWishlist));
     window.dispatchEvent(new Event("storageUpdate"));
     toast.success("Product Removed From Wishlist");
   };
 
-  const handleAddToCart = (product: any) => {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+ const handleAddToCart = (product: wishlistItem) => {
+  const cart: (wishlistItem & { qty: number })[] = JSON.parse(
+    localStorage.getItem("cart") || "[]"
+  );
 
-    const existingProduct = cart.find((item: any) => item.Id === product.Id);
+  const existingProduct = cart.find((item) => item.id === product.id);
 
-    if (existingProduct) {
-      toast(`${product.title} is already in the cart`, {
-        icon: "⚡",
-        style: {
-          border: "1px solid #facc15",
-          padding: "16px",
-          color: "#333",
-          background: "#fff9c4",
-        },
-      });
-    } else {
-      cart.push({ ...product, qty: 1 });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      window.dispatchEvent(new Event("storageUpdate"));
-      toast.success(`${product.title} added to cart`);
-    }
-  };
+  if (existingProduct) {
+    toast(`${product.title} is already in the cart`, {
+      icon: "⚡",
+      style: {
+        border: "1px solid #facc15",
+        padding: "16px",
+        color: "#333",
+        background: "#fff9c4",
+      },
+    });
+  } else {
+    cart.push({ ...product, qty: 1 });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.dispatchEvent(new Event("storageUpdate"));
+    toast.success(`${product.title} added to cart`);
+  }
+};
 
   return (
     <>
@@ -112,7 +114,7 @@ export default function Wishlist() {
               </thead>
               <tbody>
                 {wishlistItems.map((item) => (
-                  <tr key={item.Id} className="border-b border-gray-600">
+                  <tr key={item.id} className="border-b border-gray-600">
                     <td className="py-3 px-4 border-r border-gray-600">
                       <div className="flex gap-3 items-center">
                         <img
@@ -155,7 +157,7 @@ export default function Wishlist() {
                     <td className="py-3 px-4 text-center">
                       <button
                         className="text-gray-500 hover:text-red-700 cursor-pointer"
-                        onClick={() => handleRemove(item.Id)}
+                        onClick={() => handleRemove(item.id)}
                       >
                         ✕ Remove
                       </button>
@@ -169,7 +171,7 @@ export default function Wishlist() {
             <div className="hidden md:grid lg:hidden grid-cols-2 gap-4">
               {wishlistItems.map((item) => (
                 <div
-                  key={item.Id}
+                  key={item.id}
                   className="border p-4 rounded flex gap-3 items-center"
                 >
                   <img
@@ -200,7 +202,7 @@ export default function Wishlist() {
             <div className="md:hidden space-y-4">
               {wishlistItems.map((item) => (
                 <div
-                  key={item.Id}
+                  key={item.id}
                   className="border p-4 rounded flex gap-3 items-center"
                 >
                   <img
@@ -224,7 +226,7 @@ export default function Wishlist() {
                     </button>
                     <button
                       className="mt-2 text-red-500 hover:text-red-700 cursor-pointer text-sm"
-                      onClick={() => handleRemove(item.Id)}
+                      onClick={() => handleRemove(item.id)}
                     >
                       ✕ Remove
                     </button>
