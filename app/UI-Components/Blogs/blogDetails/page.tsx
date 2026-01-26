@@ -1,15 +1,32 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import blogData from "@/app/JsonData/Blog.json";
 
-export default function BlogDetails() {
+export default function BlogDetailsClient() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
-  const blog = blogData.find((b) => b.id.toString() === id);
+  const blog = blogData.find((b) => String(b.id) === String(id));
 
-  if (!blog) return <div className="p-10 text-center text-red-600">No Blog Found</div>;
+  if (!id) {
+    return (
+      <div className="p-10 text-center">
+        <p className="text-red-600 mb-4">ID blog tidak ditemukan di URL.</p>
+        <p>Contoh URL: <code>/UI-Components/Blogs/blogDetails?id=1</code></p>
+        <div className="mt-4">
+          <Link href="/UI-Components/Blogs" className="text-blue-600 underline">
+            Kembali ke daftar blog
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (!blog) {
+    return <div className="p-10 text-center text-red-600">No Blog Found for id: {id}</div>;
+  }
 
   return (
     <>
@@ -93,18 +110,13 @@ export default function BlogDetails() {
           <div className="w-full lg:w-1/3 gap-5 sticky top-22 left-0 h-fit">
             <div className="border-2 border-[var(--sec-color)] rounded-lg shadow-lg bg-[#fff8f0]">
               <div className="border-b border-[var(--sec-color)] p-5">
-                <h2 className="Unbounded text-2xl text-[var(--prim-color)]">
-                  Recent Post
-                </h2>
+                <h2 className="Unbounded text-2xl text-[var(--prim-color)]">Recent Post</h2>
               </div>
               <div className="p-5">
                 {blogData.slice(0, 4).map((recent) => (
                   <Link
                     key={recent.id}
-                    href={{
-                      pathname: "/UI-Components/Blogs/blogDetails",
-                      query: { id: recent.id },
-                    }}
+                    href={`/UI-Components/Blogs/blogDetails?id=${recent.id}`}
                     className="flex justify-between items-center mb-5 gap-5 cursor-pointer group"
                   >
                     <div className="w-1/2 overflow-hidden rounded-md">
