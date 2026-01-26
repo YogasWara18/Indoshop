@@ -67,8 +67,8 @@ export default function BottomNav() {
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
       const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
 
-      const uniqueCart = new Set(cart.map((item: any) => item.Id));
-      const uniqueWishlist = new Set(wishlist.map((item: any) => item.Id));
+     const uniqueCart = new Set(cart.map((item: unknown) => (item as { id: string }).id));
+      const uniqueWishlist = new Set(wishlist.map((item: unknown) => (item as { id: string }).id));
 
       setCartCount(uniqueCart.size);
       setWishlistCount(uniqueWishlist.size);

@@ -10,11 +10,23 @@ import products from "@/app/JsonData/TopProduct.json";
 
 import toast from "react-hot-toast";
 
+interface Product {
+  id: string;
+  title: string;
+  image: string;
+  price: string;
+  lessprice?: string;
+  review?: string;
+  sale?: string;
+  sold?: string;
+  qty?: number; 
+}
+
 export default function TopProduct() {
-  const handleAddToCart = (product: any) => {
+  const handleAddToCart = (product: Product) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-    const existingProduct = cart.find((item: any) => item.id === product.id); // ✅ pakai id kecil
+    const existingProduct = cart.find((item: Product) => item.id === product.id); // ✅ pakai id kecil
 
     if (existingProduct) {
       toast(`${product.title} Ditambahkan ke keranjang`, {
@@ -36,11 +48,11 @@ export default function TopProduct() {
     }
   };
 
-  const handleAddToWishlist = (product: any) => {
+  const handleAddToWishlist = (product: Product) => {
     const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
 
     const existingProduct = wishlist.find(
-      (item: any) => item.id === product.id, // ✅ pakai id kecil
+      (item: Product) => item.id === product.id, // ✅ pakai id kecil
     );
 
     if (existingProduct) {

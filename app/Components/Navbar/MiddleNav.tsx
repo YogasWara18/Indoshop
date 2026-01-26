@@ -12,7 +12,6 @@ import TopProduct from "@/app/JsonData/TopProduct.json";
 import Recommend from "@/app/JsonData/Recommend.json";
 
 interface ProductType {
-  Id?: string;
   id?: string;
   title?: string;
   Name?: string;
@@ -20,6 +19,14 @@ interface ProductType {
   image?: string;
   price?: string;
   Price?: string;
+}
+
+interface CartItem {
+  id: string;
+  title?: string;
+  image?: string;
+  price?: string;
+  qty?: number;
 }
 
 export default function MiddleNav() {
@@ -31,45 +38,36 @@ export default function MiddleNav() {
   const [results, setResults] = useState<ProductType[]>([]);
 
   const allProducts: ProductType[] = useMemo(
-    () => [
-      ...BestDeals,
-      ...BestSales,
-      ...HotDeals,
-      ...TopProduct,
-      ...Recommend,
-    ],
-    [],
+    () => [...BestDeals, ...BestSales, ...HotDeals, ...TopProduct, ...Recommend],
+    []
   );
 
   // Filter Product by search
-  useEffect(() => {
-    if (!searchTerm.trim()) {
-      setResults([]);
-      return;
-    }
+ useEffect(() => {
+  if (!searchTerm.trim()) {
+    setTimeout(() => setResults([]), 0);
+    return;
+  }
 
-    const filtered = allProducts.filter((p) =>
-      (p.Name || p.title || "")
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase()),
-    );
-    setResults(filtered);
-  }, [searchTerm, allProducts]);
+  const filtered = allProducts.filter((p) =>
+    (p.Name || p.title || "").toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  setTimeout(() => setResults(filtered), 0);
+}, [searchTerm, allProducts]);
 
   useEffect(() => {
     const loadCounts = () => {
-      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-      const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+      const cart: CartItem[] = JSON.parse(localStorage.getItem("cart") || "[]");
+      const wishlist: CartItem[] = JSON.parse(localStorage.getItem("wishlist") || "[]");
 
-      const uniqueCart = new Set(cart.map((item: any) => item.Id));
-      const uniqueWishlist = new Set(wishlist.map((item: any) => item.Id));
+      const uniqueCart = new Set(cart.map((item) => item.id));
+      const uniqueWishlist = new Set(wishlist.map((item) => item.id));
 
       setCartCount(uniqueCart.size);
       setWishlistCount(uniqueWishlist.size);
     };
 
     loadCounts();
-    // gunakan event bawaan browser
     window.addEventListener("storage", loadCounts);
     return () => window.removeEventListener("storage", loadCounts);
   }, []);
@@ -106,18 +104,18 @@ export default function MiddleNav() {
             <div className="search-result absolute top-full left-0 w-full bg-white border border-gray-200 rounded-lg shadow-lg mt-2 z-50">
               {results.map((item, index) => (
                 <Link
-                  key={`${item.Id}-${index}`}
+                  key={`${item.id}-${index}`}
                   href={{
                     pathname: "/UI-Components/Shop",
-                    query: { id: item.Id },
+                    query: { id: item.id },
                   }}
                   onClick={() => setSearchTerm("")}
                 >
                   <div className="flex items-center gap-4 p-3 border-b border-gray-100 hover:bg-gray-50 hover:shadow-md transition-all duration-300">
                     {/* Product Image */}
                     <img
-                      src={item.ProductImage || item.image}
-                      alt={item.Name || item.title}
+                      src={item.ProductImage || item.image || "/placeholder.png"}
+                      alt={item.Name || item.title || "Product"}
                       className="w-16 h-16 object-cover rounded-md shadow-sm"
                     />
 

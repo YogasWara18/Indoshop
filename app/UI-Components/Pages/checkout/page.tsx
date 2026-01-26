@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 type CartItem = {
-  Id: string;
+  id: string;
   name: string;
   title: string;
-  price: number;
+  price: string;
   review: string;
   qty?: number;
   quantity?: number;
@@ -22,8 +22,20 @@ export default function Checkout() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
-    const saveCart = JSON.parse(localStorage.getItem("cart") || "[]");
-    setCartItems(saveCart);
+    const handleStorageUpdate = () => {
+      const saveCart = JSON.parse(localStorage.getItem("cart") || "[]");
+      setCartItems(saveCart);
+    };
+
+    // initial load
+    handleStorageUpdate();
+
+    // listen perubahan cart
+    window.addEventListener("storageUpdate", handleStorageUpdate);
+
+    return () => {
+      window.removeEventListener("storageUpdate", handleStorageUpdate);
+    };
   }, []);
 
   const handlePlaceOrder = () => {
@@ -239,7 +251,7 @@ export default function Checkout() {
                       </p>
                     </div>
                     <span className="font-semibold text-gray-700">
-                      Rp{item.price.toLocaleString("id-ID")}
+                      Rp{Number(item.price.replace(/[^0-9]/g, "")).toLocaleString("id-ID")}
                     </span>
                   </div>
                 ))}

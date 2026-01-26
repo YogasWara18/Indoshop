@@ -1,6 +1,6 @@
 [
   {
-    "Id": "BestDeals1",
+    "id": "BestDeals1",
     "image": "/BestDeals/Product-1.png",
     "title": "Keramik Bali",
     "price": "Rp 800.000",
@@ -9,7 +9,7 @@
     "sold": "18/35"
   },
   {
-    "Id": "BestDeals2",
+    "id": "BestDeals2",
     "image": "/BestDeals/Product-2.png",
     "title": "Batik Jawa",
     "price": "Rp 350.000",
@@ -18,7 +18,7 @@
     "sold": "25/50"
   },
   {
-    "Id": "BestDeals3",
+    "id": "BestDeals3",
     "image": "/BestDeals/Product-3.png",
     "title": "Ukiran Jepara",
     "price": "Rp 1.200.000",
@@ -27,7 +27,7 @@
     "sold": "12/20"
   },
   {
-    "Id": "BestDeals4",
+    "id": "BestDeals4",
     "image": "/BestDeals/Product-4-v2.png",
     "title": "Tenun Sumatra",
     "price": "Rp 750.000",
@@ -36,7 +36,7 @@
     "sold": "30/60"
   },
   {
-    "Id": "BestDeals5",
+    "id": "BestDeals5",
     "image": "/BestDeals/Product-5-v1.png",
     "title": "Patung batu Bali",
     "price": "Rp 5.000.000",
@@ -45,7 +45,7 @@
     "sold": "22/40"
   },
   {
-    "Id": "BestDeals6",
+    "id": "BestDeals6",
     "image": "/BestDeals/Product-6-v3.png",
     "title": "Songket Palembang",
     "price": "Rp 1.500.000",
@@ -54,7 +54,7 @@
     "sold": "15/25"
   },
   {
-    "Id": "BestDeals7",
+    "id": "BestDeals7",
     "image": "/BestDeals/Product-7.png",
     "title": "Topeng Cirebon",
     "price": "Rp 450.000",
@@ -63,7 +63,7 @@
     "sold": "20/40"
   },
   {
-    "Id": "BestDeals8",
+    "id": "BestDeals8",
     "image": "/BestDeals/Product-8.png",
     "title": "Anyaman Lombok",
     "price": "Rp 300.000",
@@ -72,7 +72,7 @@
     "sold": "28/50"
   },
   {
-    "Id": "BestDeals9",
+    "id": "BestDeals9",
     "image": "/BestDeals/Product-9.png",
     "title": "Perak Yogyakarta",
     "price": "Rp 2.200.000",
@@ -81,16 +81,16 @@
     "sold": "10/18"
   },
   {
-    "Id": "BestDeals10",
+    "id": "BestDeals10",
     "image": "/BestDeals/Product-10.png",
-    "title": "Wayang Kulit",
+    "titel": "Wayang Kulit",
     "price": "Rp 950.000",
     "lessprice": "Rp 1.700.000",
     "review": "(2.3k)",
     "sold": "35/70"
   },
   {
-    "Id": "BestDeals11",
+    "id": "BestDeals11",
     "image": "/BestDeals/Product-11.png",
     "title": "Emas Papua",
     "price": "Rp 9.500.000",
@@ -99,7 +99,7 @@
     "sold": "35/70"
   },
   {
-    "Id": "BestDeals12",
+    "id": "BestDeals12",
     "image": "/BestDeals/Product-12.png",
     "title": "Gerabah Solo",
     "price": "Rp 500.000",
