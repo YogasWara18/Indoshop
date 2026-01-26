@@ -14,6 +14,17 @@ import Deal5 from "@/public/Deals-bg5.png";
 import Deal6 from "@/public/Deals-bg6.png";
 import Deal7 from "@/public/Deals-bg7.png";
 
+interface Product {
+  id: string; // sesuai JSON kamu
+  image: string;
+  title: string;
+  price: string | number; // karena campuran di JSON
+  lessprice?: string | number;
+  review?: string;
+  sold?: string;
+  qty?: number;
+}
+
 type DealItem = {
   image: StaticImageData;
   title: string;
@@ -34,35 +45,27 @@ import products from "@/app/JsonData/BestDeals.json";
 import toast from "react-hot-toast";
 
 export default function Deals() {
-  const handleAddToCart = (product: any) => {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    const existingProduct = cart.find((item: any) => item.Id === product.Id);
+ const handleAddToCart = (product: Product) => {
+  const cart: Product[] = JSON.parse(localStorage.getItem("cart") || "[]");
+  const existingProduct = cart.find((item) => item.id === product.id);
 
-    if (existingProduct) {
-      toast(`${product.title} Ditambahkan ke keranjang`, {
-        icon: "⚡",
-        style: {
-          border: "1px solid #facc15",
-          padding: "16px",
-          color: "#333",
-          background: "#fff9c4",
-        },
-      });
-    } else {
-      cart.push({ ...product, qty: 1 });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      window.dispatchEvent(new Event("storageUpdate"));
-      toast.success(`${product.title} added to cart`);
-    }
-  };
+  if (existingProduct) {
+    toast(`${product.title} sudah ada di keranjang`, { icon: "⚡" });
+  } else {
+    cart.push({ ...product, qty: 1 });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.dispatchEvent(new Event("storageUpdate"));
+    toast.success(`${product.title} ditambahkan ke keranjang`);
+  }
+};
 
   return (
     <div className="px-[8%] lg:px-[12%] py-10">
       <div className="title my-4 w-full flex flex-col lg:flex-row justify-between items-start gap-5">
-          <h1 className="text-5xl Unbounded font-bold tracking-tight">
-            Today Featured Artwork
-          </h1>
-        </div>
+        <h1 className="text-5xl Unbounded font-bold tracking-tight">
+          Today Featured Artwork
+        </h1>
+      </div>
 
       <Swiper
         slidesPerView={1}
@@ -97,14 +100,14 @@ export default function Deals() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div
-              key={product.Id}
+              key={product.id}
               className="product-wrap border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow-lg transition-transform hover:scale-[1.02] cursor-pointer duration-300 overflow-hidden"
             >
               {/* Image Section */}
               <div className="relative flex justify-center items-center w-full h-56 bg-gray-50 rounded-lg">
                 <Image
                   src={product.image}
-                  alt={product.title}
+                  alt={product.title ?? "Product image"}
                   width={200}
                   height={200}
                   className="object-contain max-h-full"
@@ -115,7 +118,7 @@ export default function Deals() {
               <Link
                 href={{
                   pathname: "/UI-Components/Shop",
-                  query: { id: product.Id },
+                  query: { id: product.id },
                 }}
               >
                 <div className="space-y-2 mt-3 product-info">
@@ -138,10 +141,13 @@ export default function Deals() {
                   </h2>
 
                   <h6 className="text-sm text-gray-600 flex items-center gap-1">
-                    <i className="bi bi-shop text-[var(--prim-color)]"></i> By indoshop
+                    <i className="bi bi-shop text-[var(--prim-color)]"></i> By
+                    indoshop
                   </h6>
 
-                  <h3 className="text-sm text-gray-500">Sold: {product.sold}</h3>
+                  <h3 className="text-sm text-gray-500">
+                    Sold: {product.sold}
+                  </h3>
                 </div>
               </Link>
 
