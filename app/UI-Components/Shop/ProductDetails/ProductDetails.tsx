@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 
 import satisfactionIcon from "@/public/ShopDetails.png";
-import Deals from "../../Index/Deals/Deals";
 
 interface ProductType {
   id: string;
@@ -125,7 +124,7 @@ export default function ProductDetails({ id, products }: Props) {
 
   return (
     <>
-      <div className="px-[8%] lg:px-[12%] py-10">
+      <div className="px-[8%] lg:px-[1%] py-10">
         <div className="flex flex-col lg:flex-row justify-between gap-5">
           {/* Product Image */}
           <div className="w-full md:w-1/2 flex justify-center md:sticky md:top-24 h-fit">
@@ -438,7 +437,7 @@ export default function ProductDetails({ id, products }: Props) {
           </div>
         </div>
       </div>
-      <Deals/>
+     
     </>
   );
 }

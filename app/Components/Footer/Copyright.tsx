@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Copyright() {
   return (
@@ -8,7 +9,7 @@ export default function Copyright() {
         
         {/* Logo */}
         <Link href="/" className="-mb-10 hover:scale-105 transition-transform duration-300">
-          <img
+          <Image
             src="/logo.png"
             alt="Indoshop Art Market"
             width={200}
