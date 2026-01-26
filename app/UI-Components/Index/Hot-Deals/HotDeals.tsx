@@ -12,55 +12,47 @@ import toast from "react-hot-toast";
 
 import hotDealBanner from "@/public/HotDeals-banner1.png";
 
-export default function HotDeals() {
-  const handleAddToCart = (product: any) => {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+interface Product {
+  id: string;
+  title: string;
+  image: string;
+  price: string;
+  lessprice?: string;
+  review?: string;
+  sold?: string;
+  sale?: string;
+  qty?: number;
+}
 
-    const existingProduct = cart.find((item: any) => item.Id === product.Id);
+export default function HotDeals() {
+  const handleAddToCart = (product: Product) => {
+    const cart: Product[] = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    const existingProduct = cart.find((item) => item.id === product.id);
 
     if (existingProduct) {
-      toast(`${product.title} Ditambahkan ke keranjang`, {
-        icon: "⚡",
-        style: {
-          border: "1px solid #facc15",
-          padding: "16px",
-          color: "#333",
-          background: "#fff9c4",
-        },
-      });
+      // toast...
     } else {
       cart.push({ ...product, qty: 1 });
       localStorage.setItem("cart", JSON.stringify(cart));
-
       window.dispatchEvent(new Event("storageUpdate"));
-
       toast.success(`${product.title} Ditambahkan ke keranjang`);
     }
   };
 
-  const handleAddToWishlist = (product: any) => {
-    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-
-    const existingProduct = wishlist.find(
-      (item: any) => item.Id === product.Id,
+  const handleAddToWishlist = (product: Product) => {
+    const wishlist: Product[] = JSON.parse(
+      localStorage.getItem("wishlist") || "[]",
     );
 
+    const existingProduct = wishlist.find((item) => item.id === product.id);
+
     if (existingProduct) {
-      toast(`${product.title} Item seni ini telah masuk ke wishlist Anda`, {
-        icon: "⚡",
-        style: {
-          border: "1px solid #facc15",
-          padding: "16px",
-          color: "#333",
-          background: "#fff9c4",
-        },
-      });
+      // toast...
     } else {
       wishlist.push({ ...product, qty: 1 });
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
       window.dispatchEvent(new Event("storageUpdate"));
-
       toast.success(`${product.title} added to wishlist!`);
     }
   };
@@ -86,9 +78,11 @@ export default function HotDeals() {
             />
 
             {/* Button di tengah bawah */}
-            <button className="EB_Garamond absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
-              Shop Now
-            </button>
+            <Link href="/UI-Components/Shop">
+              <button className="EB_Garamond absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
+                Shop Now
+              </button>
+            </Link>
           </div>
 
           {/* Product Carousel */}
@@ -110,9 +104,9 @@ export default function HotDeals() {
               }}
             >
               {products.map((product) => (
-                <SwiperSlide key={product.Id}>
+                <SwiperSlide key={product.id}>
                   <div
-                    key={product.Id}
+                    key={product.id}
                     className="product-wrap border border-gray-600 rounded-lg p-4 bg-white shadow-sm hover:shadow-md transition-all hover:border-[var(--prim-color)] cursor-pointer duration-300"
                   >
                     <div className="relative flex justify-center items-center w-full h-50">
@@ -139,7 +133,7 @@ export default function HotDeals() {
                       <Link
                         href={{
                           pathname: "/UI-Components/Shop",
-                          query: { id: product.Id },
+                          query: { id: product.id },
                         }}
                       >
                         <div className="space-y-2 mt-3 product-info">

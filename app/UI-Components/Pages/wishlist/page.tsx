@@ -20,7 +20,7 @@ export default function Wishlist() {
     const loadWishlist = () => {
       try {
         const wishlist: wishlistItem[] = JSON.parse(
-          localStorage.getItem("wishlist") || "[]"
+          localStorage.getItem("wishlist") || "[]",
         );
         setWishlistItems(wishlist);
       } catch (error) {
@@ -35,45 +35,53 @@ export default function Wishlist() {
 
   // Remove Product from Wishlist
   const handleRemove = (productId: string) => {
-    const updateWishlist = wishlistItems.filter((item) => item.id !== productId);
+    const updateWishlist = wishlistItems.filter(
+      (item) => item.id !== productId,
+    );
     localStorage.setItem("wishlist", JSON.stringify(updateWishlist));
     window.dispatchEvent(new Event("storageUpdate"));
     toast.success("Product Removed From Wishlist");
   };
 
- const handleAddToCart = (product: wishlistItem) => {
-  const cart: (wishlistItem & { qty: number })[] = JSON.parse(
-    localStorage.getItem("cart") || "[]"
-  );
+  const handleAddToCart = (product: wishlistItem) => {
+    const cart: (wishlistItem & { qty: number })[] = JSON.parse(
+      localStorage.getItem("cart") || "[]",
+    );
 
-  const existingProduct = cart.find((item) => item.id === product.id);
+    const existingProduct = cart.find((item) => item.id === product.id);
 
-  if (existingProduct) {
-    toast(`${product.title} is already in the cart`, {
-      icon: "⚡",
-      style: {
-        border: "1px solid #facc15",
-        padding: "16px",
-        color: "#333",
-        background: "#fff9c4",
-      },
-    });
-  } else {
-    cart.push({ ...product, qty: 1 });
-    localStorage.setItem("cart", JSON.stringify(cart));
-    window.dispatchEvent(new Event("storageUpdate"));
-    toast.success(`${product.title} added to cart`);
-  }
-};
+    if (existingProduct) {
+      toast(`${product.title} is already in the cart`, {
+        icon: "⚡",
+        style: {
+          border: "1px solid #facc15",
+          padding: "16px",
+          color: "#333",
+          background: "#fff9c4",
+        },
+      });
+    } else {
+      cart.push({ ...product, qty: 1 });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.dispatchEvent(new Event("storageUpdate"));
+      toast.success(`${product.title} added to cart`);
+    }
+  };
 
   return (
     <>
       {/* Header */}
-      <div className="px-[8%] lg:px-[12%] bg-[#f1c6c6c5] py-5">
+      {/* Header */}
+      <div className="px-[8%] lg:px-[12%] bg-[#fdf6ec] py-5 border-b border-[var(--prim-color)] shadow-md">
         <div className="flex justify-between items-center">
-          <h2 className="Unbounded text-2xl">Wishlist</h2>
-          <div className="flex">
-            <Link href="/" className="text-2xl Unbounded">
+          <h2 className="Unbounded text-2xl text-[var(--prim-color)]">
+            Wishlist
+          </h2>
+          <div className="flex items-center">
+            <Link
+              href="/"
+              className="text-2xl Unbounded text-gray-700 hover:text-[var(--prim-color)] transition-colors"
+            >
               Home &nbsp; :
             </Link>
             <h2 className="Unbounded text-2xl text-[var(--prim-color)]">
@@ -140,7 +148,7 @@ export default function Wishlist() {
                     <td className="py-3 px-4 Unbounded border-r border-gray-600">
                       Rp
                       {Number(item.price.replace(/[^0-9]/g, "")).toLocaleString(
-                        "id-ID"
+                        "id-ID",
                       )}
                     </td>
                     <td className="py-3 px-4 Unbounded border-r border-gray-600">
@@ -180,11 +188,13 @@ export default function Wishlist() {
                     className="w-20 h-20 object-cover rounded"
                   />
                   <div className="flex flex-col">
-                    <p className="font-medium Unbounded text-lg">{item.title}</p>
+                    <p className="font-medium Unbounded text-lg">
+                      {item.title}
+                    </p>
                     <span className="text-gray-500 text-sm">
                       Rp
                       {Number(item.price.replace(/[^0-9]/g, "")).toLocaleString(
-                        "id-ID"
+                        "id-ID",
                       )}
                     </span>
                     <button
@@ -211,11 +221,13 @@ export default function Wishlist() {
                     className="w-20 h-20 object-cover rounded"
                   />
                   <div className="flex flex-col">
-                    <p className="font-medium Unbounded text-lg">{item.title}</p>
+                    <p className="font-medium Unbounded text-lg">
+                      {item.title}
+                    </p>
                     <span className="text-gray-500 text-sm">
                       Rp
                       {Number(item.price.replace(/[^0-9]/g, "")).toLocaleString(
-                        "id-ID"
+                        "id-ID",
                       )}
                     </span>
                     <button

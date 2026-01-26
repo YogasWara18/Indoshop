@@ -8,56 +8,47 @@ import toast from "react-hot-toast";
 
 import products from "@/app/JsonData/BestSales.json";
 
+type Product = {
+  id: string;
+  image: string;
+  title: string;
+  price: string;
+  lessprice: string;
+  review: string;
+  sold: string;
+  sale?: string; // optional kalau ada
+};
+
 export default function BestSales() {
-  const handleAddToCart = (product: any) => {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    const existingProduct = cart.find((item: any) => item.Id === product.Id);
+ const handleAddToCart = (product: Product) => {
+  const cart: (Product & { qty: number })[] = JSON.parse(localStorage.getItem("cart") || "[]");
 
-    if (existingProduct) {
-      toast(`${product.title} sudah ada di keranjang`, {
-        icon: "⚡",
-        style: {
-          border: "1px solid #facc15",
-          padding: "16px",
-          color: "#333",
-          background: "#fff9c4",
-        },
-      });
-    } else {
-      cart.push({ ...product, qty: 1 });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      window.dispatchEvent(new Event("storageUpdate"));
-      toast.success(`${product.title} Ditambahkan ke keranjang`);
-    }
-  };
+  const existingProduct = cart.find((item) => item.id === product.id);
 
+  if (existingProduct) {
+    toast(`${product.title} sudah ada di keranjang`);
+  } else {
+    cart.push({ ...product, qty: 1 });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.dispatchEvent(new Event("storageUpdate"));
+    toast.success(`${product.title} Ditambahkan ke keranjang`);
+  }
+};
 
-   const handleAddToWishlist = (product: any) => {
-    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+const handleAddToWishlist = (product: Product) => {
+  const wishlist: (Product & { qty: number })[] = JSON.parse(localStorage.getItem("wishlist") || "[]");
 
-    const existingProduct = wishlist.find(
-      (item: any) => item.Id === product.Id,
-    );
+  const existingProduct = wishlist.find((item) => item.id === product.id);
 
-    if (existingProduct) {
-      toast(`${product.title} Item seni ini telah masuk ke wishlist Anda`, {
-        icon: "⚡",
-        style: {
-          border: "1px solid #facc15",
-          padding: "16px",
-          color: "#333",
-          background: "#fff9c4",
-        },
-      });
-    } else {
-      wishlist.push({ ...product, qty: 1 });
-      localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-      window.dispatchEvent(new Event("storageUpdate"));
-
-      toast.success(`${product.title} added to wishlist!`);
-    }
-  };
+  if (existingProduct) {
+    toast(`${product.title} Item seni ini telah masuk ke wishlist Anda`);
+  } else {
+    wishlist.push({ ...product, qty: 1 });
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    window.dispatchEvent(new Event("storageUpdate"));
+    toast.success(`${product.title} added to wishlist!`);
+  }
+};
 
   return (
     <>
@@ -73,7 +64,7 @@ export default function BestSales() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {products.map((product) => (
             <div
-              key={product.Id}
+              key={product.id}
               className="flex flex-col lg:flex-row items-center lg:items-start gap-6 
              border border-gray-100 rounded-2xl p-6 
              bg-white/90 backdrop-blur-md shadow-md 
@@ -118,7 +109,7 @@ export default function BestSales() {
                 <Link
                   href={{
                     pathname: "/UI-Components/Shop",
-                    query: { id: product.Id },
+                    query: { id: product.id },
                   }}
                 >
                   <h2 className="text-lg font-semibold Unbounded hover:text-[var(--prim-color)] transition-colors">

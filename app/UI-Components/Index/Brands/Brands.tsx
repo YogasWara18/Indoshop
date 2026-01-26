@@ -26,12 +26,12 @@ const brands = [
 
 export default function Brands() {
   return (
-    <div className="px-[8%] lg:px-[12%] py-12">
-      <div className="bg-gradient-to-r from-[var(--prim-color)] to-white shadow-lg p-6 rounded-3xl">
+    <div className="px-[8%] lg:px-[12%] py-16">
+      <div className="bg-white/30 backdrop-blur-md border border-[var(--prim-light)]/40 shadow-lg p-8 rounded-3xl">
         
         {/* Judul */}
-        <div className="title mb-8 w-full flex justify-center items-center">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl Unbounded font-bold tracking-tight text-gray-800">
+        <div className="title mb-10 w-full flex justify-center items-center">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl Unbounded font-bold tracking-tight text-[var(--prim-color)]">
             Shop By Brands
           </h1>
         </div>
@@ -43,8 +43,8 @@ export default function Brands() {
             spaceBetween={5}
             loop={true}
             modules={[Autoplay]}
-            autoplay={{ delay: 2000 }}
-            speed={1200}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            speed={1000}
             breakpoints={{
               1200: { slidesPerView: 7, spaceBetween: 24 },
               991: { slidesPerView: 5, spaceBetween: 20 },
@@ -62,9 +62,9 @@ export default function Brands() {
                     width={120}
                     height={120}
                     className="object-contain mx-auto cursor-pointer 
-                               hover:scale-105 hover:shadow-xl 
-                               transition-all duration-300 ease-in-out 
-                               rounded-xl p-3 
+                               hover:scale-110 hover:shadow-[0_0_20px_var(--prim-light)] 
+                               transition-all duration-500 ease-in-out 
+                               rounded-xl border border-[var(--prim-light)]/40 bg-white p-3 
                                w-[80px] h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
                   />
                 </div>

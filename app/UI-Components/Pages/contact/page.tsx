@@ -22,11 +22,11 @@ export default function Contact() {
       </div>
 
       {/* Content */}
-      <div className="px-[8%] lg:px-[12%] py-10">
-        <div className="flex flex-col lg:flex-row gap-10">
+      <div className="px-[8%] lg:px-[12%] py-10 mt-10">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
           {/* Contact Info */}
-          <div className="w-full lg:w-1/2 space-y-6">
-            <h3 className="Unbounded text-xl text-[var(--prim-color)] mb-4">
+          <div className="w-full lg:w-1/2 bg-[#fff8f0] border border-[#d9c2a3] rounded-lg p-6 shadow-md space-y-6">
+            <h3 className="Unbounded text-2xl text-[var(--prim-color)] mb-4">
               Hubungi Kami
             </h3>
             <p className="text-gray-700 leading-relaxed">
@@ -36,15 +36,15 @@ export default function Contact() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <i className="bi bi-geo-alt text-[var(--prim-color)] text-xl"></i>
-                <span className="text-gray-700">Jl. Kebudayaan No. 10, Medan</span>
+                <span className="text-gray-700">Jl. Melati No. 789,Taman Budaya, Jakarta</span>
               </div>
               <div className="flex items-center gap-3">
                 <i className="bi bi-telephone text-[var(--prim-color)] text-xl"></i>
-                <span className="text-gray-700">+62 812 3456 7890</span>
+                <span className="text-gray-700">+62 812 3456 78 / +62 813 9876 4012</span>
               </div>
               <div className="flex items-center gap-3">
                 <i className="bi bi-envelope text-[var(--prim-color)] text-xl"></i>
-                <span className="text-gray-700">info@indoshop.com</span>
+                <span className="text-gray-700">info@indoshop-art.com</span>
               </div>
             </div>
 
@@ -63,8 +63,8 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="w-full lg:w-1/2 border border-gray-200 rounded-lg shadow-lg bg-white p-6">
-            <h3 className="Unbounded text-xl text-[var(--prim-color)] mb-4">
+          <div className="w-full lg:w-1/2 bg-[#fff8f0] border border-[#d9c2a3] rounded-lg p-6 shadow-md">
+            <h3 className="Unbounded text-2xl text-[var(--prim-color)] mb-4">
               Kirim Pesan
             </h3>
             <form className="flex flex-col gap-5">

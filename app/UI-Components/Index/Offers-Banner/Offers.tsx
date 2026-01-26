@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 
 import Deal1 from "@/public/Offers-baner1.jpg";
 import Deal2 from "@/public/Offers-baner2.jpg";
+import Link from "next/link";
 
 type DealItem = {
   image: StaticImageData;
@@ -55,9 +56,11 @@ export default function Offers() {
                   expired Jan, 26
                 </span>
               </p>
+              <Link href="/UI-Components/Shop">
                <button className="EB_Garamond relative px-6 py-1 rounded-full font-bold text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40">
                 Shop Now 
               </button>
+              </Link>
             </div>
           </div>
         ))}

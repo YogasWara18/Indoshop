@@ -64,11 +64,16 @@ export default function Cart() {
 
   return (
     <>
-      <div className="px-[8%] lg:px-[12%] bg-[#f1c6c6c5] py-5">
+      <div className="px-[8%] lg:px-[12%] bg-[#fdf6ec] py-5 border-b border-[var(--prim-color)] shadow-md">
         <div className="flex justify-between items-center">
-          <h2 className="Unbounded text-2xl">Shopping Cart</h2>
-          <div className="flex">
-            <Link href="/" className="text-2xl Unbounded">
+          <h2 className="Unbounded text-2xl text-[var(--prim-color)]">
+            Shopping Cart
+          </h2>
+          <div className="flex items-center">
+            <Link
+              href="/"
+              className="text-2xl Unbounded text-gray-700 hover:text-[var(--prim-color)] transition-colors"
+            >
               Home &nbsp; :
             </Link>
             <h2 className="Unbounded text-2xl text-[var(--prim-color)]">
@@ -110,11 +115,15 @@ export default function Cart() {
                   <tbody>
                     {cartItems.map((item: CartItem) => {
                       const quantity = item.qty ?? 1;
-                      const priceNum = parseFloat(item.price.replace(/[^0-9]/g, "")) || 0; // simpan ke variabel
+                      const priceNum =
+                        parseFloat(item.price.replace(/[^0-9]/g, "")) || 0; // simpan ke variabel
                       const itemSubtotal = priceNum * quantity;
 
                       return (
-                        <tr key={item.Id} className="border-b border-gray-600 hover:bg-gray-100 transition">
+                        <tr
+                          key={item.Id}
+                          className="border-b border-gray-600 hover:bg-gray-100 transition"
+                        >
                           <td className="py-4 px-6 flex items-center gap-4">
                             <img
                               src={item.image}
@@ -296,7 +305,9 @@ export default function Cart() {
                 </div>
 
                 <button className="EB_Garamond w-full py-3 mt-3 font-semibold text-white text-[var(--white-color)] bg-[var(--prim-color)] shadow-[0_0_15px_var(--prim-light)] hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] hover:shadow-[0_0_25px_var(--prim-light)] transition-all duration-[var(--transition-regular)] cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 transition-all duration-300 ease-in-out text-sm rounded-b-xl flex items-center justify-center gap-2">
-                 <Link href="/UI-Components/Pages/checkout">Proceed to Checkout</Link> 
+                  <Link href="/UI-Components/Pages/checkout">
+                    Proceed to Checkout
+                  </Link>
                 </button>
               </div>
             </div>

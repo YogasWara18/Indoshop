@@ -53,22 +53,26 @@ export default function Checkout() {
   return (
     <>
       {/* Header */}
-      <div className="px-[8%] lg:px-[12%] bg-[var(--prim-light)] py-6 shadow">
+      {/* Header */}
+      <div className="px-[8%] lg:px-[12%] bg-[#fdf6ec] py-5 border-b border-[var(--prim-color)] shadow-md">
         <div className="flex justify-between items-center">
-          <h2 className="Unbounded text-2xl font-bold">Checkout</h2>
-          <div className="flex items-center gap-2 text-lg">
-            <Link href="/" className="hover:underline">
-              Home
+          <h2 className="Unbounded text-2xl text-[var(--prim-color)]">
+            Checkout
+          </h2>
+          <div className="flex items-center">
+            <Link
+              href="/"
+              className="text-2xl Unbounded text-gray-700 hover:text-[var(--prim-color)] transition-colors"
+            >
+              Home &nbsp; :
             </Link>
-            <span>:</span>
-            <span className="text-[var(--prim-color)] font-semibold">
-              Checkout
-            </span>
+            <h2 className="Unbounded text-2xl text-[var(--prim-color)]">
+              &nbsp; Checkout
+            </h2>
           </div>
         </div>
       </div>
 
-      {/* Content */}
       {/* Content */}
       <div className="px-[8%] lg:px-[12%] py-10">
         <div className="grid gap-8 lg:grid-cols-12">
@@ -251,7 +255,10 @@ export default function Checkout() {
                       </p>
                     </div>
                     <span className="font-semibold text-gray-700">
-                      Rp{Number(item.price.replace(/[^0-9]/g, "")).toLocaleString("id-ID")}
+                      Rp
+                      {Number(item.price.replace(/[^0-9]/g, "")).toLocaleString(
+                        "id-ID",
+                      )}
                     </span>
                   </div>
                 ))}
