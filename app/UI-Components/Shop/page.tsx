@@ -10,40 +10,25 @@ import Recommend from "@/app/JsonData/Recommend.json";
 import ProductDetails from "./ProductDetails/ProductDetails";
 import Products from "./Products/Products";
 
-
-type ProductType = {
-  Id: string;
-  image: string;
-  title: string;
-  price: string;
-  lessprice: string;
-  review: string;
-  sold: string;
-};
-
 export default function ShopPage() {
-  const allProducts: ProductType[] = [
+  const allProducts = [
     ...BestDeals,
     ...BestSales,
     ...HotDeals,
     ...TopProduct,
     ...Recommend,
-  ].map((p) => ({
-    Id: p.id, // ubah ke huruf besar
-    image: p.image,
-    title: p.title,
-    price: p.price,
-    lessprice: p.lessprice,
-    review: p.review,
-    sold: p.sold,
-  }));
+  ];
 
   const searchParams = useSearchParams();
-  const productId = searchParams.get("id") ?? undefined;
+  const productId = searchParams.get("id");
 
-  return productId ? (
-    <ProductDetails id={productId} products={allProducts} />
-  ) : (
-    <Products />
+  return (
+    <div className="">
+      {productId ? (
+        <ProductDetails id={productId} products={allProducts} />
+      ) : (
+        <Products />
+      )}
+    </div>
   );
 }

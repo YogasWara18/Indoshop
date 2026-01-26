@@ -8,7 +8,7 @@ import satisfactionIcon from "@/public/ShopDetails.png";
 import Deals from "../../Index/Deals/Deals";
 
 interface ProductType {
-  Id: string;
+  id: string;
   image: string;
   title: string;
   price: string;
@@ -32,7 +32,7 @@ export default function ProductDetails({ id, products }: Props) {
         <h1 className="text-2xl font-bold mb-6">All Products</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {products.map((product) => (
-            <div key={product.Id} className="border p-4 rounded-md">
+            <div key={product.id} className="border p-4 rounded-md">
               <Image
                 src={product.image}
                 alt={product.title}
@@ -54,7 +54,7 @@ export default function ProductDetails({ id, products }: Props) {
     );
   }
 
-  const product = products.find((item) => String(item.Id) === String(id));
+  const product = products.find((item) => String(item.id) === String(id));
   if (!product) return <p>Product Not Found!</p>;
 
   // State untuk quantity
@@ -64,7 +64,7 @@ export default function ProductDetails({ id, products }: Props) {
   const handleAddToCart = (product: ProductType) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     const existingProduct = cart.find(
-      (item: ProductType) => item.Id === product.Id,
+      (item: ProductType) => item.id === product.id,
     );
 
     if (existingProduct) {
@@ -89,7 +89,7 @@ export default function ProductDetails({ id, products }: Props) {
   const handleAddToWishlist = (product: ProductType) => {
     const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
     const existingProduct = wishlist.find(
-      (item: ProductType) => item.Id === product.Id,
+      (item: ProductType) => item.id === product.id,
     );
 
     if (existingProduct) {
@@ -117,7 +117,7 @@ export default function ProductDetails({ id, products }: Props) {
 
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     const updateCart = cart.map((item: ProductType) =>
-      item.Id === product.Id ? { ...item, qty: newQty } : item,
+      item.id === product.id ? { ...item, qty: newQty } : item,
     );
     localStorage.setItem("cart", JSON.stringify(updateCart));
     window.dispatchEvent(new Event("storageUpdate"));
