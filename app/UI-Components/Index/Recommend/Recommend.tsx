@@ -7,58 +7,52 @@ import products from "@/app/JsonData/Recommend.json";
 
 import toast from "react-hot-toast";
 
+interface Product {
+  id: string;
+  title: string;
+  image: string;
+  price: string;
+  lessprice?: string;
+  review?: string;
+  sold?: string;   // kalau di JSON sold berupa string
+  sale?: string;
+}
+
+interface CartItem extends Product {
+  qty: number;
+}
+
+
 export default function Recommend() {
-  const handleAddToCart = (product: any) => {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+ const handleAddToCart = (product: Product) => {
+  const cart: CartItem[] = JSON.parse(localStorage.getItem("cart") || "[]");
 
-    const existingProduct = cart.find((item: any) => item.Id === product.Id);
+  const existingProduct = cart.find((item) => item.id === product.id);
 
-    if (existingProduct) {
-      toast(`${product.title} Ditambahkan ke keranjang`, {
-        icon: "⚡",
-        style: {
-          border: "1px solid #facc15",
-          padding: "16px",
-          color: "#333",
-          background: "#fff9c4",
-        },
-      });
-    } else {
-      cart.push({ ...product, qty: 1 });
-      localStorage.setItem("cart", JSON.stringify(cart));
+  if (existingProduct) {
+    toast(`${product.title} Ditambahkan ke keranjang`);
+  } else {
+    cart.push({ ...product, qty: 1 });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.dispatchEvent(new Event("storageUpdate"));
+    toast.success(`${product.title} Ditambahkan ke keranjang`);
+  }
+};
 
-      window.dispatchEvent(new Event("storageUpdate"));
+const handleAddToWishlist = (product: Product) => {
+  const wishlist: CartItem[] = JSON.parse(localStorage.getItem("wishlist") || "[]");
 
-      toast.success(`${product.title} Ditambahkan ke keranjang`);
-    }
-  };
+  const existingProduct = wishlist.find((item) => item.id === product.id);
 
-  const handleAddToWishlist = (product: any) => {
-    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-
-    const existingProduct = wishlist.find(
-      (item: any) => item.Id === product.Id,
-    );
-
-    if (existingProduct) {
-      toast(`${product.title} Item seni ini telah masuk ke wishlist Anda`, {
-        icon: "⚡",
-        style: {
-          border: "1px solid #facc15",
-          padding: "16px",
-          color: "#333",
-          background: "#fff9c4",
-        },
-      });
-    } else {
-      wishlist.push({ ...product, qty: 1 });
-      localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-      window.dispatchEvent(new Event("storageUpdate"));
-
-      toast.success(`${product.title} added to wishlist!`);
-    }
-  };
+  if (existingProduct) {
+    toast(`${product.title} Item seni ini telah masuk ke wishlist Anda`);
+  } else {
+    wishlist.push({ ...product, qty: 1 });
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    window.dispatchEvent(new Event("storageUpdate"));
+    toast.success(`${product.title} added to wishlist!`);
+  }
+};
 
   return (
     <div className="px-[8%] lg:px-[12%] py-10">
@@ -73,7 +67,7 @@ export default function Recommend() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div
-              key={product.Id}
+              key={product.id}
               className="product-wrap border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow-lg transition-transform hover:scale-[1.02] cursor-pointer duration-300 overflow-hidden"
             >
               {/* Image Section */}
@@ -100,7 +94,7 @@ export default function Recommend() {
               <Link
                 href={{
                   pathname: "/UI-Components/Shop",
-                  query: { id: product.Id },
+                  query: { id: product.id },
                 }}
               >
                 <div className="space-y-2 mt-3 product-info">
