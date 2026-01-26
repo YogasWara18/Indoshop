@@ -10,7 +10,7 @@ export default function Copyright() {
         {/* Logo */}
         <Link href="/" className="-mb-10 hover:scale-105 transition-transform duration-300">
           <Image
-            src="/logo.png"
+            src="/LogoCopyright.png"
             alt="Indoshop Art Market"
             width={200}
             height={80}
