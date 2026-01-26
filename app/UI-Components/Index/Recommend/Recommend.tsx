@@ -14,7 +14,7 @@ interface Product {
   price: string;
   lessprice?: string;
   review?: string;
-  sold?: string;   // kalau di JSON sold berupa string
+  sold?: string; // kalau di JSON sold berupa string
   sale?: string;
 }
 
@@ -22,45 +22,46 @@ interface CartItem extends Product {
   qty: number;
 }
 
-
 export default function Recommend() {
- const handleAddToCart = (product: Product) => {
-  const cart: CartItem[] = JSON.parse(localStorage.getItem("cart") || "[]");
+  const handleAddToCart = (product: Product) => {
+    const cart: CartItem[] = JSON.parse(localStorage.getItem("cart") || "[]");
 
-  const existingProduct = cart.find((item) => item.id === product.id);
+    const existingProduct = cart.find((item) => item.id === product.id);
 
-  if (existingProduct) {
-    toast(`${product.title} Ditambahkan ke keranjang`);
-  } else {
-    cart.push({ ...product, qty: 1 });
-    localStorage.setItem("cart", JSON.stringify(cart));
-    window.dispatchEvent(new Event("storageUpdate"));
-    toast.success(`${product.title} Ditambahkan ke keranjang`);
-  }
-};
+    if (existingProduct) {
+      toast(`${product.title} Ditambahkan ke keranjang`);
+    } else {
+      cart.push({ ...product, qty: 1 });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.dispatchEvent(new Event("storageUpdate"));
+      toast.success(`${product.title} Ditambahkan ke keranjang`);
+    }
+  };
 
-const handleAddToWishlist = (product: Product) => {
-  const wishlist: CartItem[] = JSON.parse(localStorage.getItem("wishlist") || "[]");
+  const handleAddToWishlist = (product: Product) => {
+    const wishlist: CartItem[] = JSON.parse(
+      localStorage.getItem("wishlist") || "[]",
+    );
 
-  const existingProduct = wishlist.find((item) => item.id === product.id);
+    const existingProduct = wishlist.find((item) => item.id === product.id);
 
-  if (existingProduct) {
-    toast(`${product.title} Item seni ini telah masuk ke wishlist Anda`);
-  } else {
-    wishlist.push({ ...product, qty: 1 });
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-    window.dispatchEvent(new Event("storageUpdate"));
-    toast.success(`${product.title} added to wishlist!`);
-  }
-};
+    if (existingProduct) {
+      toast(`${product.title} Item seni ini telah masuk ke wishlist Anda`);
+    } else {
+      wishlist.push({ ...product, qty: 1 });
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      window.dispatchEvent(new Event("storageUpdate"));
+      toast.success(`${product.title} added to wishlist!`);
+    }
+  };
 
   return (
     <div className="px-[8%] lg:px-[12%] py-10">
       <div className="title my-4 w-full flex flex-col lg:flex-row justify-between items-start gap-5">
-          <h1 className="text-5xl Unbounded font-bold tracking-tight">
-            Recommend For You
-          </h1>
-        </div>
+        <h1 className="text-5xl Unbounded font-bold tracking-tight">
+          Recommend For You
+        </h1>
+      </div>
 
       {/* Recommend product */}
       <div className="my-10">
@@ -83,9 +84,11 @@ const handleAddToWishlist = (product: Product) => {
                   onClick={() => handleAddToWishlist(product)}
                   className="absolute bottom-2 right-2"
                 >
-                 <i className="bi bi-heart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
+                  <i className="bi bi-heart text-gray-600 text-xl hover:text-[var(--prim-color)] transition-all"></i>
                 </div>
-                <span className={`absolute off-product top-0 right-0 px-4 py-2 EB_Garamond text-xs font-bold text-white rounded ${product.sale === "New" ? "bg-yellow-400" : product.sale.includes("%") ? "bg-red-500" : "opacity-0" }`}>
+                <span
+                  className={`absolute off-product top-0 right-0 px-4 py-2 EB_Garamond text-xs font-bold text-white rounded ${product.sale === "New" ? "bg-yellow-400" : product.sale.includes("%") ? "bg-red-500" : "opacity-0"}`}
+                >
                   {product.sale}
                 </span>
               </div>
