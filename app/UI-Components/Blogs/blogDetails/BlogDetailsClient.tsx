@@ -104,12 +104,14 @@ export default function BlogDetailsClient() {
             <div>
               <Link
                 href="/UI-Components/Blogs"
-                className="inline-block Unbounded text-lg 
-                           bg-[var(--prim-color)] text-white 
-                           px-6 py-3 rounded-md shadow-md 
-                           hover:bg-[var(--sec-color)] hover:text-black 
-                           transition-all duration-300 ease-in-out
-                           tracking-wide"
+                className="EB_Garamond w-full lg:w-auto px-6 py-3 mt-3 font-semibold 
+                   text-white text-[var(--white-color)] bg-[var(--prim-color)] 
+                   shadow-[0_0_15px_var(--prim-light)] 
+                   hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] 
+                   hover:shadow-[0_0_25px_var(--prim-light)] 
+                   transition-all duration-[var(--transition-regular)] 
+                   cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 
+                   text-sm rounded-md flex items-center justify-center gap-2"
               >
                 ← Kembali ke Blog
               </Link>

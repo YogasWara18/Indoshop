@@ -56,8 +56,14 @@ export default function Account() {
               </div>
               <button
                 type="submit"
-                className="bg-[var(--prim-color)] text-white font-bold py-2 px-4 rounded-md 
-                           hover:bg-[var(--prim-dark)] transition-all shadow-md"
+                className="EB_Garamond w-full lg:w-auto px-6 py-3 mt-3 font-semibold 
+                   text-white text-[var(--white-color)] bg-[var(--prim-color)] 
+                   shadow-[0_0_15px_var(--prim-light)] 
+                   hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] 
+                   hover:shadow-[0_0_25px_var(--prim-light)] 
+                   transition-all duration-[var(--transition-regular)] 
+                   cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 
+                   text-sm rounded-md flex items-center justify-center gap-2"
               >
                 Login
               </button>
@@ -107,8 +113,14 @@ export default function Account() {
               </div>
               <button
                 type="submit"
-                className="bg-[var(--prim-color)] text-white font-bold py-2 px-4 rounded-md 
-                           hover:bg-[var(--prim-dark)] transition-all shadow-md"
+                className="EB_Garamond w-full lg:w-auto px-6 py-3 mt-3 font-semibold 
+                   text-white text-[var(--white-color)] bg-[var(--prim-color)] 
+                   shadow-[0_0_15px_var(--prim-light)] 
+                   hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] 
+                   hover:shadow-[0_0_25px_var(--prim-light)] 
+                   transition-all duration-[var(--transition-regular)] 
+                   cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 
+                   text-sm rounded-md flex items-center justify-center gap-2"
               >
                 Register
               </button>

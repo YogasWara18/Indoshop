@@ -6,7 +6,9 @@ export default function Contact() {
       {/* Header Breadcrumb */}
       <div className="px-[8%] lg:px-[12%] bg-[#fdf6ec] py-5 border-b border-[var(--prim-color)] shadow-md">
         <div className="flex justify-between items-center">
-          <h2 className="Unbounded text-2xl text-[var(--prim-color)]">Contact</h2>
+          <h2 className="Unbounded text-2xl text-[var(--prim-color)]">
+            Contact
+          </h2>
           <div className="flex items-center">
             <Link
               href="/"
@@ -30,17 +32,21 @@ export default function Contact() {
               Hubungi Kami
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              Kami hadir untuk mendukung seni dan kerajinan Indonesia. 
-              Silakan hubungi kami melalui informasi berikut:
+              Kami hadir untuk mendukung seni dan kerajinan Indonesia. Silakan
+              hubungi kami melalui informasi berikut:
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <i className="bi bi-geo-alt text-[var(--prim-color)] text-xl"></i>
-                <span className="text-gray-700">Jl. Melati No. 789,Taman Budaya, Jakarta</span>
+                <span className="text-gray-700">
+                  Jl. Melati No. 789,Taman Budaya, Jakarta
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <i className="bi bi-telephone text-[var(--prim-color)] text-xl"></i>
-                <span className="text-gray-700">+62 812 3456 78 / +62 813 9876 4012</span>
+                <span className="text-gray-700">
+                  +62 812 3456 78 / +62 813 9876 4012
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <i className="bi bi-envelope text-[var(--prim-color)] text-xl"></i>
@@ -50,13 +56,22 @@ export default function Contact() {
 
             {/* Social Media */}
             <div className="flex gap-4 mt-6">
-              <Link href="#" className="text-[var(--prim-color)] hover:text-[var(--prim-dark)] transition">
+              <Link
+                href="#"
+                className="text-[var(--prim-color)] hover:text-[var(--prim-dark)] transition"
+              >
                 <i className="bi bi-facebook text-2xl"></i>
               </Link>
-              <Link href="#" className="text-[var(--prim-color)] hover:text-[var(--prim-dark)] transition">
+              <Link
+                href="#"
+                className="text-[var(--prim-color)] hover:text-[var(--prim-dark)] transition"
+              >
                 <i className="bi bi-instagram text-2xl"></i>
               </Link>
-              <Link href="#" className="text-[var(--prim-color)] hover:text-[var(--prim-dark)] transition">
+              <Link
+                href="#"
+                className="text-[var(--prim-color)] hover:text-[var(--prim-dark)] transition"
+              >
                 <i className="bi bi-twitter text-2xl"></i>
               </Link>
             </div>
@@ -69,7 +84,9 @@ export default function Contact() {
             </h3>
             <form className="flex flex-col gap-5">
               <div className="flex flex-col">
-                <label className="Unbounded mb-2 text-gray-700">Nama Lengkap</label>
+                <label className="Unbounded mb-2 text-gray-700">
+                  Nama Lengkap
+                </label>
                 <input
                   type="text"
                   className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[var(--prim-color)]"
@@ -94,10 +111,14 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="Unbounded flex items-center justify-center gap-2 
-                           bg-[var(--prim-color)] text-white font-bold py-2 px-6 rounded-md 
-                           shadow-md transition-all duration-300 
-                           hover:bg-[var(--prim-dark)] hover:scale-105 hover:shadow-xl"
+                className="EB_Garamond w-full lg:w-auto px-6 py-3 mt-3 font-semibold 
+                   text-white text-[var(--white-color)] bg-[var(--prim-color)] 
+                   shadow-[0_0_15px_var(--prim-light)] 
+                   hover:bg-[var(--white-color)] hover:text-[var(--prim-color)] 
+                   hover:shadow-[0_0_25px_var(--prim-light)] 
+                   transition-all duration-[var(--transition-regular)] 
+                   cursor-pointer backdrop-blur-md border border-[var(--prim-light)]/40 
+                   text-sm rounded-md flex items-center justify-center gap-2"
               >
                 <i className="bi bi-send"></i> Kirim Pesan
               </button>

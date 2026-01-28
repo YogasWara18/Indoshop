@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 type CartItem = {
-  Id: string;
+  id: string;
   title: string;
   price: string;
   review: string;
@@ -48,7 +48,7 @@ export default function Cart() {
   }, []);
 
   const handleRemove = (productId: string) => {
-    const updateCart = cartItems.filter((item) => item.Id !== productId);
+    const updateCart = cartItems.filter((item) => item.id !== productId);
     localStorage.setItem("cart", JSON.stringify(updateCart));
     window.dispatchEvent(new Event("storageUpdate"));
     toast.success("Product removed from Cart!");
@@ -56,7 +56,7 @@ export default function Cart() {
 
   const handleQtyChange = (productId: string, qty: number) => {
     const updateCart = cartItems.map((item) =>
-      item.Id === productId ? { ...item, qty } : item,
+      item.id === productId ? { ...item, qty } : item,
     );
     localStorage.setItem("cart", JSON.stringify(updateCart));
     window.dispatchEvent(new Event("storageUpdate"));
@@ -121,7 +121,7 @@ export default function Cart() {
 
                       return (
                         <tr
-                          key={item.Id}
+                          key={item.id}
                           className="border-b border-gray-600 hover:bg-gray-100 transition"
                         >
                           <td className="py-4 px-6 flex items-center gap-4">
@@ -156,7 +156,7 @@ export default function Cart() {
                                 className="px-2 text-lg cursor-pointer"
                                 onClick={() =>
                                   handleQtyChange(
-                                    item.Id,
+                                    item.id,
                                     Math.max(1, quantity - 1),
                                   )
                                 }
@@ -169,7 +169,7 @@ export default function Cart() {
                                 className="px-2 text-lg cursor-pointer"
                                 onClick={() =>
                                   handleQtyChange(
-                                    item.Id,
+                                    item.id,
                                     Math.max(1, quantity + 1),
                                   )
                                 }
@@ -184,7 +184,7 @@ export default function Cart() {
                           <td className="py-3 px-4 Unbounded">
                             <button
                               className="text-red-500 hover:text-red-700 cursor-pointer"
-                              onClick={() => handleRemove(item.Id)}
+                              onClick={() => handleRemove(item.id)}
                             >
                               Delete
                             </button>
@@ -205,7 +205,7 @@ export default function Cart() {
 
                     return (
                       <div
-                        key={item.Id}
+                        key={item.id}
                         className="border p-4 rounded flex gap-3 items-start bg-white shadow-sm"
                       >
                         {/* Gambar */}
@@ -230,7 +230,7 @@ export default function Cart() {
                               className="px-2 py-1 text-lg border rounded cursor-pointer"
                               onClick={() =>
                                 handleQtyChange(
-                                  item.Id,
+                                  item.id,
                                   Math.max(1, quantity - 1),
                                 )
                               }
@@ -241,7 +241,7 @@ export default function Cart() {
                             <button
                               className="px-2 py-1 text-lg border rounded cursor-pointer"
                               onClick={() =>
-                                handleQtyChange(item.Id, quantity + 1)
+                                handleQtyChange(item.id, quantity + 1)
                               }
                             >
                               +
@@ -256,7 +256,7 @@ export default function Cart() {
                           {/* Delete */}
                           <button
                             className="mt-2 text-red-500 Unbounded hover:text-red-700 cursor-pointer text-sm self-start"
-                            onClick={() => handleRemove(item.Id)}
+                            onClick={() => handleRemove(item.id)}
                           >
                             ✕ Delete
                           </button>

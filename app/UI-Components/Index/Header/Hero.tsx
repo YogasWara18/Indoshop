@@ -29,8 +29,8 @@ export default function Hero() {
                   bg-transparent border border-[#d9c2a3] rounded-lg p-8 shadow-md"
             >
               <div className="w-full lg:w-1/2 space-y-5">
-                <h1 className="Unbounded text-3xl lg:text-6xl text-[var(--prim-color)] font-bold">
-                  Indonesian Artistry
+                <h1 className="Unbounded text-3xl lg:text-5xl text-white font-bold drop-shadow-lg">
+                  Indonesia Culture & Art
                 </h1>
                 <Link
                   href="/UI-Components/Shop"
@@ -62,7 +62,7 @@ export default function Hero() {
                   bg-transparent border border-[#d9c2a3] rounded-lg p-8 shadow-md"
             >
               <div className="w-full lg:w-1/2 space-y-5">
-                <h1 className="Unbounded text-3xl lg:text-6xl text-[var(--prim-color)] font-bold">
+                <h1 className="Unbounded text-3xl lg:text-6xl text-white font-bold drop-shadow-lg">
                   Indonesia Art Market
                 </h1>
                 <Link
