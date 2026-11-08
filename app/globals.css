@@ -4,6 +4,14 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 @import "remixicon/fonts/remixicon.css";
 
+@import "swiper/css";
+@import "swiper/css/pagination";
+
+/* =========================================
+   CATATAN: 3 baris @tailwind di bawah ini 
+   sudah DIHAPUS karena proyek Anda memakai Tailwind v4
+   ========================================= */
+
 /* Custom variables */
 :root {
   --prim-color: #fa2415;
@@ -338,9 +346,6 @@
   .hero-wrap h1 {
     font-size: 2.5rem;
   }
-  /* .category-info h2 {
-    font-size: 1rem;
-  } */
 }
 @media (max-width: 575px) {
   .swiper-button-prev-custom,
@@ -365,4 +370,29 @@
   .hero-wrap button:hover {
     background-color: var(--prim-color);
   }
+}
+
+/* =========================================
+   TAMBAHAN UNTUK MOBILE PREMIUM
+   ========================================= */
+
+/* Sembunyikan scrollbar untuk efek swipe premium */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Memastikan teks rata tengah di mobile sesuai permintaan */
+@media (max-width: 1024px) {
+  .mobile-text-center {
+    text-align: center !important;
+  }
+}
+
+/* Safe area untuk iPhone (Notch) */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
 }
